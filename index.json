@@ -39,9 +39,9 @@
       "id": "red-bull-energy",
       "name": "Red Bull Energy",
       "category": "bay",
-      "version": 1,
+      "version": 2,
       "file": "themes/red-bull-energy.json",
-      "description": "Lacivert zemin, kırmızı ve sarı vurgular, mavi yarış çizgileriyle enerji ve hız temalı tasarım."
+      "description": "Lacivert zemin üzerinde karşılıklı kırmızı boğa illüstrasyonları, sarı güneş diski ve sportif çerçeve."
     }
   ]
 }
