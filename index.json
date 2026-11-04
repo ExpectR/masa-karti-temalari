@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "app": "Masa Kartı Atölyesi",
+  "updatedAt": "2026-11-04",
+  "themes": [
+    {
+      "id": "modern-lacivert",
+      "name": "Modern Lacivert",
+      "category": "bay",
+      "version": 1,
+      "file": "themes/modern-lacivert.json",
+      "description": "Lacivert zemin, açık tipografi ve mavi geometrik desen."
+    },
+    {
+      "id": "klasik-altin",
+      "name": "Klasik Altın",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/klasik-altin.json",
+      "description": "Siyah zemin, şampanya tonları ve zarif altın çizgiler."
+    },
+    {
+      "id": "minimal-fildisi",
+      "name": "Minimal Fildişi",
+      "category": "bayan",
+      "version": 1,
+      "file": "themes/minimal-fildisi.json",
+      "description": "Fildişi zemin ve sade, sıcak kahverengi detaylar."
+    }
+  ]
+}
