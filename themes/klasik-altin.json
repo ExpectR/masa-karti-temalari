@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "klasik-altin",
+  "cat": "menu",
+  "n": "Klasik Altın",
+  "bg": "#101012",
+  "c": "#f0dc98",
+  "a": "#d4af37",
+  "font": "'Cinzel',serif",
+  "foil": 1,
+  "em": "",
+  "pat": "deco",
+  "p1": "#d4af37",
+  "p2": "#8a6d3b",
+  "p3": "#c9a24a"
+}
