@@ -155,12 +155,14 @@
       button(); status(notice || 'Program güncellemelerini buradan alabilirsin.');
     }
   };
-  (async function boot() {
+  async function boot() {
     var cached = read(KEY);
     if (cached && !newer(bundled.version, cached.version || '0.0.0')) {
       try { await verify(cached); show(cached); return; }
       catch (e) { remove(KEY); notice = 'Kayıtlı güncelleme okunamadı; dosyadaki çalışan sürüm açıldı.'; }
     }
     show(bundled);
-  })().catch(function () { show(bundled); });
+  }
+  function start(){boot().catch(function(){show(bundled)})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();

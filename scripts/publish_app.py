@@ -52,7 +52,7 @@ def build(version):
 <meta name="author" content="Umutcan Şahin">
 <title>Masa Kartı Atölyesi — Umutcan</title>
 <style>body{margin:0;background:#f6f1ec;color:#44352f;font:16px system-ui,sans-serif}.boot{max-width:420px;margin:15vh auto;padding:32px}h1{font-size:24px}</style>
-</head><body><main class="boot"><h1>Masa Kartı Atölyesi</h1><p>Uygulama açılıyor…</p><noscript>Uygulama için JavaScript açık olmalıdır.</noscript></main>
+</head><body><main class="boot"><noscript>Uygulama için JavaScript açık olmalıdır.</noscript></main>
 <script type="application/json" id="umutcan-bundled-app">'''+encoded+'''</script>
 <script>'''+loader+'''</script></body></html>
 '''
