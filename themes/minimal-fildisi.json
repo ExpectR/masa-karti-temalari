@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "minimal-fildisi",
+  "cat": "bayan",
+  "n": "Minimal Fildişi",
+  "bg": "#faf7f0",
+  "c": "#4a3a2a",
+  "a": "#a07845",
+  "font": "'Cormorant Garamond',serif",
+  "foil": 0,
+  "em": "",
+  "pat": "plain",
+  "p1": "#a07845",
+  "p2": "#d9c7a5",
+  "p3": "#eee5d5"
+}
