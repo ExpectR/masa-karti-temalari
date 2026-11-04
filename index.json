@@ -34,6 +34,14 @@
       "version": 1,
       "file": "themes/spider-hero.json",
       "description": "Kırmızı ve mavi çizgi roman renkleri, koyu zemin ve halftone dokulu süper kahraman teması."
+    },
+    {
+      "id": "red-bull-energy",
+      "name": "Red Bull Energy",
+      "category": "bay",
+      "version": 1,
+      "file": "themes/red-bull-energy.json",
+      "description": "Lacivert zemin, kırmızı ve sarı vurgular, mavi yarış çizgileriyle enerji ve hız temalı tasarım."
     }
   ]
 }
