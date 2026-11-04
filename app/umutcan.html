@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.1.1">
+<meta name="umutcan-app-version" content="2.1.2">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -150,7 +150,12 @@ button.g{background:var(--bg);border:1px solid var(--bd);box-shadow:none;color:v
 </div>
 <div class="prev" id="prev" aria-label="Canlı kart önizlemesi"></div>
 </div>
-<script>if(window.UmutShell)window.UmutShell.watch();</script>
+<script>
+function clearStartupPlaceholder(){document.querySelectorAll('main.boot').forEach(function(node){node.remove()})}
+clearStartupPlaceholder();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clearStartupPlaceholder,{once:true});
+if(window.UmutShell)window.UmutShell.watch();
+</script>
 <script>
 var F1="'Playfair Display',serif",FL=[[F1,'Playfair Display'],["'Cormorant Garamond',serif",'Cormorant Garamond'],["'Cinzel',serif",'Cinzel (klasik)'],["'Alex Brush',cursive",'Alex Brush'],["'Great Vibes',cursive",'Great Vibes'],["'Parisienne',cursive",'Parisienne'],["'Dancing Script',cursive",'Dancing Script'],["'Pacifico',cursive",'Pacifico (eğlenceli)'],["'Caveat',cursive",'Caveat (el yazısı)'],["Montserrat,sans-serif",'Montserrat (modern)']];
 var TH={pink:{n:'Pembe Bahçe',f:['rose','peony','daisy'],g:'leaf',a:'#e11d48'},poppy:{n:'Gelincik & Papatya',f:['poppy','daisy','poppy'],g:'leaf',a:'#dc2626'},lilac:{n:'Lila Rüya',f:['anem','cosmos','daisy'],g:'leaf',a:'#7e22ce'},sun:{n:'Güneş Bahçesi',f:['sun','daisy','poppy'],g:'leaf',a:'#d97706'},blush:{n:'Blush & Okaliptüs',f:['peonyw','rose2','peonyw'],g:'euc',a:'#a8805a',bg:'#fffaf5',c:'#6b4f3a'},lav:{n:'Provence Lavanta',f:['daisy','anem','daisy'],g:'lav',a:'#6d28d9',bg:'#fbf9ff',c:'#3b2a63'},deco:{n:'✦ Siyah & Altın Art Deco',lux:'deco',a:'#d4af37',bg:'#0b0b10',c:'#e9d28a',foil:1,font:"'Cinzel',serif"},marble:{n:'✦ Mermer & Altın',lux:'marble',a:'#b08d2f',bg:'#f6f5f3',c:'#1c1917',font:"'Cormorant Garamond',serif"},navy:{n:'✦ Gece Mavisi & Altın',lux:'navy',a:'#d4af37',bg:'#0c1a3a',c:'#f0dc98',foil:1,font:"'Parisienne',cursive"},royal:{n:'✦ Kraliyet Bordo',lux:'royal',a:'#d4af37',bg:'#4a0e1f',c:'#f0dc98',foil:1,font:"'Playfair Display',serif"},geo:{n:'✦ Rose Gold Geometrik',lux:'geo',a:'#b76e79',bg:'#fdf7f3',c:'#7a4b4f',font:"'Montserrat',sans-serif"},plain:{n:'Sade (çiçeksiz)',nofl:1,a:'#1e293b'}};
@@ -294,7 +299,7 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.1.1',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.1.2',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}

@@ -6,3 +6,5 @@
 - Launcher protokolü 1'i, uygulama kimliğini, Update düğmesini ve `UmutShell.watch/ready` anlaşmasını koru. Güncelleme SHA-256 ve sürüm/boyut doğrulamasını atlama. Başlangıç dosyasının kullanıcıdaki kopyası sabit kalırken sonraki uygulama sürümleri çalışmalıdır.
 - `mk3` ile başlayan kullanıcı verilerini/anahtarlarını koru. İsimler, logo, ayarlar, favoriler, şablonlar ve gizlenen temalar güncellemede korunmalıdır. Güncelleme verileri `umutcan.app.*` alanında tutulur.
 - Anlamlı tarayıcı doğrulaması: Update ile gerçek kod değişimi, yeniden açılış ve çevrimdışı açılışta yeni sürüm, kullanıcı verilerinin korunması, ağ/doğrulama hatasında mevcut sürümün çalışması, hatalı açılışta geri dönüş. Sadece sözdizimi kontrolüyle teslim etme.
+
+- Kullanıcıdaki eski başlangıç dosyası Update ile fiziksel olarak değişmez. Başlangıç dosyasındaki bir hata düzeltiliyorsa eski dosyalara uyumluluk düzeltmesini uygulama runtime'ına da ekle. `clearStartupPlaceholder` eski başlangıç dosyalarının bıraktığı `main.boot` yazısını temizler; bunu koru ve güncellemeyi orijinal eski başlangıç dosyasıyla doğrula.
