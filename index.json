@@ -26,6 +26,14 @@
       "version": 1,
       "file": "themes/minimal-fildisi.json",
       "description": "Fildişi zemin ve sade, sıcak kahverengi detaylar."
+    },
+    {
+      "id": "spider-hero",
+      "name": "Spider Hero",
+      "category": "bay",
+      "version": 1,
+      "file": "themes/spider-hero.json",
+      "description": "Kırmızı ve mavi çizgi roman renkleri, koyu zemin ve halftone dokulu süper kahraman teması."
     }
   ]
 }
