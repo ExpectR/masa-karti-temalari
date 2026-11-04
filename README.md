@@ -2,11 +2,26 @@
 
 Online tema kataloğu ve uygulamanın güncel kaynağı.
 
-## Kullanım
+## Kullanım ve Update
 
-Görsel temaları okuyabilen `umutcan.html` (2.0.0 ve sonrası) sürümünde **Tema Mağazası → Online yenile → Online** yolunu kullanın. Yeni temalar ve görseller bu depodan alınır; tema eklemek için HTML dosyasını yeniden dağıtmak gerekmez.
+Ana dizindeki **`umutcan.html` başlangıç dosyasını bir kez** indirip aynı dosyayı aynı tarayıcıda açın. Önceki sürümde bu sistem olmadığı için ilk geçişte bu dosya gereklidir.
 
-Önceki uygulamada görseller sadece dosyanın içine gömülüyordu. Uzaktaki görselleri okuyabilmek için uygulamanın **bir kez** bu sürüme geçirilmesi gerekir. Daha önce kaydedilmiş ayarlar, şablonlar ve gizlenen temalar aynı tarayıcı depolamasında korunur. Görsellerin ilk yüklemesi internet bağlantısı gerektirir.
+Sol menüdeki **Update** butonu programın tamamını günceller: GitHub'daki son sürüm kontrol edilir, paket indirilip doğrulanır ve uygulama aynı dosyada yeniden açılır. Sonraki program değişikliklerinde HTML'i yeniden indirmeye gerek yoktur. Çalışan sürüm butonun yanında görünür.
+
+Güncel uygulama tarayıcıda tutulur; dosyayı kapatıp açınca ve internet olmadığında da kayıtlı sürüm açılır. Diskteki başlangıç HTML'inin üzerine yazılmaz. Aynı tarayıcıyı ve dosya konumunu kullanın; tarayıcı verilerini silmek hem uygulamanın kayıtlarını hem kurulmuş güncellemeleri kaldırabilir.
+
+İsimler, logo, tasarım ayarları, favoriler, şablonlar ve silinen/gizlenen temalar güncellemede korunur. İndirme veya doğrulama başarısız olursa mevcut sürüm devam eder. Yeni sürüm açılışı tamamlayamazsa son çalışan sürüm ve güncelleme öncesi ayarlar geri yüklenir. Tarayıcı depolaması doluysa güncelleme uygulanmaz, mevcut sürüm çalışır.
+
+Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolunu kullanın. Bu işlem tema kataloğunu yeniler; **Update** ise program kodunu günceller. Yeni görsellerin ilk yüklemesi internet gerektirir.
+
+## Program değişikliklerini yayınlama
+
+1. `app/umutcan.html` dosyasında uygulamayı düzenleyin. `Update` düğmesini, sürüm metaverisini ve `UmutShell.watch/ready` bağlantısını koruyun.
+2. `python3 scripts/publish_app.py` çalıştırın. Son yayınlanan sürümün patch numarası otomatik artırılır. Belirli sürüm için `--version 2.2.0` kullanılabilir.
+3. `app/umutcan.html`, üretilen yeni `releases/umutcan-X.Y.Z.html`, `app-update.json` ve `umutcan.html` dosyalarını **aynı commit** ile `main` dalına gönderin.
+4. Gerçek tarayıcıda Update ile yeni özelliğin açıldığını, ayarların korunduğunu ve yeniden açılışta yeni sürümün kaldığını doğrulayın.
+
+`releases/` dosyaları değiştirilemez yayınlardır; mevcut bir yayını değiştirmek yerine yeni sürüm oluşturulur. Manifest sürümü, byte uzunluğunu ve SHA-256 değerini içerir. Başlangıç protokolü 1 sabit tutulur; eski başlangıç dosyaları yeni program sürümlerini açmaya devam eder. GitHub erişimi sırasında hesap/token gerekmez; depo herkese açıktır.
 
 ## Doğal koleksiyon
 
