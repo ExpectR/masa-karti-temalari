@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "spider-hero",
+  "cat": "bay",
+  "n": "Spider Hero",
+  "bg": "#101b35",
+  "c": "#f8fafc",
+  "a": "#ef233c",
+  "font": "'Montserrat',sans-serif",
+  "foil": 0,
+  "em": "",
+  "pat": "halftone",
+  "p1": "#ef233c",
+  "p2": "#1769aa",
+  "p3": "#101b35"
+}
