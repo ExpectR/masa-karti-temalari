@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "id": "natural-lavender",
+  "cat": "bayan",
+  "n": "Doğal Lavanta & Anemon",
+  "version": 1,
+  "bg": "#faf7f0",
+  "c": "#4d405f",
+  "a": "#4d405f",
+  "font": "'Cormorant Garamond',serif",
+  "foil": false,
+  "image": "assets/natural-lavender.webp",
+  "description": "Lavanta, anemon ve okaliptüs detaylı ferah botanik tasarım."
+}

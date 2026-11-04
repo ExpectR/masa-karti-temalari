@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "id": "natural-autumn",
+  "cat": "autumn",
+  "n": "Doğal Sonbahar",
+  "version": 1,
+  "bg": "#faf7f0",
+  "c": "#743e28",
+  "a": "#743e28",
+  "font": "'Cormorant Garamond',serif",
+  "foil": false,
+  "image": "assets/natural-autumn.webp",
+  "description": "Bakır tonlu sonbahar yaprakları, dalya ve buğday başakları."
+}

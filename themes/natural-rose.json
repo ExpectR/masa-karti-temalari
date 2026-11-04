@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "id": "natural-rose",
+  "cat": "bayan",
+  "n": "Doğal Gül & Şakayık",
+  "version": 1,
+  "bg": "#faf7f0",
+  "c": "#713e48",
+  "a": "#713e48",
+  "font": "'Cormorant Garamond',serif",
+  "foil": false,
+  "image": "assets/natural-rose.webp",
+  "description": "Pudra güller, şakayık ve okaliptüs ile doğal fildişi kâğıt zemini."
+}

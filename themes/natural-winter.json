@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "id": "natural-winter",
+  "cat": "newyear",
+  "n": "Doğal Kokina & Çam",
+  "version": 1,
+  "bg": "#faf7f0",
+  "c": "#244f3d",
+  "a": "#244f3d",
+  "font": "'Cormorant Garamond',serif",
+  "foil": false,
+  "image": "assets/natural-winter.webp",
+  "description": "Doğal kokina, çam dalları ve zarif kış çiçeği kompozisyonu."
+}

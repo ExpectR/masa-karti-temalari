@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "id": "natural-meadow",
+  "cat": "bayan",
+  "n": "Doğal Gelincik & Papatya",
+  "version": 1,
+  "bg": "#faf7f0",
+  "c": "#713326",
+  "a": "#713326",
+  "font": "'Cormorant Garamond',serif",
+  "foil": false,
+  "image": "assets/natural-meadow.webp",
+  "description": "Gerçekçi kırmızı gelincikler, papatyalar ve hafif kır çiçeği bordürü."
+}

@@ -1,8 +1,53 @@
 {
   "schemaVersion": 1,
   "app": "Masa Kartı Atölyesi",
-  "updatedAt": "2026-11-04",
+  "updatedAt": "2026-11-05",
   "themes": [
+    {
+      "id": "natural-rose",
+      "name": "Doğal Gül & Şakayık",
+      "category": "bayan",
+      "version": 1,
+      "file": "themes/natural-rose.json",
+      "description": "Pudra güller, şakayık ve okaliptüs ile doğal fildişi kâğıt zemini.",
+      "minAppVersion": "2.0.0"
+    },
+    {
+      "id": "natural-meadow",
+      "name": "Doğal Gelincik & Papatya",
+      "category": "bayan",
+      "version": 1,
+      "file": "themes/natural-meadow.json",
+      "description": "Gerçekçi kırmızı gelincikler, papatyalar ve hafif kır çiçeği bordürü.",
+      "minAppVersion": "2.0.0"
+    },
+    {
+      "id": "natural-lavender",
+      "name": "Doğal Lavanta & Anemon",
+      "category": "bayan",
+      "version": 1,
+      "file": "themes/natural-lavender.json",
+      "description": "Lavanta, anemon ve okaliptüs detaylı ferah botanik tasarım.",
+      "minAppVersion": "2.0.0"
+    },
+    {
+      "id": "natural-autumn",
+      "name": "Doğal Sonbahar",
+      "category": "autumn",
+      "version": 1,
+      "file": "themes/natural-autumn.json",
+      "description": "Bakır tonlu sonbahar yaprakları, dalya ve buğday başakları.",
+      "minAppVersion": "2.0.0"
+    },
+    {
+      "id": "natural-winter",
+      "name": "Doğal Kokina & Çam",
+      "category": "newyear",
+      "version": 1,
+      "file": "themes/natural-winter.json",
+      "description": "Doğal kokina, çam dalları ve zarif kış çiçeği kompozisyonu.",
+      "minAppVersion": "2.0.0"
+    },
     {
       "id": "modern-lacivert",
       "name": "Modern Lacivert",
@@ -43,5 +88,6 @@
       "file": "themes/red-bull-energy.json",
       "description": "Lacivert zemin üzerinde karşılıklı kırmızı boğa illüstrasyonları, sarı güneş diski ve sportif çerçeve."
     }
-  ]
+  ],
+  "appVersion": "2.0.0"
 }
