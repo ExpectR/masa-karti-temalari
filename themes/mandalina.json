@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "mandalina",
   "cat": "menu",
   "n": "Mandalina",
@@ -9,9 +9,5 @@
   "font": "'Montserrat',sans-serif",
   "foil": false,
   "em": "",
-  "pat": "scallop",
-  "p1": "#ffad32",
-  "p2": "#f6c56b",
-  "p3": "#ffdd9a",
-  "description": "Mandalina kabuğunun neşeli turuncu tonlarında yumuşak kıvrımlı motifler."
+  "image": "assets/mandalina.webp"
 }

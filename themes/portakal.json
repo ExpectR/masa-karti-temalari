@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "portakal",
   "cat": "menu",
   "n": "Portakal",
@@ -9,9 +9,5 @@
   "font": "'Montserrat',sans-serif",
   "foil": false,
   "em": "",
-  "pat": "circles",
-  "p1": "#ff9b20",
-  "p2": "#f3bd4b",
-  "p3": "#ffd9a1",
-  "description": "Turuncu portakal dilimlerini çağrıştıran sıcak daireler ve krem tonları."
+  "image": "assets/portakal.webp"
 }

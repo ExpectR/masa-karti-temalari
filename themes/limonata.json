@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "limonata",
   "cat": "menu",
   "n": "Limonata",
@@ -9,9 +9,5 @@
   "font": "'Montserrat',sans-serif",
   "foil": false,
   "em": "",
-  "pat": "sunburst",
-  "p1": "#f8d848",
-  "p2": "#fff0a1",
-  "p3": "#b4d88a",
-  "description": "Taze limon ve yaz güneşinden esinlenen sarı ışınlar, açık yeşil vurgular."
+  "image": "assets/limonata.webp"
 }

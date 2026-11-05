@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "detox",
   "cat": "menu",
   "n": "Detox",
@@ -9,9 +9,5 @@
   "font": "'Montserrat',sans-serif",
   "foil": false,
   "em": "",
-  "pat": "vine",
-  "p1": "#6caa78",
-  "p2": "#c2e6c4",
-  "p3": "#e7f6e8",
-  "description": "Salatalık, nane ve yeşillik çağrışımlı ferah botanik desen."
+  "image": "assets/detox.webp"
 }

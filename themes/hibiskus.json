@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "hibiskus",
   "cat": "menu",
   "n": "Hibiskus",
@@ -9,9 +9,5 @@
   "font": "'Montserrat',sans-serif",
   "foil": false,
   "em": "",
-  "pat": "flourish",
-  "p1": "#b82764",
-  "p2": "#ee9ab4",
-  "p3": "#f9d6e3",
-  "description": "Hibiskus çayını çağrıştıran fuşya ve vişne tonlarında çiçeksi kıvrımlar."
+  "image": "assets/hibiskus.webp"
 }
