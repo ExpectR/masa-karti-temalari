@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.2.0">
+<meta name="umutcan-app-version" content="2.2.1">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -143,6 +143,8 @@ button.g{background:var(--bg);border:1px solid var(--bd);box-shadow:none;color:v
 </style>
 <style>
 .batch-tools{padding:0 14px 12px}.batch-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,1fr);gap:8px;align-items:center;font-size:12px}.batch-row span{overflow-wrap:anywhere}.batch-row select{margin:0;font-size:11px}#batchRows{max-height:300px;overflow:auto}.batch-dialog{border:1px solid #d8dee5;border-radius:18px;padding:22px;max-width:900px;width:calc(100% - 32px);max-height:88vh;box-sizing:border-box;color:#24352e;background:#fafcfb}.batch-dialog::backdrop{background:#07150fc9;backdrop-filter:blur(5px)}.batch-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}.batch-dialog-head h2{font-size:20px;margin:0 0 18px}.batch-dialog-head button{width:auto;margin:0 0 18px}.import-preview{white-space:pre-wrap;max-height:220px;overflow:auto;padding:14px;background:#eef3f0;border-radius:10px}.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.compare-grid .sp{width:100%;height:315px;overflow:hidden;position:relative;background:#eee}.compare-grid .sp .card{transform:scale(.56);zoom:1!important}.batch-dialog input[type=checkbox]{width:auto}@media(max-width:700px){.compare-grid{grid-template-columns:1fr}.compare-grid .sp{width:230px}}@media print{#umutIntro,.batch-dialog{display:none!important}}
+</style><style>
+.panel.panel-compact{padding:16px;border-radius:16px}.panel-compact h1{font-size:21px}.panel-compact>.hint{font-size:11px;margin-bottom:10px}.panel-compact .by{margin-bottom:10px}.panel-compact .app-update-box{padding:9px;margin-bottom:10px}.panel-compact .app-update-box p{font-size:10px;margin-top:5px}.panel-compact details{margin:7px 0;border-radius:10px}.panel-compact summary{padding:10px 12px;font-size:12px}.panel-compact .setting-field{margin:8px 12px!important}.setting-field>label{margin:0 0 5px!important;display:block}.setting-field>.chk{display:flex!important;margin:0!important}.setting-field input,.setting-field select{margin-bottom:0;min-height:32px}.setting-field input[type=checkbox]{min-height:0}.panel-compact .setting-field textarea{min-height:64px}.settings-search{position:sticky;top:-16px;z-index:12;padding:12px 0 8px;margin-bottom:6px;background:var(--pn);border-bottom:1px solid var(--bd)}.settings-search>label{font-size:11px;font-weight:700;margin:0 0 6px}.settings-search-row{display:flex;gap:6px}.settings-search-row input{min-width:0;flex:1;margin:0;padding:10px 11px;font-family:inherit;font-size:12px;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;outline:none}.settings-search-row input:focus{border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 16%,transparent)}.settings-search-row input::-webkit-search-cancel-button{display:none}.settings-search-row button{width:32px;margin:0;padding:0;font-size:20px}.settings-search-bottom{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:6px}.settings-search-bottom span{font-size:10px;color:var(--mu)}.settings-search-bottom button{width:auto;padding:3px 5px;margin:0;font-size:10px}.settings-hit{box-shadow:inset 3px 0 0 var(--ac);padding-left:8px!important}.panel [hidden]{display:none!important}.panel-compact .batch-tools{padding:0 10px 10px}.panel-compact .batch-tools>.row>button{padding:8px 6px;font-size:11px}.panel-compact #perCardSettings{margin:8px 0}.panel-compact #perCardSettings summary{font-size:11px}.panel-compact #batchRows{max-height:230px}.panel-compact #ed{margin:10px}.panel-compact label{font-size:11px}@media(max-width:700px){.settings-search{top:-1px}.panel.panel-compact{padding:12px}.panel-compact .settings-search{position:relative;top:auto}}
 </style></head>
 <body>
 <script>
@@ -365,7 +367,7 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.2.0',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.2.1',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}
@@ -720,8 +722,52 @@ var originalRender=render;
 render=function(){if(S.autoPack&&S.ctype!=='flat')renderAutoFold();else originalRender();batchPanel()};
 var originalMarks=marks;marks=function(w,h){return S.cutMarks===false?'':originalMarks(w,h)};
 
+function initSettingsSearch(){
+ var panel=$('panel');if($('settingsSearch'))return;panel.classList.add('panel-compact');
+ var search=document.createElement('div');search.className='settings-search';search.innerHTML='<label for="settingsSearch">Ayar bul</label><div class="settings-search-row"><input id="settingsSearch" type="search" placeholder="Ayar ara… ör. yazı, logo, baskı" autocomplete="off" spellcheck="false"><button type="button" id="clearSettingsSearch" class="g" aria-label="Aramayı temizle" title="Aramayı temizle">×</button></div><div class="settings-search-bottom"><span id="settingsSearchStatus" role="status" aria-live="polite">Ctrl + K ile hızlı ara</span><button type="button" id="collapseSettings" class="g">Tümünü kapat</button></div>';
+ panel.insertBefore(search,panel.querySelector('.app-update-box'));
+ var groups=[],savedOpen=null;
+ function fold(s){return String(s).toLocaleLowerCase('tr-TR').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ı/g,'i')}
+ var aliases={names:'ad soyad isim listesi davetli misafir',copies:'kopya adet çoğalt',theme:'tema seç tasarım',cat:'kategori',size:'yazı boyutu isim boyutu punto font boyut',font:'yazı tipi font',sub:'alt başlık',subSize:'alt yazı boyutu punto',logoSize:'logo boyutu ön yüz',logoSizeB:'logo boyutu arka yüz',color:'yazı renk',accent:'renk vurgu',bg:'zemin arka plan renk',logoFile:'resim fotoğraf logo yükle',csize:'kağıt kart ölçü boyut',ctype:'katlamalı düz kart',fpl:'çift yön ön arka baskı',sheet:'A4 sayfa düzen yerleşim',bleed:'taşma payı kesim',rot:'arka yüz ters yön döndür',rotF:'ön yüz ters yön döndür'};
+ G.forEach(function(group){
+  var section=$(group[2][0][0]).closest('details'),rows=[];
+  group[2].forEach(function(control){var id=control[0],el=$(id),label=control[2]==='chk'?el.closest('label'):el.previousElementSibling;
+   if(id==='theme')label=$('tpk').previousElementSibling;
+   var wrapper=document.createElement('div');wrapper.className='setting-field';label.before(wrapper);wrapper.appendChild(label);if(label!==el.parentElement)wrapper.appendChild(el);
+   if(id==='theme')wrapper.insertBefore($('tpk'),el);
+   if(id==='logoFile')wrapper.appendChild($('logoClr'));
+   if(control[2]!=='chk')label.htmlFor=id;
+   rows.push({el:wrapper,text:fold(control[1]+' '+(aliases[id]||''))});
+  });groups.push({section:section,title:fold(group[0]),rows:rows});
+ });
+ var editor=$('ed');groups.push({section:editor.closest('details'),title:fold('Serbest tasarım kendi tasarımım'),rows:[{el:editor,text:fold('serbest tasarım kendi tasarımım öğe metin yazı resim şekil çiçek ekle sil konum döndür boyut şeffaflık saydamlık ön arka katman şablon geri al')}]});
+ var tools=$('batchTools');groups.unshift({section:tools,title:fold('Toplu kartlar projeler'),rows:[{el:tools.querySelector('.batch-tools'),text:fold('excel xlsx csv isim aktar dosya liste sütun proje kaydet aç temaları karşılaştır kartlara ayrı tema otomatik sığdır uzun isim A4 otomatik yerleştir kesim işaretleri')}]});
+ // Keep long card lists folded until they are needed.
+ var perCard=document.createElement('details');perCard.id='perCardSettings';perCard.innerHTML='<summary>Kartlara ayrı tema seç</summary>';
+ var count=$('batchCount'),rows=$('batchRows'),paging=$('batchPrev').parentElement,reset=$('resetCardThemes');count.before(perCard);[count,rows,paging,reset].forEach(function(node){perCard.appendChild(node)});
+ groups.forEach(function(g){g.section.open=g.title===fold('Metinler')});
+ function applySearch(){
+  var query=fold($('settingsSearch').value.trim()),terms=query.split(/\s+/).filter(Boolean),count=0;
+  if(query&&!savedOpen)savedOpen=groups.map(function(g){return g.section.open});
+  groups.forEach(function(g,i){var titleMatch=terms.length&&terms.every(function(t){return g.title.indexOf(t)>=0}),visible=false;
+   g.rows.forEach(function(row){var match=!query||titleMatch||terms.every(function(t){return row.text.indexOf(t)>=0});row.el.hidden=!match;row.el.classList.toggle('settings-hit',!!query&&match);if(match){visible=true;if(query)count++}});
+   g.section.hidden=!visible;if(query)g.section.open=visible;else if(savedOpen)g.section.open=savedOpen[i];
+  });
+  if(query)perCard.open=terms.some(function(t){return 'tema kart kesim'.indexOf(t)>=0});
+  if(!query)savedOpen=null;
+  $('settingsSearchStatus').textContent=query?(count?count+' ayar alanı bulundu':'Sonuç yok. Başka bir kelime dene.'):'Ctrl + K ile hızlı ara';$('clearSettingsSearch').disabled=!query;
+ }
+ $('settingsSearch').addEventListener('input',applySearch);
+ $('settingsSearch').addEventListener('keydown',function(e){if(e.key==='Escape'){$('settingsSearch').value='';applySearch()}if(e.key==='Enter'){var first=groups.filter(function(g){return !g.section.hidden}).flatMap(function(g){return g.rows}).find(function(r){return !r.el.hidden});var target=first&&first.el.querySelector('input:not([type=hidden]),select,textarea,button');if(target)target.focus()}});
+ $('clearSettingsSearch').onclick=function(){$('settingsSearch').value='';applySearch();$('settingsSearch').focus()};
+ $('collapseSettings').onclick=function(){$('settingsSearch').value='';applySearch();groups.forEach(function(g){g.section.open=false});perCard.open=false};
+ panel.addEventListener('toggle',function(e){if($('settingsSearch').value.trim()||!e.target.open||e.target.parentElement!==panel)return;groups.forEach(function(g){if(g.section!==e.target)g.section.open=false})},true);
+ document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('settingsSearch').focus();$('settingsSearch').select()}});
+ applySearch();
+}
+
 if(themeHidden(S.theme)){var initialOptions=thOpts(S.cat);if(!initialOptions.length){S.cat='own';initialOptions=thOpts('own')}S.theme=initialOptions[0][0];S.hideBase=S.cat=='own'}
-ui();edInit();storeInit();batchInit();
+ui();edInit();storeInit();batchInit();initSettingsSearch();
 var oldStoreOpen=$('sopen').onclick;
 $('sopen').onclick=function(){if(oldStoreOpen)oldStoreOpen();loadOnlineThemes(false)};
 

@@ -29,6 +29,7 @@
 <text x="525" y="136" fill="#e4dac7" text-anchor="middle" font-family="DejaVu Serif,serif" font-size="36" letter-spacing="9">10 KASIM</text>
 <path d="M421 158H491M559 158H629" stroke="#bca57c" stroke-width=".8"/>
 <circle cx="525" cy="158" r="2" fill="#c9b58c"/>
+<image href="on-kasim-ataturk.webp" x="342" y="180" width="366" height="390" opacity=".25" preserveAspectRatio="xMidYMid meet"/>
 <!-- The center stays clear for the application's editable name and subtitle. -->
 <g transform="translate(198 639) rotate(-14)"><use href="#laurel"/></g>
 <g transform="translate(852 639) scale(-1 1) rotate(-14)"><use href="#laurel"/></g>

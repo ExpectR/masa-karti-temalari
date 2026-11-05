@@ -7,9 +7,9 @@
       "id": "on-kasim-anma",
       "name": "10 Kasım — Sonsuz Özlem",
       "category": "bay",
-      "version": 1,
+      "version": 2,
       "file": "themes/on-kasim-anma.json",
-      "description": "Atatürk’ü anmak için siyah zemin, yas kurdelesi, ay yıldız ve 1881–sonsuzluk detayı.",
+      "description": "Transparan ve gerçekçi Atatürk profil portresi, siyah zemin, yas kurdelesi, ay yıldız ve 1881–sonsuzluk detayı.",
       "minAppVersion": "2.0.0"
     },
     {
@@ -146,6 +146,5 @@
       "description": "Limon sarısı güneş ışınları ve açık yeşil vurgular."
     }
   ],
-  "appVersion": "2.1.3"
+  "appVersion": "2.2.1"
 }
-
