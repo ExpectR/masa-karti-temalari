@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "nar",
+  "cat": "menu",
+  "n": "Nar",
+  "bg": "#fff0ed",
+  "c": "#65172e",
+  "a": "#a61f47",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "pat": "trellis",
+  "p1": "#b51f46",
+  "p2": "#ef9ca3",
+  "p3": "#73213a",
+  "description": "Nar tanelerinden ilham alan bordo-kızıl geometrik örgü."
+}
