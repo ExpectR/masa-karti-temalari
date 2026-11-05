@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "id": "detox",
+  "cat": "menu",
+  "n": "Detox",
+  "bg": "#effaf1",
+  "c": "#235743",
+  "a": "#67b990",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "image": "assets/detox.webp"
+}

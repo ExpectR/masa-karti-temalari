@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "id": "hibiskus",
+  "cat": "menu",
+  "n": "Hibiskus",
+  "bg": "#fff0f4",
+  "c": "#682947",
+  "a": "#ce477a",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "image": "assets/hibiskus.webp"
+}

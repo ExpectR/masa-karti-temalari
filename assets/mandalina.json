@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "id": "mandalina",
+  "cat": "menu",
+  "n": "Mandalina",
+  "bg": "#fff8e9",
+  "c": "#704515",
+  "a": "#f49a21",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "image": "assets/mandalina.webp"
+}

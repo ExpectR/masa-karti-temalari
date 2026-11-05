@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "id": "portakal",
+  "cat": "menu",
+  "n": "Portakal",
+  "bg": "#fff3df",
+  "c": "#6a320c",
+  "a": "#ee7808",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "image": "assets/portakal.webp"
+}

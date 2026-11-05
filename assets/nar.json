@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "id": "nar",
+  "cat": "menu",
+  "n": "Nar",
+  "bg": "#fff0ed",
+  "c": "#65172e",
+  "a": "#a61f47",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "image": "assets/nar.webp"
+}

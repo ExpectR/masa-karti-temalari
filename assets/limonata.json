@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "id": "limonata",
+  "cat": "menu",
+  "n": "Limonata",
+  "bg": "#fffde9",
+  "c": "#526237",
+  "a": "#e9c934",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "image": "assets/limonata.webp"
+}
