@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.1.5">
+<meta name="umutcan-app-version" content="2.1.6">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -146,19 +146,17 @@ button.g{background:var(--bg);border:1px solid var(--bd);box-shadow:none;color:v
 <style>
 #umutIntro{position:fixed;inset:0;z-index:2147483647;background:#020609;overflow:hidden;opacity:1;transition:opacity .65s ease}
 #umutIntro canvas{display:block;width:100%;height:100%}
-#umutIntro .intro-skip{position:absolute;right:24px;bottom:22px;padding:9px 15px;background:#071812b3;border:1px solid #58ff9c40;border-radius:30px;color:#98b9a6;font:11px monospace;letter-spacing:2px;cursor:pointer}
 #umutIntro.leaving{opacity:0;pointer-events:none}
 </style>
-<div id="umutIntro" role="region" aria-label="Yıldızların arasından gelen yeşil kodlar U harfini oluşturuyor"><canvas aria-hidden="true"></canvas><button class="intro-skip" type="button">ATLA ↗</button></div>
+<div id="umutIntro" role="region" aria-label="Yıldızların arasından gelen yeşil kodlar U harfini oluşturuyor"><canvas aria-hidden="true"></canvas></div>
 <script>
 (function(){
  var host=document.getElementById('umutIntro'),canvas=host.querySelector('canvas'),ctx=canvas.getContext('2d');
  var frame=0,finished=false,start=performance.now(),stars=[],particles=[],w=0,h=0,dpr=1;
  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  var glyphs='01{}<>/[];:=+#',duration=reduced?900:4300;
- function finish(){if(finished)return;finished=true;cancelAnimationFrame(frame);clearTimeout(failsafe);window.removeEventListener('resize',resize);document.removeEventListener('keydown',escape);host.classList.add('leaving');setTimeout(function(){host.remove()},700)}
- function escape(e){if(e.key==='Escape')finish()}
- var failsafe=setTimeout(finish,5500);host.querySelector('button').onclick=finish;document.addEventListener('keydown',escape);
+ function finish(){if(finished)return;finished=true;cancelAnimationFrame(frame);clearTimeout(failsafe);window.removeEventListener('resize',resize);host.classList.add('leaving');setTimeout(function(){host.remove()},700)}
+ var failsafe=setTimeout(finish,5500);
  function resize(){
   w=window.innerWidth;h=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
   stars=Array.from({length:140},function(){return{x:Math.random()*w,y:Math.random()*h,r:.35+Math.random()*1.2,a:.15+Math.random()*.7,p:Math.random()*6.28}});
@@ -178,7 +176,7 @@ button.g{background:var(--bg);border:1px solid var(--bd);box-shadow:none;color:v
    if(progress<1){var length=(1-progress)*.09;ctx.strokeStyle='rgba(48,255,130,'+(.45*(1-progress))+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+(p.sx-p.x)*length,y+(p.sy-p.y)*length);ctx.stroke()}
    ctx.globalAlpha=p.a;ctx.fillStyle=progress<.9?'#a4ffcb':'#42ff90';ctx.shadowColor='#21ff7c';ctx.shadowBlur=progress>=1?9:4;ctx.fillText(p.g,x,y);ctx.shadowBlur=0;
   });ctx.globalAlpha=1;
-  if(t>2900||reduced){var alpha=reduced?.8:Math.min(1,(t-2900)/700);ctx.globalAlpha=alpha;ctx.fillStyle='#9bbdaf';ctx.font='10px monospace';ctx.fillText('U M U T C A N',w/2,h/2+Math.min(w*.68,h*.62,430)*.48+32);ctx.globalAlpha=1}
+  if(t>2900||reduced){var alpha=reduced?.8:Math.min(1,(t-2900)/700);ctx.globalAlpha=alpha;ctx.fillStyle='#9bbdaf';ctx.font='10px monospace';ctx.fillText('POWERED BY UMUTCAN',w/2,h/2+Math.min(w*.68,h*.62,430)*.48+32);ctx.globalAlpha=1}
   if(t>=duration){finish();return}frame=requestAnimationFrame(draw);
  }
  try{if(!ctx){finish();return}resize();window.addEventListener('resize',resize);frame=requestAnimationFrame(draw)}catch(e){finish()}
@@ -341,7 +339,7 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.1.5',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.1.6',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}
