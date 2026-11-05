@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "version": "2.2.5",
+      "title": "Güncelleme notları",
+      "changes": [
+        "Update yanına Yenilikler düğmesi eklendi.",
+        "Kullandığın sürümün değişiklikleri ve önceki güncellemeler uygulama içinden görülebilir.",
+        "Güncelleme notları internet olmadığında da açılır."
+      ]
+    },
+    {
+      "version": "2.2.4",
+      "title": "Dikey, yay ve çember yazı",
+      "changes": [
+        "Yazı için 90° dikey ve harfleri alt alta dizme seçenekleri eklendi.",
+        "Üst/alt yay ve tam çember yerleşimi; yarıçap ve açı ayarı eklendi.",
+        "Yazıyı logo veya nesnenin etrafına hizalama eklendi."
+      ]
+    },
+    {
+      "version": "2.2.3",
+      "title": "Kart üzerinde yazı düzenleme",
+      "changes": [
+        "Yazıya tıklayınca silme çarpısı ve düzenleme araçları açılır.",
+        "Yatay/dikey ortalama, köşeden boyutlandırma ve hassas konum ayarı eklendi.",
+        "Hazır yazılar kart bazında düzenlenebilir; işlemler Geri al ile geri çevrilebilir."
+      ]
+    },
+    {
+      "version": "2.2.2",
+      "title": "Güncelleme kontrolü iyileştirildi",
+      "changes": [
+        "Update kontrolü, ham dosyaların beş dakikalık önbelleğine bağlı kalmaması için doğrudan GitHub API'sine taşındı.",
+        "Son sürüm doğrulanamazsa yanlış bir Zaten güncelsin sonucu gösterilmesi önlendi."
+      ]
+    },
+    {
+      "version": "2.2.1",
+      "title": "Ayar arama ve kompakt menü",
+      "changes": [
+        "Sol menüye ayar arama çubuğu eklendi; bölümler daha kompakt hale getirildi.",
+        "10 Kasım temasına yarı saydam, gerçekçi Atatürk profil silüeti eklendi. Tema Mağazası → Online yenile ile alınabilir."
+      ]
+    },
+    {
+      "version": "2.2.0",
+      "title": "Toplu kartlar ve projeler",
+      "changes": [
+        "Aynı baskı sayfasındaki kartlar için ayrı tema seçimi eklendi.",
+        "Excel XLSX / CSV isim aktarımı, proje kaydet/aç ve üç temayı karşılaştırma eklendi.",
+        "Otomatik A4 yerleşimi, kesim işaretleri ve uzun isimleri sığdırma seçenekleri eklendi."
+      ]
+    },
+    {
+      "version": "2.1.6",
+      "title": "Intro son düzenlemeleri",
+      "changes": [
+        "Introdan Atla düğmesi ve Esc ile geçiş kaldırıldı.",
+        "U harfinin altındaki yazı POWERED BY UMUTCAN olarak değiştirildi."
+      ]
+    },
+    {
+      "version": "2.1.5",
+      "title": "Yeşil kodlardan U introsu",
+      "changes": [
+        "Yıldızlı uzay fonundan gelen yeşil kodların U harfini oluşturduğu açılış animasyonu eklendi."
+      ]
+    },
+    {
+      "version": "2.1.4",
+      "title": "Online temalar daha hızlı açılır",
+      "changes": [
+        "Değişmeyen sürümlü temaların yeniden indirilmesi azaltıldı; temalar geldikçe gösterilir.",
+        "Tema isteklerine zaman aşımı ve sınırlı eşzamanlı yükleme eklendi. 100 tema sınırı korundu."
+      ]
+    }
+  ]
+}

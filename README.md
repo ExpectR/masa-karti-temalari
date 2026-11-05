@@ -14,13 +14,15 @@ Güncel uygulama tarayıcıda tutulur; dosyayı kapatıp açınca ve internet ol
 
 Update, sürüm bilgisini ve uygulama paketini GitHub Contents API üzerinden her kontrolde yeni bir URL ile alır; böylece ham `main` dosyalarının beş dakikalık önbelleğine bağlı kalmaz. API geçici olarak kullanılamazsa yedek ham kaynak denenir. Yedek kaynak aynı/eski sürümü gösteriyorsa son sürüm doğrulanamadığı belirtilir; yanlış bir “zaten güncelsin” sonucu verilmez. Boyut, SHA-256 ve sürüm doğrulaması ile geri dönüş korunur. GitHub API için hesap veya token gerekmez; anonim API sınırına ulaşıldığında kullanıcıya kontrolün tamamlanamadığı bildirilir. Kontrol yalnızca Update tıklanınca yapılır.
 
+Update yanındaki **Yenilikler** düğmesi, kullandığınız sürümün kısa değişiklik notlarını ve önceki güncellemeleri gösterir. Notlar sürümün içinde saklanır; internet olmadan da açılır.
+
 Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolunu kullanın. Bu işlem tema kataloğunu yeniler; **Update** ise program kodunu günceller. Yeni görsellerin ilk yüklemesi internet gerektirir.
 
 ## Program değişikliklerini yayınlama
 
 1. `app/umutcan.html` dosyasında uygulamayı düzenleyin. `Update` düğmesini, sürüm metaverisini ve `UmutShell.watch/ready` bağlantısını koruyun.
-2. `python3 scripts/publish_app.py` çalıştırın. Paylaşılan `scripts/update_transport.js` hem runtime içindeki `UMUT_UPDATE_TRANSPORT` işaretlerine hem üretilen başlangıç dosyasına otomatik eklenir; işaretleri koruyun. Böylece kullanıcıdaki eski başlangıç dosyaları da yeni runtime üzerinden hızlı kontrolü kullanır. Son yayınlanan sürümün patch numarası otomatik artırılır. Belirli sürüm için `--version 2.2.0` kullanılabilir.
-3. `app/umutcan.html`, üretilen yeni `releases/umutcan-X.Y.Z.html`, `app-update.json` ve `umutcan.html` dosyalarını **aynı commit** ile `main` dalına gönderin.
+2. `app/release-notes.json` dosyasına yayınlayacağınız sürüm için kısa Türkçe başlık ve değişiklik maddeleri ekleyin. `python3 scripts/publish_app.py` çalıştırın. Betik notu bulunmayan sürümü yayınlamaz; `UMUT_RELEASE_NOTES` işaretleri arasına sürüme uygun notları gömer. Paylaşılan `scripts/update_transport.js` hem runtime içindeki `UMUT_UPDATE_TRANSPORT` işaretlerine hem üretilen başlangıç dosyasına otomatik eklenir; işaretleri koruyun. Böylece kullanıcıdaki eski başlangıç dosyaları da yeni runtime üzerinden hızlı kontrolü kullanır. Son yayınlanan sürümün patch numarası otomatik artırılır. Belirli sürüm için `--version 2.2.0` kullanılabilir.
+3. `app/umutcan.html`, üretilen yeni `releases/umutcan-X.Y.Z.html`, `app-update.json`, `umutcan.html`, `app/release-notes.json` ve güncellenen `index.json` dosyalarını **aynı commit** ile `main` dalına gönderin.
 4. Gerçek tarayıcıda Update ile yeni özelliğin açıldığını, ayarların korunduğunu ve yeniden açılışta yeni sürümün kaldığını doğrulayın.
 
 `releases/` dosyaları değiştirilemez yayınlardır; mevcut bir yayını değiştirmek yerine yeni sürüm oluşturulur. Manifest sürümü, byte uzunluğunu ve SHA-256 değerini içerir. Başlangıç protokolü 1 sabit tutulur; eski başlangıç dosyaları yeni program sürümlerini açmaya devam eder. GitHub erişimi sırasında hesap/token gerekmez; depo herkese açıktır.

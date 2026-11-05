@@ -11,6 +11,31 @@ ROOT = Path(__file__).resolve().parents[1]
 APP_ID = 'masa-karti-atolyesi'
 PROTOCOL = 1
 
+def release_notes_payload(version):
+    path = ROOT / 'app/release-notes.json'
+    data = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(data, dict) or data.get('schemaVersion') != 1 or not isinstance(data.get('releases'), list):
+        raise SystemExit('app/release-notes.json must contain schemaVersion 1 and a releases list.')
+    entries, versions = [], set()
+    for entry in data['releases']:
+        if not isinstance(entry, dict):
+            raise SystemExit('Every release note must be an object.')
+        number, title, changes = entry.get('version'), entry.get('title'), entry.get('changes')
+        if not isinstance(number, str) or not re.fullmatch(r'\d{1,6}\.\d{1,6}\.\d{1,6}', number) or number in versions:
+            raise SystemExit('Release note versions must be unique major.minor.patch values.')
+        if not isinstance(title, str) or not 1 <= len(title.strip()) <= 100:
+            raise SystemExit('Each release note needs a short title.')
+        if not isinstance(changes, list) or not 1 <= len(changes) <= 8 or any(not isinstance(line, str) or not 1 <= len(line.strip()) <= 240 for line in changes):
+            raise SystemExit('Each release note needs 1-8 short, non-empty changes.')
+        versions.add(number)
+        entries.append({'version': number, 'title': title.strip(), 'changes': [line.strip() for line in changes]})
+    if version not in versions:
+        raise SystemExit(f'Add release notes for {version} to app/release-notes.json before publishing.')
+    version_key = lambda number: tuple(map(int, number.split('.')))
+    entries.sort(key=lambda entry: version_key(entry['version']), reverse=True)
+    return {'schemaVersion': 1, 'currentVersion': version,
+            'releases': [entry for entry in entries if version_key(entry['version']) <= version_key(version)][:12]}
+
 def build(version):
     if not re.fullmatch(r'\d{1,6}\.\d{1,6}\.\d{1,6}', version):
         raise SystemExit('Use a numeric major.minor.patch version.')
@@ -23,6 +48,13 @@ def build(version):
     html, transport_count = re.subn(r'<!-- UMUT_UPDATE_TRANSPORT_START -->.*?<!-- UMUT_UPDATE_TRANSPORT_END -->', lambda m: block, html, count=1, flags=re.S)
     if transport_count != 1:
         raise SystemExit('Runtime update transport marker is missing.')
+
+    notes = release_notes_payload(version)
+    encoded_notes = json.dumps(notes, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
+    notes_block = '<!-- UMUT_RELEASE_NOTES_START -->\n<script type="application/json" id="umut-release-notes-data">' + encoded_notes + '</script>\n<!-- UMUT_RELEASE_NOTES_END -->'
+    html, notes_count = re.subn(r'<!-- UMUT_RELEASE_NOTES_START -->.*?<!-- UMUT_RELEASE_NOTES_END -->', lambda m: notes_block, html, count=1, flags=re.S)
+    if notes_count != 1:
+        raise SystemExit('Runtime release notes marker is missing.')
 
     html, count = re.subn(r"var APP_VERSION='[^']+'", "var APP_VERSION='" + version + "'", html, count=1)
     if count != 1:
