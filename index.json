@@ -4,6 +4,15 @@
   "updatedAt": "2026-11-05",
   "themes": [
     {
+      "id": "on-kasim-anma",
+      "name": "10 Kasım — Sonsuz Özlem",
+      "category": "bay",
+      "version": 1,
+      "file": "themes/on-kasim-anma.json",
+      "description": "Atatürk’ü anmak için siyah zemin, yas kurdelesi, ay yıldız ve 1881–sonsuzluk detayı.",
+      "minAppVersion": "2.0.0"
+    },
+    {
       "id": "natural-rose",
       "name": "Doğal Gül & Şakayık",
       "category": "bayan",
@@ -139,3 +148,4 @@
   ],
   "appVersion": "2.1.3"
 }
+

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1480" viewBox="0 0 1050 740">
+<defs>
+ <radialGradient id="bg"><stop stop-color="#202225"/><stop offset="1" stop-color="#08090b"/></radialGradient>
+ <linearGradient id="gold" x2="1" y2="1"><stop stop-color="#846948"/><stop offset=".45" stop-color="#e2d2b1"/><stop offset="1" stop-color="#9b8056"/></linearGradient>
+ <linearGradient id="silk" x2="1" y2=".4"><stop stop-color="#08090b"/><stop offset=".55" stop-color="#353639"/><stop offset="1" stop-color="#111214"/></linearGradient>
+ <g id="laurel" fill="none" stroke="#b69d73" stroke-width="1.1">
+  <path d="M0 0Q-38-34-31-100"/>
+  <path d="M-8-9Q-32-11-35-29Q-15-29-8-9M-18-24Q-6-38-14-53Q-31-40-18-24M-26-44Q-48-49-45-65Q-26-62-26-44M-30-60Q-14-73-20-88Q-37-77-30-60M-31-79Q-48-88-42-103Q-26-94-31-79M-31-99Q-23-115-31-125Q-42-112-31-99"/>
+ </g>
+</defs>
+<rect width="1050" height="740" fill="url(#bg)"/>
+<path d="M0 0L300 0 0 300Z" fill="#ffffff" opacity=".018"/>
+<path d="M1050 740L770 740 1050 460Z" fill="#ffffff" opacity=".018"/>
+<rect x="31" y="31" width="988" height="678" rx="1" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+<rect x="39" y="39" width="972" height="662" fill="none" stroke="#b59c71" opacity=".24" stroke-width=".6"/>
+<g fill="none" stroke="#c3aa7e" stroke-width="1.5"><path d="M31 86V31H86M964 31H1019V86M1019 654V709H964M86 709H31V654"/></g>
+<!-- A black mourning ribbon, deliberately confined to the upper left. -->
+<g transform="translate(127 150)">
+ <path d="M-9-3L-42 85-13 74 1 96 24 20Z" fill="url(#silk)" stroke="#6f6658" stroke-width=".7"/>
+ <path d="M8-3L44 85 15 75 1 97-23 20Z" fill="url(#silk)" stroke="#6f6658" stroke-width=".7"/>
+ <path d="M-21 19C-58-41-20-76 0-76C27-76 59-38 20 19L0-7Z" fill="url(#silk)" stroke="#80715a" stroke-width=".8"/>
+ <path d="M-10-26C-28-55-13-65 0-65C15-65 30-53 10-26L0-9Z" fill="#0d0e10"/>
+</g>
+<!-- Restrained crescent and star, without a portrait. -->
+<g transform="translate(927 140)" fill="#c9b58c">
+ <path d="M13-30A32 32 0 1 0 13 30A26 26 0 1 1 13-30Z"/>
+ <path d="M28-12L31-3 41-3 33 3 36 12 28 6 20 12 23 3 15-3 25-3Z"/>
+</g>
+<text x="525" y="136" fill="#e4dac7" text-anchor="middle" font-family="DejaVu Serif,serif" font-size="36" letter-spacing="9">10 KASIM</text>
+<path d="M421 158H491M559 158H629" stroke="#bca57c" stroke-width=".8"/>
+<circle cx="525" cy="158" r="2" fill="#c9b58c"/>
+<!-- The center stays clear for the application's editable name and subtitle. -->
+<g transform="translate(198 639) rotate(-14)"><use href="#laurel"/></g>
+<g transform="translate(852 639) scale(-1 1) rotate(-14)"><use href="#laurel"/></g>
+<text x="525" y="592" fill="#bda985" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="13" letter-spacing="4">SAYGI, ÖZLEM VE MİNNETLE</text>
+<text x="482" y="638" fill="#e4dac7" text-anchor="end" font-family="DejaVu Serif,serif" font-size="26" letter-spacing="4">1881</text>
+<path d="M535 628C520 608 497 608 497 628C497 648 520 648 535 628C550 608 573 608 573 628C573 648 550 648 535 628" fill="none" stroke="#d7c4a0" stroke-width="2.2"/>
+<text x="525" y="677" fill="#bda985" text-anchor="middle" font-family="DejaVu Sans,sans-serif" font-size="15" letter-spacing="6">09:05</text>
+</svg>
