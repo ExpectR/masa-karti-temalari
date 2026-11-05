@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.2.2">
+<meta name="umutcan-app-version" content="2.2.3">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -145,6 +145,8 @@ button.g{background:var(--bg);border:1px solid var(--bd);box-shadow:none;color:v
 .batch-tools{padding:0 14px 12px}.batch-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,1fr);gap:8px;align-items:center;font-size:12px}.batch-row span{overflow-wrap:anywhere}.batch-row select{margin:0;font-size:11px}#batchRows{max-height:300px;overflow:auto}.batch-dialog{border:1px solid #d8dee5;border-radius:18px;padding:22px;max-width:900px;width:calc(100% - 32px);max-height:88vh;box-sizing:border-box;color:#24352e;background:#fafcfb}.batch-dialog::backdrop{background:#07150fc9;backdrop-filter:blur(5px)}.batch-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}.batch-dialog-head h2{font-size:20px;margin:0 0 18px}.batch-dialog-head button{width:auto;margin:0 0 18px}.import-preview{white-space:pre-wrap;max-height:220px;overflow:auto;padding:14px;background:#eef3f0;border-radius:10px}.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.compare-grid .sp{width:100%;height:315px;overflow:hidden;position:relative;background:#eee}.compare-grid .sp .card{transform:scale(.56);zoom:1!important}.batch-dialog input[type=checkbox]{width:auto}@media(max-width:700px){.compare-grid{grid-template-columns:1fr}.compare-grid .sp{width:230px}}@media print{#umutIntro,.batch-dialog{display:none!important}}
 </style><style>
 .panel.panel-compact{padding:16px;border-radius:16px}.panel-compact h1{font-size:21px}.panel-compact>.hint{font-size:11px;margin-bottom:10px}.panel-compact .by{margin-bottom:10px}.panel-compact .app-update-box{padding:9px;margin-bottom:10px}.panel-compact .app-update-box p{font-size:10px;margin-top:5px}.panel-compact details{margin:7px 0;border-radius:10px}.panel-compact summary{padding:10px 12px;font-size:12px}.panel-compact .setting-field{margin:8px 12px!important}.setting-field>label{margin:0 0 5px!important;display:block}.setting-field>.chk{display:flex!important;margin:0!important}.setting-field input,.setting-field select{margin-bottom:0;min-height:32px}.setting-field input[type=checkbox]{min-height:0}.panel-compact .setting-field textarea{min-height:64px}.settings-search{position:sticky;top:-16px;z-index:12;padding:12px 0 8px;margin-bottom:6px;background:var(--pn);border-bottom:1px solid var(--bd)}.settings-search>label{font-size:11px;font-weight:700;margin:0 0 6px}.settings-search-row{display:flex;gap:6px}.settings-search-row input{min-width:0;flex:1;margin:0;padding:10px 11px;font-family:inherit;font-size:12px;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;outline:none}.settings-search-row input:focus{border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 16%,transparent)}.settings-search-row input::-webkit-search-cancel-button{display:none}.settings-search-row button{width:32px;margin:0;padding:0;font-size:20px}.settings-search-bottom{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-top:6px}.settings-search-bottom span{font-size:10px;color:var(--mu)}.settings-search-bottom button{width:auto;padding:3px 5px;margin:0;font-size:10px}.settings-hit{box-shadow:inset 3px 0 0 var(--ac);padding-left:8px!important}.panel [hidden]{display:none!important}.panel-compact .batch-tools{padding:0 10px 10px}.panel-compact .batch-tools>.row>button{padding:8px 6px;font-size:11px}.panel-compact #perCardSettings{margin:8px 0}.panel-compact #perCardSettings summary{font-size:11px}.panel-compact #batchRows{max-height:230px}.panel-compact #ed{margin:10px}.panel-compact label{font-size:11px}@media(max-width:700px){.settings-search{top:-1px}.panel.panel-compact{padding:12px}.panel-compact .settings-search{position:relative;top:auto}}
+</style><style>
+#canvasTools{position:fixed;z-index:10005;padding:9px;border:1px solid #d7e4ed;border-radius:13px;background:#fffffffa;color:#203444;box-shadow:0 8px 36px #10243738;backdrop-filter:blur(12px);font:12px system-ui,sans-serif;box-sizing:border-box}#canvasTools[hidden],#canvasSelectionBox[hidden]{display:none!important}.canvas-tool-head{display:flex;align-items:center;gap:5px;margin-bottom:7px}.canvas-tool-head b{flex:1;font-size:11px;min-width:0}.canvas-tool-head button{flex:none!important;width:auto!important;font-size:10px!important;padding:5px 7px!important}#canvasTools button{margin:0;width:auto;min-height:28px;padding:5px 8px;border:1px solid #dce5eb;border-radius:7px;color:#244157;background:#f1f6fa;box-shadow:none;font:11px system-ui,sans-serif;cursor:pointer}#canvasTools button:hover{background:#dbeffd;border-color:#68ade0}.canvas-tool-row{display:flex;gap:5px;align-items:center;margin:5px 0}.canvas-tool-row>button{flex:1}.canvas-tool-row label{display:flex;align-items:center;gap:4px;margin:0;white-space:nowrap;color:#446174;font-size:10px}.canvas-tool-row input{width:52px;margin:0;padding:5px 3px;min-height:27px;border:1px solid #cadce8;border-radius:6px;color:#203444;background:white;font:11px system-ui,sans-serif;text-align:center}.canvas-coordinates{flex-wrap:wrap}.canvas-coordinates label{flex:1}.canvas-coordinates button{min-width:27px;padding:3px!important;flex:0 0 27px}#canvasTools small{display:block;font-size:9px;color:#718493;margin-top:6px}.notice-only .canvas-tool-body{display:none}#canvasSelectionBox{position:fixed;z-index:10004;border:1.5px solid #1686ce;outline:2px solid #ffffff55;pointer-events:none;box-sizing:border-box}#canvasSelectionBox button{position:absolute;pointer-events:auto;touch-action:none;margin:0;padding:0;width:27px;height:27px;min-height:0;border:2px solid white;border-radius:50%;box-shadow:0 2px 8px #0f25494d;cursor:pointer}#canvasDelete{right:-15px;top:-15px;color:white;background:#d83c4c;font:22px/22px system-ui,sans-serif}#canvasSelectionBox #canvasResize{right:-8px;bottom:-8px;width:15px;height:15px;background:#1686ce;border-radius:4px;cursor:nwse-resize}.canvas-active{outline:1px dashed #1686ce!important;outline-offset:2px}.canvas-guide{position:absolute;pointer-events:none;z-index:20;border:0;background:#00c2a1}.canvas-guide[hidden]{display:none}.canvas-guide-x{left:50%;top:0;width:1px;height:100%}.canvas-guide-y{top:50%;left:0;height:1px;width:100%}@media print{#canvasTools,#canvasSelectionBox,.canvas-guide{display:none!important}.canvas-active{outline:none!important}}
 </style></head>
 <body>
 <script>
@@ -458,14 +460,14 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.2.2',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.2.3',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}
 function naturalArt(t){var src=themeImage(t);if(!src||!S.flowers||S.bgImg)return '';return '<img class="natural-art" alt="" src="'+esc(src)+'">'}
 [['natural_rose','Doğal Gül & Şakayık','bayan','rose','#713e48'],['natural_meadow','Doğal Gelincik & Papatya','bayan','meadow','#713326'],['natural_lavender','Doğal Lavanta & Anemon','bayan','lavender','#4d405f'],['natural_autumn','Doğal Sonbahar','autumn','autumn','#743e28'],['natural_winter','Doğal Kokina & Çam','newyear','winter','#244f3d']].forEach(function(r){TH[r[0]]={n:r[1],cat:r[2],art:r[3],bg:'#faf7f0',c:r[4],a:r[4],font:FM.C,nw:1}});
 var C=[['L',17,12,3,-55],['L',20,2,24,35],['L',15,24,9,-5],[0,25,7,12,0],[1,18,22,7,20],[2,13,4,36,0],[2,11,30,24,15],[1,14,15,30,-15]];
-var DEF={autoFit:true,autoPack:false,cutMarks:true,cardThemes:{},names:'Hoş Geldiniz',copies:1,sub:'',backText:'',font:FL[3][0],size:30,weight:'400',italic:false,upper:false,ls:0,color:'#1f2937',shadow:false,subFont:FL[9][0],subSize:10,subUp:true,accent:'#e11d48',theme:'pink',flowers:true,fsize:100,bg:'#ffffff',frame:'none',logo:'',logoSize:18,logoSizeB:18,logoRot:0,logoOp:100,logoPos:'front',csize:'A7',sheet:'two',foil:false,items:[],sel:'',snap:true,hideBase:false,bgMode:'sol',bg2:'#e2e8f0',bgAng:135,bgImg:'',ctype:'fold',orient:'p',fpl:'one',cat:'bayan',backTheme:true,bgB:'#ffffff',menu:'',menuF:'',menuSize:10,cwid:98,chei:78,bleed:2,rotF:false,rot:true,fold:true,pos:{fLogo:[50,24],name:[50,52],sub:[50,76],bLogo:[50,48],bText:[50,88],menu:[50,50],menuF:[50,64]}};
+var DEF={cardText:{},autoFit:true,autoPack:false,cutMarks:true,cardThemes:{},names:'Hoş Geldiniz',copies:1,sub:'',backText:'',font:FL[3][0],size:30,weight:'400',italic:false,upper:false,ls:0,color:'#1f2937',shadow:false,subFont:FL[9][0],subSize:10,subUp:true,accent:'#e11d48',theme:'pink',flowers:true,fsize:100,bg:'#ffffff',frame:'none',logo:'',logoSize:18,logoSizeB:18,logoRot:0,logoOp:100,logoPos:'front',csize:'A7',sheet:'two',foil:false,items:[],sel:'',snap:true,hideBase:false,bgMode:'sol',bg2:'#e2e8f0',bgAng:135,bgImg:'',ctype:'fold',orient:'p',fpl:'one',cat:'bayan',backTheme:true,bgB:'#ffffff',menu:'',menuF:'',menuSize:10,cwid:98,chei:78,bleed:2,rotF:false,rot:true,fold:true,pos:{fLogo:[50,24],name:[50,52],sub:[50,76],bLogo:[50,48],bText:[50,88],menu:[50,50],menuF:[50,64]}};
 var S=JSON.parse(JSON.stringify(DEF));
 try{var sv=JSON.parse(localStorage.getItem('mk3'));if(sv)S=Object.assign(S,sv)}catch(e){}if(S.names=='Bayan Emirhan'){S.names='Hoş Geldiniz';if(S.sub=='Hoş Geldiniz')S.sub=''}restoreOnlineCache();S.cat=(TH[S.theme]||TH.pink).cat||'bayan';
 var G=[['Metinler',1,[['names','İsimler (her satır bir kart)','ta'],['copies','Her isimden kaç adet','num',1,50],['sub','Alt yazı','text'],['menuF','Ön yüz menü / ek yazı (her satır ayrı)','ta'],['backText','Arka yüz yazısı','text'],['menu','Menü / arka yüz metni (her satır ayrı)','ta'],['menuSize','Menü yazı boyutu','rng',6,20]]],
@@ -485,10 +487,10 @@ else h+='<input type="text" id="'+i+'">'});h+='</details>'});
 h+='<details open><summary>✏️ Serbest Tasarım (kendi tasarımın)</summary><div id="ed">'+EDH()+'</div></details><button class="g" id="rp">Konumları sıfırla</button><button class="g" id="rs">Tüm ayarları sıfırla</button><div class="hint" id="info"></div><button onclick="window.print()">Yazdır / PDF Yap</button><p class="sig">Tasarım &amp; kodlama: <b>by Umutcan Şahin</b></p>';
 document.getElementById('panel').insertAdjacentHTML('beforeend',h);
 G.forEach(function(g){g[2].forEach(function(c){var i=c[0];if(c[2]=='file')return;var el=document.getElementById(i),ev=(c[2]=='sel'||c[2]=='chk')?'change':'input';
-el.addEventListener(ev,function(){var v=c[2]=='chk'?el.checked:el.value;if(c[2]=='rng'||c[2]=='num')v=+v;S[i]=v;if(i=='ctype')fillSizes();if(i=='cat')pickTheme(v);if(i=='theme')applyTheme(v);render()})})});
+el.addEventListener(ev,function(){var v=c[2]=='chk'?el.checked:el.value;if(c[2]=='rng'||c[2]=='num')v=+v;S[i]=v;var textKey={names:'name',sub:'sub',backText:'bText',menu:'menu',menuF:'menuF'}[i];if(textKey&&S.cardText)Object.keys(S.cardText).forEach(function(entry){var field=S.cardText[entry][textKey];if(field)delete field.hidden});if(i=='ctype')fillSizes();if(i=='cat')pickTheme(v);if(i=='theme')applyTheme(v);render()})})});
 document.getElementById('logoFile').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){S.logo=r.result;render()};r.readAsDataURL(f)});
 document.getElementById('logoClr').onclick=function(){S.logo='';document.getElementById('logoFile').value='';render()};
-document.getElementById('rp').onclick=function(){S.pos=JSON.parse(JSON.stringify(DEF.pos));render()};
+document.getElementById('rp').onclick=function(){S.pos=JSON.parse(JSON.stringify(DEF.pos));Object.keys(S.cardText||{}).forEach(function(entry){Object.keys(S.cardText[entry]).forEach(function(key){delete S.cardText[entry][key].x;delete S.cardText[entry][key].y})});render()};
 document.getElementById('rs').onclick=function(){var lg=S.logo;S=JSON.parse(JSON.stringify(DEF));S.logo=lg;fillSizes();fillTheme();sync();render()}}
 function sync(){if(window.tpUpd)tpUpd();G.forEach(function(g){g[2].forEach(function(c){if(c[2]=='file')return;var el=document.getElementById(c[0]);if(c[2]=='chk')el.checked=!!S[c[0]];else el.value=S[c[0]]})})}
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -501,7 +503,7 @@ else if(kind=='navy'){s='<rect width="105" height="74" fill="url(#navyg)"/>';for
 else if(kind=='royal'){s='<defs><pattern id="dam" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M5 1L8 5L5 9L2 5Z" fill="none" stroke="#d4af37" stroke-width=".25"/><circle cx="5" cy="5" r=".7" fill="#d4af37"/></pattern></defs><rect width="105" height="74" fill="url(#dam)" opacity=".3"/>'+fr(3,.55)+fr(4.8,.2);[[6,6],[99,6],[6,68],[99,68]].forEach(function(c){s+='<circle cx="'+c[0]+'" cy="'+c[1]+'" r="1.6" fill="'+g+'"/>'})}
 else{gg='url(#rg)';s='<g fill="none" stroke="'+gg+'" stroke-width=".3">';[22,16,10].forEach(function(r){s+='<circle cx="0" cy="0" r="'+r+'"/><circle cx="105" cy="74" r="'+r+'"/>'});s+='<rect x="4" y="4" width="97" height="66"/></g><path d="M105 0H84L105 21Z M0 74H21L0 53Z" fill="'+gg+'" opacity=".2"/>'}
 if(orn)s+='<g stroke="'+gg+'" fill="none" stroke-width=".3"><path d="M52.5 31L57 37L52.5 43L48 37Z"/><path d="M28 37H46M59 37H77"/></g>';return s}
-function dr(k,html,st){var p=S.pos[k]||(k=='menuF'?[50,64]:[50,50]);return '<div class="dr" data-k="'+k+'" style="left:'+p[0]+'%;top:'+p[1]+'%;'+(st||'')+'">'+html+'</div>'}
+function dr(k,html,st){var edit=(S.localTextEdits||{})[k];if(edit&&edit.hidden)return '';if(edit&&edit.size!==undefined&&k!=='name'){if(k==='fLogo'||k==='bLogo')html=html.replace(/height:[0-9.]+mm/,'height:'+edit.size*(S.cardScale||1)+'mm');else st=(st||'').replace(/font-size:[0-9.]+pt/,'font-size:'+edit.size*(S.cardScale||1)+'pt')}var p=S.pos[k]||(k=='menuF'?[50,64]:[50,50]);return '<div class="dr" data-k="'+k+'" style="left:'+p[0]+'%;top:'+p[1]+'%;'+(st||'')+'">'+html+'</div>'}
 function logo(k,kk){return dr(k,'<img src="'+S.logo+'" style="height:'+((k=='bLogo'?S.logoSizeB:S.logoSize)*kk)+'mm;opacity:'+S.logoOp/100+';transform:rotate('+S.logoRot+'deg)">')}
 function foilCss(){return 'background:linear-gradient(100deg,#b8892a,#fff0a8 30%,#c9a24a 55%,#fbe7a1 78%,#a8791d);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent'}
 function marks(w,h){var s='<svg class="mk" width="'+(w+16)+'mm" height="'+(h+16)+'mm" viewBox="-8 -8 '+(w+16)+' '+(h+16)+'"><g stroke="#000" stroke-width=".3">';[[0,0],[w,0],[0,h],[w,h]].forEach(function(c){var sx=c[0]?1:-1,sy=c[1]?1:-1;var B=S.bleed||0;s+='<path d="M'+(c[0]+sx*(B+1))+' '+c[1]+'H'+(c[0]+sx*(B+3.5))+'M'+c[0]+' '+(c[1]+sy*(B+1))+'V'+(c[1]+sy*(B+3.5))+'"/>'});return s+'</g></svg>'}
@@ -549,15 +551,15 @@ shape:[['s','Genişlik (mm)','rng',2,200],['h','Yükseklik (% genişlik)','rng',
 fl:[['s','Boyut (mm)','rng',6,200],['mir','Yatay çevir','chk']]},
 EC=[['f','Hangi yüzde','sel',[['f','Ön yüz'],['b','Arka yüz']]],['x','Yatay konum %','rng',0,100,.5],['y','Dikey konum %','rng',0,100,.5],['r','Döndür (derece)','rng',-180,180],['op','Saydamlık %','rng',10,100]];
 function EDH(){var o='<optgroup label="Yazı &amp; resim"><option value="text">Yazı kutusu</option><option value="img">Resim / logo yükle…</option></optgroup><optgroup label="Şekil"><option value="s:rect">Dikdörtgen</option><option value="s:circle">Daire</option><option value="s:line">Çizgi</option><option value="s:diamond">Elmas</option><option value="s:frame">Çerçeve</option></optgroup><optgroup label="Çiçek &amp; dal">'+Object.keys(FLN).map(function(k){return '<option value="'+k+'">'+FLN[k]+'</option>'}).join('')+'</optgroup>';
-return '<p class="hint">Öğeyi sürükle, köşedeki mavi kareden büyüt, üstteki yuvarlaktan döndür. Yazıya {isim} yazarsan her kartta o kartın ismi çıkar. Ok tuşları hassas taşır, Ctrl+Z geri alır.</p><label>Yeni öğe hangi yüze eklensin</label><select id="edf"><option value="f">Ön yüz</option><option value="b">Arka yüz</option></select><label>Eklenecek öğe</label><select id="edt">'+o+'</select><button id="eda">+ Ekle</button><input type="file" id="edi" accept="image/*" style="display:none"><div class="row"><button class="g" id="edu">↶ Geri al</button><button class="g" id="edc">Tümünü sil</button></div><label>Zemin resmi (isteğe bağlı)</label><input type="file" id="edbg" accept="image/*"><button class="g" id="edbgc">Zemin resmini kaldır</button><div id="edl"></div><div id="edp"></div>'}
+return '<p class="hint">Yazıya tıkla; çarpıdan sil, araçlardan ortala veya boyutlandır. Öğeyi sürükle, köşeden büyüt; serbest öğeyi üstteki yuvarlaktan döndür. Yazıya {isim} yazarsan her kartta o kartın ismi çıkar. Ok tuşları hassas taşır, Ctrl+Z geri alır.</p><label>Yeni öğe hangi yüze eklensin</label><select id="edf"><option value="f">Ön yüz</option><option value="b">Arka yüz</option></select><label>Eklenecek öğe</label><select id="edt">'+o+'</select><button id="eda">+ Ekle</button><input type="file" id="edi" accept="image/*" style="display:none"><div class="row"><button class="g" id="edu">↶ Geri al</button><button class="g" id="edc">Tümünü sil</button></div><label>Zemin resmi (isteğe bağlı)</label><input type="file" id="edbg" accept="image/*"><button class="g" id="edbgc">Zemin resmini kaldır</button><div id="edl"></div><div id="edp"></div>'}
 function bgCss(c){var b=S.bgMode=='lin'?'linear-gradient('+S.bgAng+'deg,'+c+','+S.bg2+')':S.bgMode=='rad'?'radial-gradient(circle,'+c+','+S.bg2+')':c;return 'background:'+b+';'+(S.bgImg?'background-image:url('+S.bgImg+');background-size:cover;background-position:center;':'')}
 function snapH(){HIST.push(JSON.stringify(S.items));if(HIST.length>80)HIST.shift()}
 function uid(){return 'i'+Date.now().toString(36)+Math.floor(Math.random()*1e3)}
 function getIt(id){for(var i=0;i<S.items.length;i++)if(S.items[i].id==id)return S.items[i]}
 function txtDef(t){return{t:'text',tx:t,s:22,font:S.font,wt:'400',it:0,up:0,ls:0,col:S.color,foil:S.foil?1:0,sh:0,al:'center'}}
 function shDef(k){var d={t:'shape',k:k,s:50,h:30,fill:'#e11d48',st:'#111827',sw:0,rad:0};if(k=='circle'){d.s=30;d.h=100}if(k=='diamond'){d.s=20;d.h=100}if(k=='line'){d.s=60;d.sw=.6;d.fill=S.accent}if(k=='frame'){d.s=70;d.h=50;d.sw=.6;d.st=S.accent}return d}
-function addItem(o){snapH();var e=document.getElementById('edf'),it=Object.assign({id:uid(),f:(e&&e.value)||'f',x:50,y:50,r:0,op:100},o);S.items.push(it);S.sel=it.id;render();edP();return it}
-function undo(){if(!HIST.length)return;S.items=JSON.parse(HIST.pop());if(!getIt(S.sel))S.sel='';render();edP()}
+function addItem(o){snapH();var e=document.getElementById('edf'),it=Object.assign({id:uid(),f:(e&&e.value)||'f',x:50,y:50,r:0,op:100},o);S.items.push(it);S.sel=it.id;render();edP();if(window.canvasSelect){var canvasNode=Array.from($('prev').querySelectorAll('.it')).find(function(node){return node.dataset.k==='i:'+it.id});if(canvasNode)canvasSelect(canvasNode)}return it}
+function undo(){if(!HIST.length)return;var value=JSON.parse(HIST.pop());if(value&&value.canvas===1){S.items=value.items;S.cardText=value.cardText;S.sel=value.sel;sync()}else S.items=value;if(!getIt(S.sel))S.sel='';canvasNotice='';render();edP()}
 function tf(it,f){return 'translate(-50%,-50%) rotate('+it.r+'deg)'+(it.mir&&it.t!='text'?' scaleX(-1)':'')+(f!=1?' scale('+f+')':'')}
 function itemHtml(it,n,k){var w=it.s*k,b='',st='left:'+it.x+'%;top:'+it.y+'%;transform:'+tf(it,1)+';max-width:none;opacity:'+it.op/100;
 if(it.t=='text')w=itemNameSize(it,n,k);
@@ -584,19 +586,7 @@ g('edu').onclick=undo;g('edc').onclick=function(){snapH();S.items=[];S.sel='';re
 g('edbg').onchange=function(e){var f=e.target.files[0];if(f)loadImg(f,1600,function(u){S.bgImg=u;render()});e.target.value=''};g('edbgc').onclick=function(){S.bgImg='';render()};
 var p=g('edp');p.addEventListener('input',pc);p.addEventListener('change',pc);p.addEventListener('focusin',snapH);
 p.addEventListener('click',function(e){var a=e.target.dataset.a,it=getIt(S.sel);if(!a||!it)return;snapH();var i=S.items.indexOf(it);if(a=='up'){S.items.splice(i,1);S.items.push(it)}else if(a=='dn'){S.items.splice(i,1);S.items.unshift(it)}else if(a=='del'){S.items.splice(i,1);S.sel=''}else{var c=JSON.parse(JSON.stringify(it));c.id=uid();if(a=='dup'){c.x=Math.min(100,c.x+3);c.y=Math.min(100,c.y+3)}else c.f=it.f=='f'?'b':'f';S.items.push(c);S.sel=c.id}render();edP()});
-g('edl').addEventListener('click',function(e){var r=e.target.closest('.li');if(!r)return;S.sel=r.dataset.id;applySel();edP()})}
-var dg=null;
-document.addEventListener('pointerdown',function(e){if(e.target.closest&&e.target.closest('#store'))return;var h=e.target.closest&&e.target.closest('.hnd'),d=e.target.closest&&e.target.closest('.dr');
-if(!d){if(S.sel&&e.target.closest&&e.target.closest('.card')){S.sel='';applySel();edP()}return}
-var k=d.dataset.k,it=k.indexOf('i:')==0?getIt(k.slice(2)):null,fc=d.parentNode,inv=S.ctype!='flat'&&(fc.classList.contains('b')?S.rot:S.rotF),r=d.getBoundingClientRect();
-dg={d:d,f:fc,k:k,it:it,inv:inv,mode:'m',cx:r.left+r.width/2,cy:r.top+r.height/2};
-if(it){if(S.sel!=it.id){S.sel=it.id;applySel();edP()}snapH();if(h){dg.mode=h.classList.contains('hr')?'r':'s';dg.d0=Math.max(8,Math.hypot(e.clientX-dg.cx,e.clientY-dg.cy))}}
-try{e.target.setPointerCapture(e.pointerId)}catch(x){}e.preventDefault()});
-document.addEventListener('pointermove',function(e){if(!dg)return;var it=dg.it;
-if(dg.mode=='m'){var r=dg.f.getBoundingClientRect(),x=(e.clientX-r.left)/r.width*100,y=(e.clientY-r.top)/r.height*100;if(dg.inv){x=100-x;y=100-y}x=Math.max(0,Math.min(100,x));y=Math.max(0,Math.min(100,y));if(S.snap){if(Math.abs(x-50)<1.5)x=50;if(Math.abs(y-50)<1.5)y=50}x=+x.toFixed(1);y=+y.toFixed(1);if(it){it.x=x;it.y=y}else S.pos[dg.k]=[x,y];dg.d.style.left=x+'%';dg.d.style.top=y+'%'}
-else if(dg.mode=='r'){var a=Math.atan2(e.clientY-dg.cy,e.clientX-dg.cx)*180/Math.PI+90;if(dg.inv)a-=180;it.r=Math.round(((a%360)+540)%360-180);dg.d.style.transform=tf(it,1)}
-else{dg.f2=Math.max(.1,Math.min(8,Math.hypot(e.clientX-dg.cx,e.clientY-dg.cy)/dg.d0));dg.d.style.transform=tf(it,dg.f2)}});
-document.addEventListener('pointerup',function(){if(!dg)return;var it=dg.it;if(dg.mode=='s'&&dg.f2)it.s=Math.max(2,+(it.s*dg.f2).toFixed(1));dg=null;render();if(it)edP()});
+g('edl').addEventListener('click',function(e){var r=e.target.closest('.li');if(!r)return;S.sel=r.dataset.id;applySel();edP();var canvasNode=Array.from($('prev').querySelectorAll('.it')).find(function(node){return node.dataset.k==='i:'+r.dataset.id});if(canvasNode)canvasSelect(canvasNode)})}
 document.addEventListener('keydown',function(e){var t=e.target.tagName;if(t=='INPUT'||t=='TEXTAREA'||t=='SELECT')return;if((e.ctrlKey||e.metaKey)&&e.key=='z'){undo();e.preventDefault();return}var it=getIt(S.sel);if(!it)return;var d=e.shiftKey?1:.25,m={ArrowLeft:[-d,0],ArrowRight:[d,0],ArrowUp:[0,-d],ArrowDown:[0,d]}[e.key];if(m){snapH();it.x=Math.max(0,Math.min(100,+(it.x+m[0]).toFixed(2)));it.y=Math.max(0,Math.min(100,+(it.y+m[1]).toFixed(2)));render();edP();e.preventDefault()}else if(e.key=='Delete'||e.key=='Backspace'){snapH();S.items.splice(S.items.indexOf(it),1);S.sel='';render();edP();e.preventDefault()}});
 
 function ldK(k){try{var v=JSON.parse(localStorage.getItem(k));return Array.isArray(v)?v:[]}catch(e){return []}}
@@ -717,7 +707,7 @@ function batchEntries(){
 function batchStyle(n,index){var entry=batchEntries()[index],id=entry&&S.cardThemes&&S.cardThemes[entry.key],t=TH[id];if(!t||themeHidden(id))return {};
  return {theme:id,cat:t.cat,accent:t.a,bg:t.bg||'#ffffff',color:t.c||'#1f2937',foil:!!t.foil,font:t.font||S.font,hideBase:t.cat==='own'};
 }
-function cardFor(n,w,h,side,index){var style=batchStyle(n,index);return withS(style,function(){return card(n,w,h,side)})}
+function cardFor(n,w,h,side,index){var entry=batchEntries()[index],style=batchStyle(n,index),edits=entry&&(S.cardText||{})[entry.key]||{},pos=Object.assign({},S.pos);Object.keys(edits).forEach(function(key){var d=edits[key],p=pos[key]||[50,50];pos[key]=[d.x===undefined?p[0]:d.x,d.y===undefined?p[1]:d.y]});Object.assign(style,{pos:pos,localTextEdits:edits,cardScale:w/105});if(edits.name&&edits.name.size!==undefined)style.size=edits.name.size;return withS(style,function(){return card(n,w,h,side).replace('<div class="card','<div data-card-key="'+esc(entry?entry.key:'')+'" class="card')})}
 var fitCanvas=document.createElement('canvas');
 function itemNameSize(it,n,k){
  if(S.autoFit===false||!/\{isim\}/i.test(String(it.tx)))return it.s*k;
@@ -773,6 +763,7 @@ function openProject(o){
  base.pos=JSON.parse(JSON.stringify(DEF.pos));Object.keys(base.pos).forEach(function(k){var p=d.pos&&d.pos[k];if(Array.isArray(p)&&p.length===2&&p.every(function(n){return typeof n==='number'&&isFinite(n)}))base.pos[k]=p.map(function(n){return Math.max(0,Math.min(100,n))})});
  base.autoFit=d.autoFit!==false;base.autoPack=!!d.autoPack;base.cutMarks=d.cutMarks!==false;base.cardThemes={};var assignments=d.cardThemes;
  if(assignments&&typeof assignments==='object')Object.keys(assignments).slice(0,500).forEach(function(k){if(k.length<=1000&&known[assignments[k]])base.cardThemes[k]=assignments[k]});
+ base.cardText={};if(d.cardText&&typeof d.cardText==='object')Object.keys(d.cardText).slice(0,500).forEach(function(entry){if(entry.length>1000)return;var fields=d.cardText[entry];if(!fields||typeof fields!=='object')return;var result={};Object.keys(CANVAS_FIELDS).forEach(function(key){var field=fields[key];if(!field||typeof field!=='object')return;var safe={};['x','y','size'].forEach(function(p){if(typeof field[p]==='number'&&isFinite(field[p]))safe[p]=Math.max(p==='size'?2:0,Math.min(p==='size'?400:100,field[p]))});if(typeof field.hidden==='boolean')safe.hidden=field.hidden;result[key]=safe});base.cardText[entry]=result});
  remote.forEach(function(pair){TH['online_'+pair.meta.id]=known['online_'+pair.meta.id]});
  var merged=ldK('mk3_online_cache').filter(function(p){return p&&p.meta&&!remote.some(function(r){return r.meta.id===p.meta.id})}).concat(remote).slice(-100);svK('mk3_online_cache',merged);
  S=base;fillSizes();fillTheme();sync();render();edP();
@@ -810,8 +801,93 @@ function compareThemes(){
  root.querySelectorAll('select').forEach(function(sel,i){sel.value=keys[(Math.max(0,keys.indexOf(S.theme))+i)%keys.length];sel.onchange=function(){draw(i)};draw(i)});root.querySelectorAll('[data-use]').forEach(function(button){button.onclick=function(){var key=root.querySelector('[data-compare="'+button.dataset.use+'"]').value;useTheme(key);d.close()}});
 }
 var originalRender=render;
-render=function(){if(S.autoPack&&S.ctype!=='flat')renderAutoFold();else originalRender();batchPanel()};
+render=function(){if(S.autoPack&&S.ctype!=='flat')renderAutoFold();else originalRender();batchPanel();if(window.canvasRefresh)canvasRefresh()};
 var originalMarks=marks;marks=function(w,h){return S.cutMarks===false?'':originalMarks(w,h)};
+
+// Direct on-card editing. Built-in text changes apply to the selected physical card.
+var canvasSelection=null,canvasDrag=null,canvasTools=null,canvasBox=null,canvasNotice='',canvasObstacles=null;
+var CANVAS_FIELDS={name:['İsim','size'],sub:['Alt yazı','subSize'],bText:['Arka yazı','subSize'],menu:['Arka menü','menuSize'],menuF:['Ön yazı','menuSize'],fLogo:['Ön logo','logoSize'],bLogo:['Arka logo','logoSizeB']};
+function canvasSnapshot(){HIST.push(JSON.stringify({canvas:1,items:S.items,cardText:S.cardText||{},sel:S.sel}));if(HIST.length>80)HIST.shift()}
+function canvasElement(){if(!canvasSelection)return null;return Array.from($('prev').querySelectorAll('.dr')).find(function(el){var card=el.closest('.card');return el.dataset.k===canvasSelection.key&&card&&card.dataset.cardKey===canvasSelection.entry})||null}
+function canvasValues(){
+ if(!canvasSelection)return null;var key=canvasSelection.key;
+ if(key.indexOf('i:')===0){var it=getIt(key.slice(2));if(!it)return null;return {x:it.x,y:it.y,size:it.s,label:it.t==='text'?'Serbest yazı':'Serbest öğe',item:it,unit:it.t==='text'?'pt':'mm'}}
+ var info=CANVAS_FIELDS[key];if(!info)return null;var override=(S.cardText||{})[canvasSelection.entry]||{},style=override[key]||{},p=S.pos[key]||[50,50];
+ return {x:style.x===undefined?p[0]:style.x,y:style.y===undefined?p[1]:style.y,size:style.size===undefined?S[info[1]]:style.size,label:info[0]+' · Bu kart',unit:key.indexOf('Logo')>=0?'mm':'pt'};
+}
+function canvasWrite(changes){
+ var values=canvasValues();if(!values)return;
+ if(values.item){Object.keys(changes).forEach(function(k){if(k==='size')values.item.s=changes[k];else values.item[k]=changes[k]});return}
+ S.cardText=S.cardText||{};var card=S.cardText[canvasSelection.entry]||(S.cardText[canvasSelection.entry]={}),style=card[canvasSelection.key]||(card[canvasSelection.key]={});Object.assign(style,changes);
+}
+function canvasRefresh(){
+ if(!canvasTools)return;var el=canvasElement(),value=canvasValues();
+ $('prev').querySelectorAll('.canvas-active').forEach(function(node){node.classList.remove('canvas-active')});
+ if(!el||!value){canvasBox.hidden=true;if(!canvasNotice){canvasTools.hidden=true;return}canvasTools.hidden=false;canvasTools.classList.add('notice-only');$('canvasToolLabel').textContent=canvasNotice;canvasPlace(null);return}
+ canvasNotice='';canvasTools.classList.remove('notice-only');canvasTools.hidden=false;canvasBox.hidden=false;el.classList.add('canvas-active');
+ $('canvasToolLabel').textContent=value.label;$('canvasSizeValue').value=+value.size.toFixed(1);$('canvasSizeUnit').textContent=value.unit;$('canvasX').value=+value.x.toFixed(1);$('canvasY').value=+value.y.toFixed(1);
+ canvasPlace(el);
+}
+function canvasPlace(el){
+ var r=el&&el.getBoundingClientRect(),vw=window.innerWidth,vh=window.innerHeight;
+ if(r){var visible=r.bottom>0&&r.top<vh&&r.right>0&&r.left<vw;canvasBox.hidden=!visible;if(!visible){canvasTools.hidden=true;return}canvasBox.style.cssText='left:'+r.left+'px;top:'+r.top+'px;width:'+r.width+'px;height:'+r.height+'px';}
+ var width=Math.min(356,vw-16);canvasTools.style.width=width+'px';var height=canvasTools.offsetHeight;
+ var left=(vw-width)/2,top=vh-height-18;
+ if(r){
+  if(!canvasDrag||!canvasObstacles)canvasObstacles=Array.from($('prev').querySelectorAll('.dr')).filter(function(node){return node!==el}).map(function(node){return node.getBoundingClientRect()}).filter(function(rect){return rect.bottom>0&&rect.top<vh&&rect.right>0&&rect.left<vw});
+  var center=r.left+r.width/2-width/2,candidates=[[center,r.top-height-12],[center,r.bottom+12],[r.right+20,r.top],[r.left-width-20,r.top],[vw-width-8,8],[vw-width-8,vh-height-8],[8,vh-height-8]];
+  var overlap=function(a,b){return Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top))};
+  var best=null;candidates.forEach(function(candidate){var x=Math.max(8,Math.min(vw-width-8,candidate[0])),y=Math.max(8,Math.min(vh-height-8,candidate[1])),box={left:x,top:y,right:x+width,bottom:y+height};var score=overlap(box,r)*10+canvasObstacles.reduce(function(sum,rect){return sum+overlap(box,rect)},0)+Math.hypot(x-center,y-r.top)*.02;if(!best||score<best.score)best={x:x,y:y,score:score}});left=best.x;top=best.y;
+ }
+ canvasTools.style.left=left+'px';canvasTools.style.top=top+'px';
+}
+function canvasSelect(el){
+ var card=el.closest('#prev .card');if(!card)return;canvasSelection={key:el.dataset.k,entry:card.dataset.cardKey};el.tabIndex=0;el.focus({preventScroll:true});canvasNotice='';S.sel=canvasSelection.key.indexOf('i:')===0?canvasSelection.key.slice(2):'';applySel();edP();canvasRefresh();
+}
+function canvasChange(changes){if(!canvasValues())return;canvasSnapshot();canvasWrite(changes);render();edP()}
+function canvasDelete(){
+ var value=canvasValues();if(!value)return;canvasSnapshot();if(value.item){S.items=S.items.filter(function(it){return it.id!==value.item.id});S.sel=''}else canvasWrite({hidden:true});
+ canvasSelection=null;canvasNotice='Yazı kaldırıldı. Geri al ile getirebilirsin.';render();edP();
+}
+function canvasAxes(face){
+ var matrix=new DOMMatrix();for(var node=face;node&&node!==document.body;node=node.parentElement){var transform=getComputedStyle(node).transform;if(transform&&transform!=='none')matrix=new DOMMatrix(transform).multiply(matrix)}
+ var a=Math.hypot(matrix.a,matrix.b)||1,b=Math.hypot(matrix.c,matrix.d)||1;return {ux:matrix.a/a,uy:matrix.b/a,vx:matrix.c/b,vy:matrix.d/b};
+}
+function canvasPoint(face,event){var r=face.getBoundingClientRect(),axis=canvasAxes(face),dx=event.clientX-r.left-r.width/2,dy=event.clientY-r.top-r.height/2,w=Math.abs(axis.ux)>.5?r.width:r.height,h=Math.abs(axis.vy)>.5?r.height:r.width;return {x:50+(dx*axis.ux+dy*axis.uy)/w*100,y:50+(dx*axis.vx+dy*axis.vy)/h*100}}
+function canvasBegin(event,el,mode){
+ canvasSelect(el);var value=canvasValues(),r=el.getBoundingClientRect(),p=canvasPoint(el.closest('.face'),event);
+ canvasDrag={el:el,face:el.closest('.face'),mode:mode,startX:event.clientX,startY:event.clientY,offsetX:p.x-value.x,offsetY:p.y-value.y,cx:r.left+r.width/2,cy:r.top+r.height/2,size:value.size,item:value.item,rotation:value.item?value.item.r:0,startAngle:Math.atan2(event.clientY-r.top-r.height/2,event.clientX-r.left-r.width/2),distance:Math.max(8,Math.hypot(event.clientX-r.left-r.width/2,event.clientY-r.top-r.height/2)),changed:false,pointer:event.pointerId};
+ try{event.target.setPointerCapture(event.pointerId)}catch(e){}event.preventDefault();
+}
+function canvasGuides(face,x,y){['x','y'].forEach(function(axis){var guide=face.querySelector('.canvas-guide-'+axis);if(!guide){guide=document.createElement('i');guide.className='canvas-guide canvas-guide-'+axis;face.appendChild(guide)}guide.hidden=axis==='x'?x!==50:y!==50})}
+function canvasEnd(){if(!canvasDrag)return;var changed=canvasDrag.changed;canvasDrag=null;$('prev').querySelectorAll('.canvas-guide').forEach(function(node){node.remove()});if(changed){render();edP()}else canvasRefresh()}
+function initCanvasTools(){
+ canvasTools=document.createElement('div');canvasTools.id='canvasTools';canvasTools.hidden=true;canvasTools.setAttribute('role','toolbar');canvasTools.setAttribute('aria-label','Seçili yazıyı düzenle');canvasTools.innerHTML='<div class="canvas-tool-head"><b id="canvasToolLabel"></b><button type="button" data-canvas="undo" title="Son değişikliği geri al">↶ Geri al</button><button type="button" data-canvas="close" aria-label="Yazı araçlarını kapat">×</button></div><div class="canvas-tool-body"><div class="canvas-tool-row"><button type="button" data-canvas="centerX">Yatay ortala</button><button type="button" data-canvas="centerY">Dikey ortala</button><button type="button" data-canvas="center">Tam ortaya</button></div><div class="canvas-tool-row"><button type="button" data-canvas="smaller" aria-label="Yazıyı küçült">A−</button><label>Boyut <input id="canvasSizeValue" type="number" min="2" max="400" step="1"><span id="canvasSizeUnit">pt</span></label><button type="button" data-canvas="larger" aria-label="Yazıyı büyüt">A+</button></div><div class="canvas-tool-row canvas-coordinates"><label>X % <input id="canvasX" type="number" min="0" max="100" step="0.5"></label><label>Y % <input id="canvasY" type="number" min="0" max="100" step="0.5"></label><button type="button" data-canvas="up" aria-label="Yukarı taşı">↑</button><button type="button" data-canvas="down" aria-label="Aşağı taşı">↓</button><button type="button" data-canvas="left" aria-label="Sola taşı">←</button><button type="button" data-canvas="right" aria-label="Sağa taşı">→</button></div><small>Köşeden boyutlandır · Ok tuşları: hassas taşı · Shift: hızlı taşı</small></div>';
+ canvasBox=document.createElement('div');canvasBox.id='canvasSelectionBox';canvasBox.hidden=true;canvasBox.innerHTML='<button type="button" id="canvasDelete" title="Seçili yazıyı sil" aria-label="Seçili yazıyı sil">×</button><button type="button" id="canvasResize" title="Sürükleyerek boyutlandır" aria-label="Sürükleyerek boyutlandır"></button>';
+ document.body.appendChild(canvasTools);document.body.appendChild(canvasBox);
+ canvasTools.addEventListener('pointerdown',function(e){e.stopPropagation()});canvasTools.addEventListener('click',function(e){var button=e.target.closest('[data-canvas]');if(!button)return;var action=button.dataset.canvas,value=canvasValues();if(action==='undo'){canvasNotice='';undo();return}if(action==='close'){canvasSelection=null;canvasNotice='';S.sel='';applySel();canvasRefresh();return}if(!value)return;
+  if(action==='centerX')canvasChange({x:50});else if(action==='centerY')canvasChange({y:50});else if(action==='center')canvasChange({x:50,y:50});else if(action==='larger'||action==='smaller')canvasChange({size:Math.max(2,Math.min(400,value.size+(action==='larger'?1:-1)))});else {var axis=action==='left'||action==='right'?'x':'y',direction=action==='left'||action==='up'?-1:1,change={};change[axis]=Math.max(0,Math.min(100,value[axis]+direction*.5));canvasChange(change)}
+ });
+ ['canvasSizeValue','canvasX','canvasY'].forEach(function(id){$(id).addEventListener('change',function(){var key=id==='canvasSizeValue'?'size':id==='canvasX'?'x':'y',v=Number(this.value);if(!isFinite(v)){canvasRefresh();return}var changes={};changes[key]=Math.max(key==='size'?2:0,Math.min(key==='size'?400:100,v));canvasChange(changes)})});
+ $('canvasDelete').addEventListener('pointerdown',function(e){e.stopPropagation()});$('canvasDelete').onclick=canvasDelete;
+ $('canvasResize').addEventListener('pointerdown',function(e){e.stopPropagation();var el=canvasElement();if(el)canvasBegin(e,el,'s')});
+ document.addEventListener('pointerdown',function(e){if(e.button!==0&&e.pointerType!=='touch')return;if(e.target.closest('#canvasTools,#canvasSelectionBox,#store,.batch-dialog'))return;var el=e.target.closest('#prev .dr');
+  if(!el){if(e.target.closest('#prev')){canvasSelection=null;canvasNotice='';S.sel='';applySel();edP();canvasRefresh()}return}
+  var handle=e.target.closest('.hnd');canvasBegin(e,el,handle?(handle.classList.contains('hr')?'r':'s'):'m');
+ });
+ document.addEventListener('pointermove',function(e){var drag=canvasDrag;if(!drag||e.pointerId!==drag.pointer)return;if(!drag.changed&&Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)<3)return;if(!drag.changed){canvasSnapshot();drag.changed=true}
+  var value=canvasValues();if(!value)return;
+  if(drag.mode==='m'){var p=canvasPoint(drag.face,e),x=Math.max(0,Math.min(100,p.x-drag.offsetX)),y=Math.max(0,Math.min(100,p.y-drag.offsetY));if(S.snap){if(Math.abs(x-50)<1.5)x=50;if(Math.abs(y-50)<1.5)y=50}x=+x.toFixed(1);y=+y.toFixed(1);canvasWrite({x:x,y:y});drag.el.style.left=x+'%';drag.el.style.top=y+'%';canvasGuides(drag.face,x,y)}
+  else if(drag.mode==='r'&&value.item){value.item.r=Math.round(((drag.rotation+(Math.atan2(e.clientY-drag.cy,e.clientX-drag.cx)-drag.startAngle)*180/Math.PI)%360+540)%360-180);drag.el.style.transform=tf(value.item,1)}
+  else {var ratio=Math.max(.1,Math.min(8,Math.hypot(e.clientX-drag.cx,e.clientY-drag.cy)/drag.distance)),size=Math.max(2,Math.min(400,+(drag.size*ratio).toFixed(1)));canvasWrite({size:size});if(value.item)drag.el.style.transform=tf(Object.assign({},value.item,{r:drag.rotation}),size/drag.size);else {var scale=parseFloat(drag.el.closest('.card').style.width)/105;if(value.unit==='mm'){var img=drag.el.querySelector('img');if(img)img.style.height=size*scale+'mm'}else drag.el.style.fontSize=size*scale+'pt'}}
+  canvasRefresh();e.preventDefault();
+ },{passive:false});
+ document.addEventListener('pointerup',canvasEnd);document.addEventListener('pointercancel',canvasEnd);
+ document.addEventListener('keydown',function(e){if(!canvasSelection||/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(e.target.tagName)||e.target.isContentEditable||e.ctrlKey||e.metaKey||e.altKey)return;var value=canvasValues();if(!value)return;var key=e.key,changes={},step=e.shiftKey?1:.25;
+  if(key==='Delete'||key==='Backspace'){canvasDelete()}else if(key==='Escape'){canvasSelection=null;canvasNotice='';S.sel='';applySel();canvasRefresh()}else if(key.indexOf('Arrow')===0){if(key==='ArrowLeft')changes.x=Math.max(0,value.x-step);else if(key==='ArrowRight')changes.x=Math.min(100,value.x+step);else if(key==='ArrowUp')changes.y=Math.max(0,value.y-step);else if(key==='ArrowDown')changes.y=Math.min(100,value.y+step);canvasChange(changes)}else return;e.preventDefault();e.stopImmediatePropagation();
+ },true);
+ window.addEventListener('resize',function(){canvasRefresh()});window.addEventListener('scroll',function(){if(!canvasDrag)canvasRefresh()},true);window.addEventListener('blur',canvasEnd);
+}
 
 function initSettingsSearch(){
  var panel=$('panel');if($('settingsSearch'))return;panel.classList.add('panel-compact');
@@ -858,7 +934,7 @@ function initSettingsSearch(){
 }
 
 if(themeHidden(S.theme)){var initialOptions=thOpts(S.cat);if(!initialOptions.length){S.cat='own';initialOptions=thOpts('own')}S.theme=initialOptions[0][0];S.hideBase=S.cat=='own'}
-ui();edInit();storeInit();batchInit();initSettingsSearch();
+ui();edInit();storeInit();batchInit();initSettingsSearch();initCanvasTools();
 var oldStoreOpen=$('sopen').onclick;
 $('sopen').onclick=function(){if(oldStoreOpen)oldStoreOpen();loadOnlineThemes(false)};
 
