@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "hibiskus",
+  "cat": "menu",
+  "n": "Hibiskus",
+  "bg": "#fff0f4",
+  "c": "#682947",
+  "a": "#ce477a",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "pat": "flourish",
+  "p1": "#b82764",
+  "p2": "#ee9ab4",
+  "p3": "#f9d6e3",
+  "description": "Hibiskus çayını çağrıştıran fuşya ve vişne tonlarında çiçeksi kıvrımlar."
+}
