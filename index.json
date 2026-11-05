@@ -87,6 +87,54 @@
       "version": 2,
       "file": "themes/red-bull-energy.json",
       "description": "Lacivert zemin üzerinde karşılıklı kırmızı boğa illüstrasyonları, sarı güneş diski ve sportif çerçeve."
+    },
+    {
+      "id": "portakal",
+      "name": "Portakal",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/portakal.json",
+      "description": "Portakal renklerinde sıcak daire motifleri."
+    },
+    {
+      "id": "nar",
+      "name": "Nar",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/nar.json",
+      "description": "Nar tanesi esintili bordo ve kırmızı geometrik desen."
+    },
+    {
+      "id": "mandalina",
+      "name": "Mandalina",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/mandalina.json",
+      "description": "Mandalina tonlarında yumuşak kıvrımlı desen."
+    },
+    {
+      "id": "detox",
+      "name": "Detox",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/detox.json",
+      "description": "Nane ve yeşillik esintili ferah botanik desen."
+    },
+    {
+      "id": "hibiskus",
+      "name": "Hibiskus",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/hibiskus.json",
+      "description": "Hibiskus çayından esinlenen pembe çiçeksi motif."
+    },
+    {
+      "id": "limonata",
+      "name": "Limonata",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/limonata.json",
+      "description": "Limon sarısı güneş ışınları ve açık yeşil vurgular."
     }
   ],
   "appVersion": "2.1.2"
