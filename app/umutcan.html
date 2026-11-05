@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.1.3">
+<meta name="umutcan-app-version" content="2.1.4">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -299,7 +299,7 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.1.3',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.1.4',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}
@@ -520,12 +520,23 @@ function loadOnlineThemes(force){
  if(onlineLoaded&&!force){sDraw();return Promise.resolve()}
  onlineBusy=true;onlineMsg('Online temalar kontrol ediliyor…');
  var bust=force?'?refresh='+Date.now():'';
- onlineRequest=fetch(ONLINE_CATALOG+bust,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('Katalog alınamadı ('+r.status+')');return r.json()}).then(function(cat){
+ var catalogController=new AbortController(),catalogTimer=setTimeout(function(){catalogController.abort()},10000);
+ onlineRequest=fetch(ONLINE_CATALOG+bust,{cache:'no-cache',signal:catalogController.signal}).finally(function(){clearTimeout(catalogTimer)}).then(function(r){if(!r.ok)throw new Error('Katalog alınamadı ('+r.status+')');return r.json()}).then(function(cat){
   if(!cat||cat.schemaVersion!==1||!Array.isArray(cat.themes))throw new Error('Katalog biçimi geçersiz');
   var cached=ldK('mk3_online_cache');
-  return Promise.all(cat.themes.slice(0,100).filter(safeThemeMeta).map(function(meta){
-   return fetch(ONLINE_THEME_BASE+meta.file+bust,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('Tema indirilemedi');return r.json()}).then(function(t){return parseOnlineTheme(meta,t)?{meta:meta,theme:t}:null}).catch(function(){return cached.filter(function(p){return p&&p.meta&&p.meta.id===meta.id&&parseOnlineTheme(p.meta,p.theme)})[0]||null});
-  }));
+  var entries=cat.themes.slice(0,100).filter(safeThemeMeta),next=0,pairs=new Array(entries.length),drawTimer=null;
+  function showPair(pair){if(!pair)return;TH['online_'+pair.meta.id]=parseOnlineTheme(pair.meta,pair.theme);if(!drawTimer)drawTimer=setTimeout(function(){drawTimer=null;sDraw()},100)}
+  function worker(){
+   if(next>=entries.length)return Promise.resolve();
+   var i=next++,meta=entries[i],previous=cached.filter(function(p){return p&&p.meta&&p.meta.id===meta.id&&parseOnlineTheme(p.meta,p.theme)})[0];
+   // Only explicitly versioned, unchanged themes can skip the network.
+   if(!force&&previous&&Number.isSafeInteger(meta.version)&&meta.version>0&&previous.meta.version===meta.version&&previous.meta.file===meta.file){pairs[i]={meta:meta,theme:previous.theme};showPair(pairs[i]);return worker()}
+   var controller=new AbortController(),timer=setTimeout(function(){controller.abort()},10000);
+   return fetch(ONLINE_THEME_BASE+meta.file+'?v='+encodeURIComponent(meta.version||1),{cache:force?'no-cache':'default',signal:controller.signal}).then(function(r){if(!r.ok)throw new Error('Tema indirilemedi');return r.json()}).then(function(t){
+    if(!parseOnlineTheme(meta,t))throw new Error('Geçersiz tema');pairs[i]={meta:meta,theme:t};
+   }).catch(function(){pairs[i]=previous||null}).finally(function(){clearTimeout(timer)}).then(function(){showPair(pairs[i]);return worker()});
+  }
+  return Promise.all(Array.from({length:Math.min(6,entries.length)},worker)).then(function(){if(drawTimer)clearTimeout(drawTimer);return pairs});
  }).then(function(pairs){
   pairs=pairs.filter(Boolean);var keep={};pairs.forEach(function(p){var key='online_'+p.meta.id;TH[key]=parseOnlineTheme(p.meta,p.theme);keep[key]=true});
   Object.keys(TH).forEach(function(k){if(TH[k].remote&&!keep[k])delete TH[k]});svK('mk3_online_cache',pairs);
@@ -549,4 +560,5 @@ if(window.UmutShell)window.UmutShell.ready(APP_VERSION);else{document.getElement
 </script>
 </body>
 </html>
+
 
