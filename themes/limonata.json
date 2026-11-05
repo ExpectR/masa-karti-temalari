@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "limonata",
+  "cat": "menu",
+  "n": "Limonata",
+  "bg": "#fffde9",
+  "c": "#526237",
+  "a": "#e9c934",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "em": "",
+  "pat": "sunburst",
+  "p1": "#f8d848",
+  "p2": "#fff0a1",
+  "p3": "#b4d88a",
+  "description": "Taze limon ve yaz güneşinden esinlenen sarı ışınlar, açık yeşil vurgular."
+}
