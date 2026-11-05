@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "appId": "masa-karti-atolyesi",
   "launcherProtocol": 1,
-  "version": "2.2.1",
-  "file": "releases/umutcan-2.2.1.html",
-  "sha256": "0ffce577c88de746f2f908d620b10619dd0d677bbd4cb4e8fda85dd2ea41a061",
-  "size": 183366,
-  "publishedAt": "2026-11-05T21:59:32+00:00"
+  "version": "2.2.2",
+  "file": "releases/umutcan-2.2.2.html",
+  "sha256": "7bb67fb798fcf11be35b0fce50dc00f1e95671d1e34701816623f6846abb8e0d",
+  "size": 188682,
+  "publishedAt": "2026-11-05T22:07:32+00:00"
 }

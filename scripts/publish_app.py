@@ -16,6 +16,14 @@ def build(version):
         raise SystemExit('Use a numeric major.minor.patch version.')
     source = ROOT / 'app/umutcan.html'
     html = source.read_text(encoding='utf-8')
+    transport = (ROOT / 'scripts/update_transport.js').read_text(encoding='utf-8')
+    if '</script' in transport.lower():
+        raise SystemExit('Update transport contains an unsafe closing script tag.')
+    block = '<!-- UMUT_UPDATE_TRANSPORT_START -->\n<script>\n' + transport + '\n</script>\n<!-- UMUT_UPDATE_TRANSPORT_END -->'
+    html, transport_count = re.subn(r'<!-- UMUT_UPDATE_TRANSPORT_START -->.*?<!-- UMUT_UPDATE_TRANSPORT_END -->', lambda m: block, html, count=1, flags=re.S)
+    if transport_count != 1:
+        raise SystemExit('Runtime update transport marker is missing.')
+
     html, count = re.subn(r"var APP_VERSION='[^']+'", "var APP_VERSION='" + version + "'", html, count=1)
     if count != 1:
         raise SystemExit('APP_VERSION is missing.')
@@ -43,7 +51,7 @@ def build(version):
     bundle = {'appId': APP_ID, 'launcherProtocol': PROTOCOL, 'version': version,
               'html': html, 'sha256': digest, 'size': len(data), 'pending': False}
     encoded = json.dumps(bundle, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
-    loader = (ROOT / 'scripts/launcher.js').read_text(encoding='utf-8')
+    loader = transport + '\n' + (ROOT / 'scripts/launcher.js').read_text(encoding='utf-8')
     if '</script' in loader.lower():
         raise SystemExit('Launcher contains an unsafe closing script tag.')
     shell = '''<!DOCTYPE html>
@@ -69,3 +77,4 @@ if __name__ == '__main__':
         major, minor, patch = map(int, current.split('.'))
         version = f'{major}.{minor}.{patch+1}'
     build(version)
+

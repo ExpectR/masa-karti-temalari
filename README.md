@@ -12,12 +12,14 @@ Güncel uygulama tarayıcıda tutulur; dosyayı kapatıp açınca ve internet ol
 
 İsimler, logo, tasarım ayarları, favoriler, şablonlar ve silinen/gizlenen temalar güncellemede korunur. İndirme veya doğrulama başarısız olursa mevcut sürüm devam eder. Yeni sürüm açılışı tamamlayamazsa son çalışan sürüm ve güncelleme öncesi ayarlar geri yüklenir. Tarayıcı depolaması doluysa güncelleme uygulanmaz, mevcut sürüm çalışır.
 
+Update, sürüm bilgisini ve uygulama paketini GitHub Contents API üzerinden her kontrolde yeni bir URL ile alır; böylece ham `main` dosyalarının beş dakikalık önbelleğine bağlı kalmaz. API geçici olarak kullanılamazsa yedek ham kaynak denenir. Yedek kaynak aynı/eski sürümü gösteriyorsa son sürüm doğrulanamadığı belirtilir; yanlış bir “zaten güncelsin” sonucu verilmez. Boyut, SHA-256 ve sürüm doğrulaması ile geri dönüş korunur. GitHub API için hesap veya token gerekmez; anonim API sınırına ulaşıldığında kullanıcıya kontrolün tamamlanamadığı bildirilir. Kontrol yalnızca Update tıklanınca yapılır.
+
 Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolunu kullanın. Bu işlem tema kataloğunu yeniler; **Update** ise program kodunu günceller. Yeni görsellerin ilk yüklemesi internet gerektirir.
 
 ## Program değişikliklerini yayınlama
 
 1. `app/umutcan.html` dosyasında uygulamayı düzenleyin. `Update` düğmesini, sürüm metaverisini ve `UmutShell.watch/ready` bağlantısını koruyun.
-2. `python3 scripts/publish_app.py` çalıştırın. Son yayınlanan sürümün patch numarası otomatik artırılır. Belirli sürüm için `--version 2.2.0` kullanılabilir.
+2. `python3 scripts/publish_app.py` çalıştırın. Paylaşılan `scripts/update_transport.js` hem runtime içindeki `UMUT_UPDATE_TRANSPORT` işaretlerine hem üretilen başlangıç dosyasına otomatik eklenir; işaretleri koruyun. Böylece kullanıcıdaki eski başlangıç dosyaları da yeni runtime üzerinden hızlı kontrolü kullanır. Son yayınlanan sürümün patch numarası otomatik artırılır. Belirli sürüm için `--version 2.2.0` kullanılabilir.
 3. `app/umutcan.html`, üretilen yeni `releases/umutcan-X.Y.Z.html`, `app-update.json` ve `umutcan.html` dosyalarını **aynı commit** ile `main` dalına gönderin.
 4. Gerçek tarayıcıda Update ile yeni özelliğin açıldığını, ayarların korunduğunu ve yeniden açılışta yeni sürümün kaldığını doğrulayın.
 
@@ -59,3 +61,4 @@ Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolu
 Kategoriler: `bayan`, `bay`, `menu`, `autumn`, `newyear`. Sürüm 1 desen temaları da desteklenir. Görsel temaların sürüm 2 olması eski uygulamaların bunları yanlışlıkla basit desen olarak göstermesini önler. Yalnızca bu depodaki `assets/` görselleri kabul edilir; temalardan JavaScript çalıştırılmaz.
 
 Kaynak görseller yapay zekâ ile üretilmiştir; uygulama için WebP biçimine dönüştürülmüştür.
+
