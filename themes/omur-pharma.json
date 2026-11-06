@@ -9,8 +9,8 @@
   "font": "Montserrat,sans-serif",
   "foil": 0,
   "em": "",
-  "pat": "topo",
+  "pat": "hex",
   "p1": "#ff7900",
-  "p2": "#ffe1c3",
-  "p3": "#f4f7fa"
+  "p2": "#ffdcc0",
+  "p3": "#f5f8fb"
 }
