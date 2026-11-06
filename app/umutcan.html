@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.2.5">
+<meta name="umutcan-app-version" content="2.2.6">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -182,6 +182,56 @@ SOFTWARE. */
 #umutIntro canvas{display:block;width:100%;height:100%}
 #umutIntro.leaving{opacity:0;pointer-events:none}
 </style>
+
+<style>
+#workshopRebuild{position:fixed;inset:0;z-index:2147483646;overflow:hidden;background:var(--bg);isolation:isolate;transition:opacity .45s ease}
+#workshopRebuild>.swarm-scene{position:absolute;margin:0;pointer-events:none}
+#workshopRebuild canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#workshopRebuild .swarm-caption{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);padding:10px 18px;border:1px solid var(--bd);border-radius:30px;background:var(--pn);color:var(--tx);font:11px system-ui,sans-serif;letter-spacing:.12em;white-space:nowrap;box-shadow:0 8px 32px #0001}
+#workshopRebuild .swarm-caption i{display:inline-block;width:6px;height:6px;margin-right:9px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399}
+@media print{#workshopRebuild,#umutIntro{display:none!important}}
+</style>
+<script>
+// Original, local-only choreography: no extension or network dependency.
+window.startWorkshopRebuild=function(){
+ var real=document.querySelector('.wrap');if(!real||document.getElementById('workshopRebuild'))return;
+ var host=document.createElement('div'),scene=real.cloneNode(true),canvas=document.createElement('canvas'),caption=document.createElement('div');
+ host.id='workshopRebuild';host.setAttribute('role','status');host.setAttribute('aria-label','Atölye renkli imleçlerle kuruluyor');
+ scene.classList.add('swarm-scene');scene.setAttribute('aria-hidden','true');scene.inert=true;
+ scene.querySelectorAll('[id]').forEach(function(el){el.removeAttribute('id')});
+ var bounds=real.getBoundingClientRect();scene.style.cssText='left:'+bounds.left+'px;top:'+bounds.top+'px;width:'+bounds.width+'px;max-width:none';
+ caption.className='swarm-caption';caption.innerHTML='<i></i>ATÖLYE KURULUYOR';host.append(scene,canvas,caption);document.body.appendChild(host);
+ var visibility=real.style.visibility,wasInert=real.inert,frame=0,ended=false,timer,started=performance.now(),duration=6200;
+ var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches,ctx=canvas.getContext('2d');
+ function finish(){if(ended)return;ended=true;cancelAnimationFrame(frame);clearTimeout(timer);window.removeEventListener('resize',resize);real.style.visibility=visibility;real.inert=wasInert;host.style.opacity='0';setTimeout(function(){host.remove()},480)}
+ function resize(){var d=Math.min(devicePixelRatio||1,2);canvas.width=innerWidth*d;canvas.height=innerHeight*d;if(ctx)ctx.setTransform(d,0,0,d,0,0);var b=real.getBoundingClientRect();scene.style.left=b.left+'px';scene.style.top=b.top+'px';scene.style.width=b.width+'px'}
+ var colors=['#9b6dff','#f06b9b','#23b6a8','#e4a53b','#4d9fff','#ed7854'],names=['Tasarım','Tipografi','Yerleşim','Renk','Detay','Umutcan'];
+ var targets=Array.from(scene.querySelectorAll('.panel > *, .prev .card')).filter(function(el){var b=el.getBoundingClientRect();return b.width>0&&b.height>0&&b.top<innerHeight&&b.bottom>0});
+ var panel=scene.querySelector('.panel');if(panel)targets.unshift(panel);
+ var jobs=targets.map(function(el,i){var b=el.getBoundingClientRect(),j={el:el,index:i,delay:i===0?500:950+(i-1)*Math.min(220,2900/Math.max(1,targets.length-1)),length:i===0?650:900+(i%3)*140};el.style.clipPath='inset(0 100% 100% 0)';return j});
+ function clamp(v){return Math.max(0,Math.min(1,v))}
+ function cursor(x,y,color,name){ctx.save();ctx.translate(x,y);ctx.shadowColor='#0003';ctx.shadowBlur=7;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(0,23);ctx.lineTo(6,17);ctx.lineTo(11,28);ctx.lineTo(16,25);ctx.lineTo(10,15);ctx.lineTo(20,15);ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.6;ctx.stroke();ctx.shadowBlur=0;ctx.font='600 10px system-ui';var width=ctx.measureText(name).width+18;ctx.fillStyle=color;ctx.fillRect(19,27,width,20);ctx.fillStyle='#fff';ctx.fillText(name,28,41);ctx.restore()}
+ function draw(now){
+  if(ended)return;
+  try{
+   var t=now-started;ctx.clearRect(0,0,innerWidth,innerHeight);
+   jobs.forEach(function(j){var p=clamp((t-j.delay)/j.length),ease=1-Math.pow(1-p,3);j.el.style.clipPath=p>=1?'none':reduced?'none':'inset(0 '+((1-ease)*100)+'% '+((1-ease)*100)+'% 0)';j.el.style.opacity=reduced?String(p):'1'});
+   colors.forEach(function(color,i){var list=jobs.filter(function(j){return j.index%colors.length===i}),job=list.find(function(j){return t<j.delay+j.length+180})||list[list.length-1],x,y;
+    if(t<500){var angle=i*Math.PI/3+t*.002;x=innerWidth/2+Math.cos(angle)*75;y=innerHeight/2+Math.sin(angle)*55}
+    else if(job){var r=job.el.getBoundingClientRect(),p=clamp((t-job.delay)/job.length),e=1-Math.pow(1-p,3),travel=clamp((t-job.delay+450)/450);x=(innerWidth/2)*(1-travel)+(r.left+r.width*e)*travel;y=(innerHeight/2)*(1-travel)+(r.top+r.height*e)*travel;
+     if(p>0&&p<1&&!reduced){ctx.save();ctx.strokeStyle=color;ctx.globalAlpha=.75;ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.strokeRect(r.left,r.top,r.width*e,r.height*e);ctx.globalAlpha=.2;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,innerHeight);ctx.moveTo(0,y);ctx.lineTo(innerWidth,y);ctx.stroke();ctx.restore();ctx.fillStyle=color;ctx.font='10px monospace';ctx.fillText(Math.round(r.width*e)+' × '+Math.round(r.height*e),Math.max(8,Math.min(innerWidth-100,x+12)),Math.max(15,y-12))}
+    }else{x=innerWidth/2;y=innerHeight/2}
+    if(t>4900){var exit=clamp((t-4900)/1000);x+=(innerWidth+120-x)*exit;y+=(i*45+45-y)*exit}
+    if(reduced){x=innerWidth/2+(i-2.5)*45;y=innerHeight-90}cursor(Math.max(4,Math.min(innerWidth+130,x)),Math.max(4,Math.min(innerHeight-45,y)),color,names[i]);
+   });
+   if(t>4800)caption.innerHTML='<i></i>HER DETAYDA EMEK VAR';
+   if(t>=duration){finish();return}frame=requestAnimationFrame(draw);
+  }catch(e){finish()}
+ }
+ try{if(!ctx){finish();return}resize();real.style.visibility='hidden';real.inert=true;window.addEventListener('resize',resize);timer=setTimeout(finish,8500);frame=requestAnimationFrame(draw)}catch(e){finish()}
+};
+</script>
+
 <div id="umutIntro" role="region" aria-label="Yıldızların arasından gelen yeşil kodlar U harfini oluşturuyor"><canvas aria-hidden="true"></canvas></div>
 <script>
 (function(){
@@ -189,7 +239,7 @@ SOFTWARE. */
  var frame=0,finished=false,start=performance.now(),stars=[],particles=[],w=0,h=0,dpr=1;
  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  var glyphs='01{}<>/[];:=+#',duration=reduced?900:4300;
- function finish(){if(finished)return;finished=true;cancelAnimationFrame(frame);clearTimeout(failsafe);window.removeEventListener('resize',resize);host.classList.add('leaving');setTimeout(function(){host.remove()},700)}
+ function finish(){if(finished)return;finished=true;cancelAnimationFrame(frame);clearTimeout(failsafe);window.removeEventListener('resize',resize);if(window.startWorkshopRebuild)window.startWorkshopRebuild();host.classList.add('leaving');setTimeout(function(){host.remove()},700)}
  var failsafe=setTimeout(finish,5500);
  function resize(){
   w=window.innerWidth;h=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
@@ -322,7 +372,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 if(window.UmutShell)window.UmutShell.watch();
 </script>
 <!-- UMUT_RELEASE_NOTES_START -->
-<script type="application/json" id="umut-release-notes-data">{"schemaVersion": 1, "currentVersion": "2.2.5", "releases": [{"version": "2.2.5", "title": "Güncelleme notları", "changes": ["Update yanına Yenilikler düğmesi eklendi.", "Kullandığın sürümün değişiklikleri ve önceki güncellemeler uygulama içinden görülebilir.", "Güncelleme notları internet olmadığında da açılır."]}, {"version": "2.2.4", "title": "Dikey, yay ve çember yazı", "changes": ["Yazı için 90° dikey ve harfleri alt alta dizme seçenekleri eklendi.", "Üst/alt yay ve tam çember yerleşimi; yarıçap ve açı ayarı eklendi.", "Yazıyı logo veya nesnenin etrafına hizalama eklendi."]}, {"version": "2.2.3", "title": "Kart üzerinde yazı düzenleme", "changes": ["Yazıya tıklayınca silme çarpısı ve düzenleme araçları açılır.", "Yatay/dikey ortalama, köşeden boyutlandırma ve hassas konum ayarı eklendi.", "Hazır yazılar kart bazında düzenlenebilir; işlemler Geri al ile geri çevrilebilir."]}, {"version": "2.2.2", "title": "Güncelleme kontrolü iyileştirildi", "changes": ["Update kontrolü, ham dosyaların beş dakikalık önbelleğine bağlı kalmaması için doğrudan GitHub API'sine taşındı.", "Son sürüm doğrulanamazsa yanlış bir Zaten güncelsin sonucu gösterilmesi önlendi."]}, {"version": "2.2.1", "title": "Ayar arama ve kompakt menü", "changes": ["Sol menüye ayar arama çubuğu eklendi; bölümler daha kompakt hale getirildi.", "10 Kasım temasına yarı saydam, gerçekçi Atatürk profil silüeti eklendi. Tema Mağazası → Online yenile ile alınabilir."]}, {"version": "2.2.0", "title": "Toplu kartlar ve projeler", "changes": ["Aynı baskı sayfasındaki kartlar için ayrı tema seçimi eklendi.", "Excel XLSX / CSV isim aktarımı, proje kaydet/aç ve üç temayı karşılaştırma eklendi.", "Otomatik A4 yerleşimi, kesim işaretleri ve uzun isimleri sığdırma seçenekleri eklendi."]}, {"version": "2.1.6", "title": "Intro son düzenlemeleri", "changes": ["Introdan Atla düğmesi ve Esc ile geçiş kaldırıldı.", "U harfinin altındaki yazı POWERED BY UMUTCAN olarak değiştirildi."]}, {"version": "2.1.5", "title": "Yeşil kodlardan U introsu", "changes": ["Yıldızlı uzay fonundan gelen yeşil kodların U harfini oluşturduğu açılış animasyonu eklendi."]}, {"version": "2.1.4", "title": "Online temalar daha hızlı açılır", "changes": ["Değişmeyen sürümlü temaların yeniden indirilmesi azaltıldı; temalar geldikçe gösterilir.", "Tema isteklerine zaman aşımı ve sınırlı eşzamanlı yükleme eklendi. 100 tema sınırı korundu."]}]}</script>
+<script type="application/json" id="umut-release-notes-data">{"schemaVersion": 1, "currentVersion": "2.2.6", "releases": [{"version": "2.2.6", "title": "İmleçlerle kurulan atölye", "changes": ["Yeşil U introsunun ardından renkli imleçler araç panelini ve kartları parça parça kurar.", "Açılış her seferinde oynar; Atla düğmesi veya Esc ile geçiş yoktur.", "Animasyon internet gerektirmez; tamamlandığında atölye düzenlemeye açılır."]}, {"version": "2.2.5", "title": "Güncelleme notları", "changes": ["Update yanına Yenilikler düğmesi eklendi.", "Kullandığın sürümün değişiklikleri ve önceki güncellemeler uygulama içinden görülebilir.", "Güncelleme notları internet olmadığında da açılır."]}, {"version": "2.2.4", "title": "Dikey, yay ve çember yazı", "changes": ["Yazı için 90° dikey ve harfleri alt alta dizme seçenekleri eklendi.", "Üst/alt yay ve tam çember yerleşimi; yarıçap ve açı ayarı eklendi.", "Yazıyı logo veya nesnenin etrafına hizalama eklendi."]}, {"version": "2.2.3", "title": "Kart üzerinde yazı düzenleme", "changes": ["Yazıya tıklayınca silme çarpısı ve düzenleme araçları açılır.", "Yatay/dikey ortalama, köşeden boyutlandırma ve hassas konum ayarı eklendi.", "Hazır yazılar kart bazında düzenlenebilir; işlemler Geri al ile geri çevrilebilir."]}, {"version": "2.2.2", "title": "Güncelleme kontrolü iyileştirildi", "changes": ["Update kontrolü, ham dosyaların beş dakikalık önbelleğine bağlı kalmaması için doğrudan GitHub API'sine taşındı.", "Son sürüm doğrulanamazsa yanlış bir Zaten güncelsin sonucu gösterilmesi önlendi."]}, {"version": "2.2.1", "title": "Ayar arama ve kompakt menü", "changes": ["Sol menüye ayar arama çubuğu eklendi; bölümler daha kompakt hale getirildi.", "10 Kasım temasına yarı saydam, gerçekçi Atatürk profil silüeti eklendi. Tema Mağazası → Online yenile ile alınabilir."]}, {"version": "2.2.0", "title": "Toplu kartlar ve projeler", "changes": ["Aynı baskı sayfasındaki kartlar için ayrı tema seçimi eklendi.", "Excel XLSX / CSV isim aktarımı, proje kaydet/aç ve üç temayı karşılaştırma eklendi.", "Otomatik A4 yerleşimi, kesim işaretleri ve uzun isimleri sığdırma seçenekleri eklendi."]}, {"version": "2.1.6", "title": "Intro son düzenlemeleri", "changes": ["Introdan Atla düğmesi ve Esc ile geçiş kaldırıldı.", "U harfinin altındaki yazı POWERED BY UMUTCAN olarak değiştirildi."]}, {"version": "2.1.5", "title": "Yeşil kodlardan U introsu", "changes": ["Yıldızlı uzay fonundan gelen yeşil kodların U harfini oluşturduğu açılış animasyonu eklendi."]}, {"version": "2.1.4", "title": "Online temalar daha hızlı açılır", "changes": ["Değişmeyen sürümlü temaların yeniden indirilmesi azaltıldı; temalar geldikçe gösterilir.", "Tema isteklerine zaman aşımı ve sınırlı eşzamanlı yükleme eklendi. 100 tema sınırı korundu."]}]}</script>
 <!-- UMUT_RELEASE_NOTES_END -->
 <script>
 var F1="'Playfair Display',serif",FL=[[F1,'Playfair Display'],["'Cormorant Garamond',serif",'Cormorant Garamond'],["'Cinzel',serif",'Cinzel (klasik)'],["'Alex Brush',cursive",'Alex Brush'],["'Great Vibes',cursive",'Great Vibes'],["'Parisienne',cursive",'Parisienne'],["'Dancing Script',cursive",'Dancing Script'],["'Pacifico',cursive",'Pacifico (eğlenceli)'],["'Caveat',cursive",'Caveat (el yazısı)'],["Montserrat,sans-serif",'Montserrat (modern)']];
@@ -467,7 +517,7 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.2.5',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.2.6',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}
