@@ -149,7 +149,7 @@
       "id": "omur-pharma",
       "name": "Omur Pharma | Kurumsal İlaç",
       "category": "menu",
-      "version": 1,
+      "version": 2,
       "file": "themes/omur-pharma.json",
       "description": "OPC turuncu-beyaz kurumsal renkleriyle ilaç ve laboratuvar sektörüne özel tasarım.",
       "minAppVersion": "2.0.0"
