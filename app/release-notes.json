@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.7",
+      "title": "Tekrarlanan temalar temizlendi",
+      "changes": [
+        "Aynı tasarımın yalnızca renk veya yazı tipi değişen kopyaları listelerden kaldırıldı.",
+        "Tema mağazası, kategori seçimi, kartlara ayrı tema seçimi ve karşılaştırma listeleri sadeleştirildi.",
+        "Önceden kaydedilmiş projeler, karta özel tema seçimleri, favoriler ve şablonlar korundu."
+      ]
+    },
+    {
       "version": "2.2.6",
       "title": "İmleçlerle kurulan atölye",
       "changes": [
