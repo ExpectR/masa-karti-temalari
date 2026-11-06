@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "omur-pharma",
+  "cat": "menu",
+  "n": "Omur Pharma | Kurumsal İlaç",
+  "bg": "#ffffff",
+  "c": "#17212b",
+  "a": "#ff7900",
+  "font": "Montserrat,sans-serif",
+  "foil": 0,
+  "em": "",
+  "pat": "topo",
+  "p1": "#ff7900",
+  "p2": "#ffe1c3",
+  "p3": "#f4f7fa"
+}
