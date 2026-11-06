@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "app": "Masa Kartı Atölyesi",
-  "updatedAt": "2026-11-05",
+  "updatedAt": "2026-11-06",
   "themes": [
     {
       "id": "on-kasim-anma",
@@ -144,6 +144,15 @@
       "version": 1,
       "file": "themes/limonata.json",
       "description": "Limon sarısı güneş ışınları ve açık yeşil vurgular."
+    },
+    {
+      "id": "omur-pharma",
+      "name": "Omur Pharma | Kurumsal İlaç",
+      "category": "menu",
+      "version": 1,
+      "file": "themes/omur-pharma.json",
+      "description": "OPC turuncu-beyaz kurumsal renkleriyle ilaç ve laboratuvar sektörüne özel tasarım.",
+      "minAppVersion": "2.0.0"
     }
   ],
   "appVersion": "2.2.7"
