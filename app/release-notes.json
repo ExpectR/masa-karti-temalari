@@ -2,6 +2,14 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.9",
+      "title": "Modern dijital saat",
+      "changes": [
+        "Analog saat, 24 saat biçiminde dijital saate dönüştürüldü.",
+        "Saat ve dakika büyük, saniye vurgu renginde gösterilir; Türkçe tarih korunur."
+      ]
+    },
+    {
       "version": "2.2.8",
       "title": "Atölyede saat ve tarih",
       "changes": [
