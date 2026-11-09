@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.8",
+      "title": "Atölyede saat ve tarih",
+      "changes": [
+        "Sağ kenara modern analog saat ve Türkçe tarih eklendi.",
+        "Saat cihazın yerel saatine göre çalışır; tarih gece yarısında yenilenir.",
+        "Küçük ekranlarda kompakt üst şeride yerleşir; baskılarda görünmez."
+      ]
+    },
+    {
       "version": "2.2.7",
       "title": "Tekrarlanan temalar temizlendi",
       "changes": [
