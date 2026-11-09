@@ -22,6 +22,12 @@ Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolu
 
 Gemini bölümü ayar aramasının hemen altındadır. İsteğini yazınca genel tasarım için bir öneri hazırlar; **Şu an / Önerilen** karşılaştırmasını gösterir. Kart ancak **Uygula** ile değişir. **Geri al** (veya Ctrl+Z) asistanın uyguladığı değişikliği de geri alır. Öneri hazırlanırken kart düzenlenirse eski öneri uygulanmaz.
 
+**Yeni tema üret** modunda Gemini, mevcut tema listesinden seçim yapmak yerine renkler, geometrik şekiller ve bitkisel motiflerden yeni bir vektörel kompozisyon oluşturur. Önizlemede adını düzenleyip **Yerel temalarıma kaydet** diyebilirsin; kaydetmek kartı değiştirmez. Uyguladığın temayı asistanın altındaki **Bu temayı yerel kaydet** düğmesiyle de saklayabilirsin.
+
+Kayıtlar **Tema Mağazası → Yerel Temalarım** bölümünde görünür. **Kullan** mevcut isim, logo ve serbest öğelerini koruyarak temayı uygular. **JSON indir** yalnızca tema tanımını dosyaya kaydeder; **Şablonlarım → İçe aktar** ile aynı veya başka bir tarayıcıya geri alınabilir. Üretilen temalar GitHub'a, tema deposuna veya bir sunucu veritabanına gönderilmez; `mk3t` anahtarında bu tarayıcıda saklanır. Tarayıcı verilerini temizlemek kayıtları siler; saklamak istediğin temaları JSON olarak yedekle.
+
+Bu sürüm fotoğraf üretmez; çizgi, çerçeve, geometrik desen ve mevcut bitkisel çizimlerden yeni bir yerleşim üretir. İsim ve logo görselleri tema dosyasına gömülmez. Mevcut tema tanımı yeni bir Gemini isteğinde tasarım bağlamı olarak gönderilebilir; özel isim listeleri ve logo/resim dosyaları gönderilmez.
+
 ### Windows'ta ilk bağlantı
 
 1. [Google AI Studio](https://aistudio.google.com/api-keys) üzerinden bir Gemini API anahtarı oluştur. Ücretsiz katmanı kullanmak için Google projesinde ücretli faturalandırmayı açma. Kota ve model erişimi Google hesabına bağlıdır; uygulama kota dolunca başka ücretli modele geçmez, otomatik tekrar deneme yapmaz.
