@@ -49,6 +49,14 @@ def build(version):
     if transport_count != 1:
         raise SystemExit('Runtime update transport marker is missing.')
 
+    contract = (ROOT / 'scripts/gemini-contract.cjs').read_text(encoding='utf-8')
+    if '</script' in contract.lower():
+        raise SystemExit('Gemini contract contains an unsafe closing script tag.')
+    contract_block = '<!-- UMUT_GEMINI_CONTRACT_START -->\n<script>\n' + contract + '\n</script>\n<!-- UMUT_GEMINI_CONTRACT_END -->'
+    html, contract_count = re.subn(r'<!-- UMUT_GEMINI_CONTRACT_START -->.*?<!-- UMUT_GEMINI_CONTRACT_END -->', lambda m: contract_block, html, count=1, flags=re.S)
+    if contract_count != 1:
+        raise SystemExit('Gemini contract marker is missing.')
+
     notes = release_notes_payload(version)
     encoded_notes = json.dumps(notes, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     notes_block = '<!-- UMUT_RELEASE_NOTES_START -->\n<script type="application/json" id="umut-release-notes-data">' + encoded_notes + '</script>\n<!-- UMUT_RELEASE_NOTES_END -->'

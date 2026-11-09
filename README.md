@@ -18,6 +18,23 @@ Update yanındaki **Yenilikler** düğmesi, kullandığınız sürümün kısa d
 
 Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolunu kullanın. Bu işlem tema kataloğunu yeniler; **Update** ise program kodunu günceller. Yeni görsellerin ilk yüklemesi internet gerektirir.
 
+## Gemini Tasarım Asistanı
+
+Gemini bölümü ayar aramasının hemen altındadır. İsteğini yazınca genel tasarım için bir öneri hazırlar; **Şu an / Önerilen** karşılaştırmasını gösterir. Kart ancak **Uygula** ile değişir. **Geri al** (veya Ctrl+Z) asistanın uyguladığı değişikliği de geri alır. Öneri hazırlanırken kart düzenlenirse eski öneri uygulanmaz.
+
+### Windows'ta ilk bağlantı
+
+1. [Google AI Studio](https://aistudio.google.com/api-keys) üzerinden bir Gemini API anahtarı oluştur. Ücretsiz katmanı kullanmak için Google projesinde ücretli faturalandırmayı açma. Kota ve model erişimi Google hesabına bağlıdır; uygulama kota dolunca başka ücretli modele geçmez, otomatik tekrar deneme yapmaz.
+2. Bu proje klasöründeki **Gemini Başlat.cmd** dosyasını aç. Tarayıcıda açılan yerel kurulum sayfasının parola alanına anahtarı yapıştır. Yardımcı anahtarın model erişimini doğrular, sonra anahtarı yalnızca bu Windows hesabında açılabilen şifreli bir dosyaya kaydeder. `.local/` Git tarafından dışlanır. Anahtarı HTML'e, kaynak koda veya sohbete yazma.
+3. Yardımcıdaki **Bağlantı kodunu kopyala** düğmesini kullan. Atölyeyi **Update** ile 2.2.10 veya sonrasına güncelle. Gemini → **Bağlantı** bölümüne bu kodu yapıştırıp kontrol et. Bu kod API anahtarından ayrıdır.
+4. Kurulum sekmesini kapatabilirsin; bilgisayarı yeniden başlattığında **Gemini Başlat.cmd** dosyasını yeniden aç. Yardımcıyı durdurmak için kurulum sayfasındaki **Yardımcıyı durdur** düğmesini kullan. Anahtarı değiştirmek için `powershell.exe -NoProfile -STA -File scripts/start-gemini.ps1 -Configure` çalıştır.
+
+Bilgisayarda yapay zekâ modeli çalışmaz. Küçük bir Node.js 20+ bağlantı yardımcısı yalnızca `127.0.0.1:8766` üzerinde dinler; yapay zekâ Google sunucularında çalışır. Codex'in paketli Node.js'i varsa otomatik bulunur. Bu yöntem aynı bilgisayarda açılan HTML içindir; iPhone veya başka bir bilgisayar bu yerel bağlantıyı kullanamaz. Web üzerinden kullanım ayrı bir sunucu ve erişim düzeni gerektirir.
+
+Gemini'ye yalnızca yazdığın istek, izin verilen tasarım ayarları, tema ve yazı tipi adları gönderilir. İsim listesi, logo/resim dosyaları, mevcut yazı içerikleri, favoriler, şablonlar ve bağlantı kodu Google'a gönderilmez. Google'ın ücretsiz katmanının veri kullanım koşulları geçerlidir; isteme özel bilgi yazma. Karta özel düzenlemeler korunur; asistan genel tasarımı düzenler. İlk sürüm serbest öğe ekleme/silme veya dosya işlemleri yapmaz.
+
+Model yanıtı sunucuda ve tarayıcıda izin listesiyle doğrulanır; JavaScript/HTML çalıştırılmaz. Yerel bağlantı kodu olmadan öneri istenemez. Model `gemini-3.1-flash-lite`; yardımcıda saatte en fazla 30 istek ve aynı anda tek istek sınırı vardır. Google'ın daha düşük ücretsiz kota sınırları ayrıca geçerlidir.
+
 ## Program değişikliklerini yayınlama
 
 1. `app/umutcan.html` dosyasında uygulamayı düzenleyin. `Update` düğmesini, sürüm metaverisini ve `UmutShell.watch/ready` bağlantısını koruyun.
