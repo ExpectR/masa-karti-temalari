@@ -1,4 +1,6 @@
 'use strict';
+if(require.main===module){require('./flux-gateway.cjs').startStandalone()}else{
+'use strict';
 const http=require('node:http'),crypto=require('node:crypto'),fs=require('node:fs'),path=require('node:path');
 const {windowsSecretStore}=require('./gemini-secret.cjs');
 const contract=require('./gemini-contract.cjs');
@@ -87,3 +89,5 @@ if(require.main===module){
  server.listen(8766,'127.0.0.1',()=>{fs.writeFileSync(ready,JSON.stringify({ok:true,pid:process.pid}));fs.writeFileSync(path.join(privateDir,'gemini-link.json'),JSON.stringify({url:'http://127.0.0.1:8766/setup#'+token}));console.log('Gemini yerel kurulum sayfası hazır.');});
 }
 module.exports={createGateway};
+
+}

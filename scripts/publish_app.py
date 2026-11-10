@@ -49,21 +49,13 @@ def build(version):
     if transport_count != 1:
         raise SystemExit('Runtime update transport marker is missing.')
 
-    contract = (ROOT / 'scripts/gemini-contract.cjs').read_text(encoding='utf-8')
-    if '</script' in contract.lower():
-        raise SystemExit('Gemini contract contains an unsafe closing script tag.')
-    contract_block = '<!-- UMUT_GEMINI_CONTRACT_START -->\n<script>\n' + contract + '\n</script>\n<!-- UMUT_GEMINI_CONTRACT_END -->'
-    html, contract_count = re.subn(r'<!-- UMUT_GEMINI_CONTRACT_START -->.*?<!-- UMUT_GEMINI_CONTRACT_END -->', lambda m: contract_block, html, count=1, flags=re.S)
-    if contract_count != 1:
-        raise SystemExit('Gemini contract marker is missing.')
-
-    horde = (ROOT / 'scripts/horde-client.js').read_text(encoding='utf-8')
-    if '</script' in horde.lower():
-        raise SystemExit('Horde client contains an unsafe closing script tag.')
-    horde_block = '<!-- UMUT_HORDE_START -->\n<script>\n' + horde + '\n</script>\n<!-- UMUT_HORDE_END -->'
-    html, horde_count = re.subn(r'<!-- UMUT_HORDE_START -->.*?<!-- UMUT_HORDE_END -->', lambda m: horde_block, html, count=1, flags=re.S)
-    if horde_count != 1:
-        raise SystemExit('Horde client marker is missing.')
+    compat = (ROOT / 'scripts/saved-theme.js').read_text(encoding='utf-8')
+    if '</script' in compat.lower():
+        raise SystemExit('Saved theme reader contains an unsafe script tag.')
+    block = '<!-- UMUT_SAVED_THEME_START -->\n<script>\n' + compat + '\n</script>\n<!-- UMUT_SAVED_THEME_END -->'
+    html, count = re.subn(r'<!-- UMUT_SAVED_THEME_START -->.*?<!-- UMUT_SAVED_THEME_END -->', lambda m: block, html, count=1, flags=re.S)
+    if count != 1:
+        raise SystemExit('Saved theme reader marker is missing.')
 
     notes = release_notes_payload(version)
     encoded_notes = json.dumps(notes, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')

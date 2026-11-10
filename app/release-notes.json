@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.14",
+      "title": "Yalnızca FLUX: sade görsel üretimi",
+      "changes": [
+        "Görsel paneli Hızlı Görsel Üret · FLUX olarak yenilendi; mod seçimi kaldırıldı.",
+        "Gemini tasarım asistanı, vektörel üretim ve AI Horde bağlantıları kaldırıldı.",
+        "FLUX bağlantısı, PNG indirme, yerel kayıt ve önceki kayıtlı temalar korunur. Yardımcı FLUX Başlat.cmd olarak adlandırıldı."
+      ]
+    },
+    {
       "version": "2.2.13",
       "title": "Cloudflare FLUX ile hızlı görsel",
       "changes": [

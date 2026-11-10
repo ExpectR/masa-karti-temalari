@@ -1,4 +1,6 @@
-﻿param([switch]$Configure)
+param([switch]$Configure)
+& (Join-Path $PSScriptRoot 'start-flux.ps1') @PSBoundParameters
+return
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 $privateDir=Join-Path $root '.local'

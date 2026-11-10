@@ -18,40 +18,13 @@ Update yanındaki **Yenilikler** düğmesi, kullandığınız sürümün kısa d
 
 Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolunu kullanın. Bu işlem tema kataloğunu yeniler; **Update** ise program kodunu günceller. Yeni görsellerin ilk yüklemesi internet gerektirir.
 
-## Gemini Tasarım Asistanı
+## Hızlı Görsel Üret · FLUX
 
-Gemini bölümü ayar aramasının hemen altındadır. İsteğini yazınca genel tasarım için bir öneri hazırlar; **Şu an / Önerilen** karşılaştırmasını gösterir. Kart ancak **Uygula** ile değişir. **Geri al** (veya Ctrl+Z) asistanın uyguladığı değişikliği de geri alır. Öneri hazırlanırken kart düzenlenirse eski öneri uygulanmaz.
+Ayar aramasının altındaki panel yalnızca Cloudflare FLUX.1 Schnell ile görsel üretir. Tarifini yaz veya örneklerden seç; **Hızlı görsel üret** düğmesine bas. Önizlemede **PNG indir**, **Yerel temalarıma kaydet** ve **Arka plana uygula** seçenekleri bulunur. Kaydetmek kartı değiştirmez. Uygulama isimleri, logoyu, serbest öğeleri ve karta özel seçimleri korur; **Geri al** önceki tasarımı geri getirir. Kayıtlar **Tema Mağazası → Yerel Temalarım** bölümünden açılır, JSON olarak yedeklenip Şablonlarım bölümünden içe aktarılır. Önceden kaydedilmiş vektörel temalar yerel uyumluluk okuyucusuyla kullanılmaya devam eder; yeni vektörel üretim yoktur.
 
-**Vektörel tema üret** modunda Gemini, mevcut tema listesinden seçim yapmak yerine renkler, geometrik şekiller ve bitkisel motiflerden yeni bir vektörel kompozisyon oluşturur. Önizlemede adını düzenleyip **Yerel temalarıma kaydet** diyebilirsin; kaydetmek kartı değiştirmez. Uyguladığın temayı asistanın altındaki **Bu temayı yerel kaydet** düğmesiyle de saklayabilirsin.
+**FLUX Başlat.cmd** dosyasını aç. İlk kurulumda yardımcının yerel sayfasına Cloudflare hesap kimliği ve yalnızca o hesabın Workers AI Read/Edit izinli API anahtarını gir. Anahtar Windows DPAPI ile `.local/cloudflare-credential.xml` içine şifreli kaydedilir; uygulamaya, HTML’e veya GitHub’a eklenmez. Yerel sayfanın bağlantı kodunu paneldeki **Bağlantı** bölümüne yapıştır. Mevcut bağlantı kodları otomatik korunur. Bilgisayarı yeniden başlatınca aynı FLUX Başlat.cmd dosyasını açmak yeterlidir.
 
-Kayıtlar **Tema Mağazası → Yerel Temalarım** bölümünde görünür. **Kullan** mevcut isim, logo ve serbest öğelerini koruyarak temayı uygular. **JSON indir** yalnızca tema tanımını dosyaya kaydeder; **Şablonlarım → İçe aktar** ile aynı veya başka bir tarayıcıya geri alınabilir. Yerel kayıtlar GitHub'a veya tema deposuna gönderilmez; `mk3t` anahtarında bu tarayıcıda saklanır. Tarayıcı verilerini temizlemek kayıtları siler; saklamak istediğin temaları JSON olarak yedekle.
-
-Gemini'nin vektörel modu fotoğraf üretmez. İsim ve logo görselleri tema dosyasına gömülmez. Mevcut vektörel tema tanımı yeni bir Gemini isteğinde tasarım bağlamı olarak gönderilebilir; özel isim listeleri ve logo/resim dosyaları gönderilmez.
-
-### Ücretsiz gerçek görsel üretimi
-
-**Hızlı görsel üret · FLUX**, [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/) üzerindeki FLUX.1 Schnell modelini dört adımla çalıştırır. Yerel bağlantı yardımcısı açık olmalı. Mevcut atölye bağlantı kodu kullanılır; Cloudflare API anahtarı tarayıcıya veya HTML'e gönderilmez. Yalnızca yazdığın görsel tarifi sabit model ve ayarlarla Cloudflare'a iletilir; isim listesi, logo, mevcut kart ve öğeler gönderilmez. Gerçek süre yoğunluğa bağlıdır; sabit hız garantisi yoktur.
-
-Cloudflare hesabını **Workers Free** planında tut. Günlük ücretsiz kota Cloudflare tarafından uygulanır; uygulama ücretli plan etkinleştirmez veya başka bir modele otomatik geçmez. Yerel yardımcı ayrıca işlem başına tek görsel, beş saniye aralık ve çalıştığı süre içinde UTC günü başına 80 istek sınırı uygular. Bu yerel sayaç Cloudflare hesap kotasının yerini almaz. Kurulumda Workers AI Read/Edit izinli, yalnızca ilgili hesaba ait token ve hesap kimliği yardımcının Cloudflare bölümüne girilir. Anahtar doğrulanıp `.local/cloudflare-credential.xml` içine Windows DPAPI ile şifreli kaydedilir; `.local/` Git'e dahil değildir. Gemini anahtarı ayrı saklanır ve korunur.
-
-**Görsel üret · AI Horde**, [AI Horde](https://www.aihorde.net/docs/image/) üzerinden Dreamshaper ile görsel üretir. Gemini anahtarı, bağlantı yardımcısı, hesap veya ödeme gerekmez; üretim uzak gönüllü sunucularda yapılır. Ücretsiz anonim erişim düşük önceliklidir; sıra, kullanılabilir sunucu ve kota nedeniyle bekleme veya hata olabilir. Daha iyi sonuç için İngilizce tarif yaz. Model her tarifi kusursuz karşılamaz; görselin içinde istemeden yazı oluşabilir.
-
-Bu servis yalnızca yazdığın görsel tarifini ve sabit üretim ayarlarını alır; uygulamadaki isimler, logo ve tasarım dosyaları gönderilmez. Anonim isteklerde AI Horde `shared=true` kullanır; tarif ve üretilen görsel servis tarafından paylaşılabilir. Özel/kişisel bilgi yazma. [Resmî API sözleşmesi](https://aihorde.net/api/).
-
-Sıra durumu gösterilir; **Üretimi iptal et** isteği durdurur. Yeniden açılışta bekleyen iş yeni istek göndermeden devam eder. Sonuç önizlemesinde **PNG indir**, **Yerel temalarıma kaydet** ve **Arka plana uygula** bulunur. Uygulama isimleri, logoyu, serbest öğeleri ve karta özel seçimleri korur; **Geri al** önceki tasarımı geri getirir. Yerel görsel temaları da JSON ile yedeklenebilir; kaydedilen görseller çevrimdışı çalışır. Ücretli servise otomatik geçiş yoktur.
-
-### Windows'ta ilk bağlantı
-
-1. [Google AI Studio](https://aistudio.google.com/api-keys) üzerinden bir Gemini API anahtarı oluştur. Ücretsiz katmanı kullanmak için Google projesinde ücretli faturalandırmayı açma. Kota ve model erişimi Google hesabına bağlıdır; uygulama kota dolunca başka ücretli modele geçmez, otomatik tekrar deneme yapmaz.
-2. Bu proje klasöründeki **Gemini Başlat.cmd** dosyasını aç. Tarayıcıda açılan yerel kurulum sayfasının parola alanına anahtarı yapıştır. Yardımcı anahtarın model erişimini doğrular, sonra anahtarı yalnızca bu Windows hesabında açılabilen şifreli bir dosyaya kaydeder. `.local/` Git tarafından dışlanır. Anahtarı HTML'e, kaynak koda veya sohbete yazma.
-3. Yardımcıdaki **Bağlantı kodunu kopyala** düğmesini kullan. Atölyeyi **Update** ile 2.2.10 veya sonrasına güncelle. Gemini → **Bağlantı** bölümüne bu kodu yapıştırıp kontrol et. Bu kod API anahtarından ayrıdır.
-4. Kurulum sekmesini kapatabilirsin; bilgisayarı yeniden başlattığında **Gemini Başlat.cmd** dosyasını yeniden aç. Yardımcıyı durdurmak için kurulum sayfasındaki **Yardımcıyı durdur** düğmesini kullan. Anahtarı değiştirmek için `powershell.exe -NoProfile -STA -File scripts/start-gemini.ps1 -Configure` çalıştır.
-
-Bilgisayarda yapay zekâ modeli çalışmaz. Küçük bir Node.js 20+ bağlantı yardımcısı yalnızca `127.0.0.1:8766` üzerinde dinler; yapay zekâ Google sunucularında çalışır. Codex'in paketli Node.js'i varsa otomatik bulunur. Bu yöntem aynı bilgisayarda açılan HTML içindir; iPhone veya başka bir bilgisayar bu yerel bağlantıyı kullanamaz. Web üzerinden kullanım ayrı bir sunucu ve erişim düzeni gerektirir.
-
-Gemini'ye yalnızca yazdığın istek, izin verilen tasarım ayarları, tema ve yazı tipi adları gönderilir. İsim listesi, logo/resim dosyaları, mevcut yazı içerikleri, favoriler, şablonlar ve bağlantı kodu Google'a gönderilmez. Google'ın ücretsiz katmanının veri kullanım koşulları geçerlidir; isteme özel bilgi yazma. Karta özel düzenlemeler korunur; asistan genel tasarımı düzenler. İlk sürüm serbest öğe ekleme/silme veya dosya işlemleri yapmaz.
-
-Model yanıtı sunucuda ve tarayıcıda izin listesiyle doğrulanır; JavaScript/HTML çalıştırılmaz. Yerel bağlantı kodu olmadan öneri istenemez. Model `gemini-3.1-flash-lite`; yardımcıda saatte en fazla 30 istek ve aynı anda tek istek sınırı vardır. Google'ın daha düşük ücretsiz kota sınırları ayrıca geçerlidir.
+Model bilgisayarda çalışmaz. Yardımcı yalnızca `127.0.0.1:8766` üzerinde dinler; yalnızca yazdığın tarif Cloudflare’a iletilir. İsim listesi, logo ve mevcut öğeler gönderilmez. Cloudflare hesabını Workers Free planında tut; günlük ücretsiz kota Cloudflare tarafından uygulanır. Uygulama ücretli plan açmaz veya başka modele geçmez. Yardımcı dört adım, tek görsel, beş saniye aralık ve çalıştığı süre içinde UTC günü başına 80 istek sınırı uygular. Üretim süresi yoğunluğa bağlıdır. Yerel kayıtlar çevrimdışı kullanılabilir. `.local/` ve `mk3` kullanıcı kayıtları güncellemelerde korunur.
 
 ## Program değişikliklerini yayınlama
 

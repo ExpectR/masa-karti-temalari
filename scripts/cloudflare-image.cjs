@@ -22,7 +22,7 @@ function createCloudflareHandler({config,saveCredential,fetchImpl=fetch,now=Date
     const r=await fetchImpl('https://api.cloudflare.com/client/v4/accounts/'+next.accountId+'/ai/models/search?search=flux-1-schnell',{headers:{Authorization:'Bearer '+next.apiKey},signal:AbortSignal.timeout(25000)});
     if(!r.ok)throw failure(r);const d=await r.json();if(d.success!==true)throw Error('Cloudflare erişimi doğrulanamadı.');saveCredential(next.apiKey,next.accountId);current=next;reply(res,200,{ok:true});return true;
    }
-   if(!current){reply(res,503,{error:'Cloudflare henüz bağlanmadı. Gemini Başlat.cmd yardımcısındaki Cloudflare bölümünü tamamla.'});return true}
+   if(!current){reply(res,503,{error:'Cloudflare henüz bağlanmadı. FLUX Başlat.cmd yardımcısındaki bağlantıyı tamamla.'});return true}
    if(typeof input.prompt!=='string'||!input.prompt.trim()||input.prompt.length>1500){reply(res,400,{error:'Görselini 1–1500 karakterle tarif et.'});return true}
    const date=new Date(now()).toISOString().slice(0,10);if(date!==day){day=date;used=0}
    if(now()-last<minInterval||used>=maxDaily){reply(res,429,{error:'Görsel istek sınırına ulaşıldı. Bir süre sonra yeniden dene.'});return true}

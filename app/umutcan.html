@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="umutcan-app-id" content="masa-karti-atolyesi">
-<meta name="umutcan-app-version" content="2.2.13">
+<meta name="umutcan-app-version" content="2.2.14">
 <meta name="umutcan-launcher-protocol" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="author" content="Umutcan Şahin">
@@ -152,7 +152,7 @@ button.g{background:var(--bg);border:1px solid var(--bd);box-shadow:none;color:v
 @media print{.workshop-clock{display:none!important}}
 
 
-.gemini-assistant{margin:8px 0 12px;padding:12px;border:1px solid var(--bd);border-radius:14px;background:linear-gradient(135deg,var(--pn),var(--bg))}.gemini-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.gemini-head b{font-size:12px}.gemini-badge{color:var(--ac);font:600 9px system-ui;letter-spacing:.08em}.gemini-assistant p{font-size:10px;line-height:1.6;color:var(--mu);margin:7px 0}.gemini-assistant textarea{min-height:65px;resize:vertical;font-size:12px}.gemini-assistant .gemini-samples{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}.gemini-samples button{width:auto;margin:0;padding:5px 7px;border-radius:7px;background:var(--pn);border:1px solid var(--bd);color:var(--mu);font-size:9px}.gemini-assistant>button{margin-top:3px;font-size:11px;padding:9px}.gemini-assistant details{margin:8px 0 0!important;box-shadow:none!important}.gemini-assistant summary{padding:7px 9px!important;font-size:10px!important}.gemini-connection-body{padding:0 9px 9px}.gemini-connection-body input{font-size:11px}.gemini-connection-body button{font-size:10px;padding:7px}.gemini-status{overflow-wrap:anywhere}.gemini-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:center}.gemini-preview-grid h3{font-size:12px;margin:4px 0 12px}.gemini-preview-grid .sp{background:var(--bg)}.gemini-preview-grid .card{zoom:1!important;outline:none;transform-origin:0 0!important}.gemini-preview-message{white-space:pre-wrap;font-size:13px;line-height:1.6}.gemini-change-list{font-size:12px;line-height:1.7;padding-left:20px;overflow-wrap:anywhere}.gemini-apply{margin-top:14px}.gemini-dialog-note{font-size:11px;line-height:1.5;color:#718096}@media(max-width:420px){.gemini-preview-grid{gap:7px}.gemini-preview-grid .sp{width:130px;height:184px}}@media print{.gemini-assistant,.gemini-preview-dialog{display:none!important}}
+.flux-assistant{margin:8px 0 12px;padding:12px;border:1px solid var(--bd);border-radius:14px;background:linear-gradient(135deg,var(--pn),var(--bg))}.flux-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.flux-head b{font-size:12px}.flux-badge{color:var(--ac);font:600 9px system-ui;letter-spacing:.08em}.flux-assistant p{font-size:10px;line-height:1.6;color:var(--mu);margin:7px 0}.flux-assistant textarea{min-height:65px;resize:vertical;font-size:12px}.flux-assistant .flux-samples{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}.flux-samples button{width:auto;margin:0;padding:5px 7px;border-radius:7px;background:var(--pn);border:1px solid var(--bd);color:var(--mu);font-size:9px}.flux-assistant>button{margin-top:3px;font-size:11px;padding:9px}.flux-assistant details{margin:8px 0 0!important;box-shadow:none!important}.flux-assistant summary{padding:7px 9px!important;font-size:10px!important}.flux-connection-body{padding:0 9px 9px}.flux-connection-body input{font-size:11px}.flux-connection-body button{font-size:10px;padding:7px}.flux-status{overflow-wrap:anywhere}@media print{.flux-assistant,.flux-image-dialog{display:none!important}}
 </style>
 <style>
 .batch-tools{padding:0 14px 12px}.batch-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,1fr);gap:8px;align-items:center;font-size:12px}.batch-row span{overflow-wrap:anywhere}.batch-row select{margin:0;font-size:11px}#batchRows{max-height:300px;overflow:auto}.batch-dialog{border:1px solid #d8dee5;border-radius:18px;padding:22px;max-width:900px;width:calc(100% - 32px);max-height:88vh;box-sizing:border-box;color:#24352e;background:#fafcfb}.batch-dialog::backdrop{background:#07150fc9;backdrop-filter:blur(5px)}.batch-dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px}.batch-dialog-head h2{font-size:20px;margin:0 0 18px}.batch-dialog-head button{width:auto;margin:0 0 18px}.import-preview{white-space:pre-wrap;max-height:220px;overflow:auto;padding:14px;background:#eef3f0;border-radius:10px}.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.compare-grid .sp{width:100%;height:315px;overflow:hidden;position:relative;background:#eee}.compare-grid .sp .card{transform:scale(.56);zoom:1!important}.batch-dialog input[type=checkbox]{width:auto}@media(max-width:700px){.compare-grid{grid-template-columns:1fr}.compare-grid .sp{width:230px}}@media print{#umutIntro,.batch-dialog{display:none!important}}
@@ -385,17 +385,10 @@ clearStartupPlaceholder();
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clearStartupPlaceholder,{once:true});
 if(window.UmutShell)window.UmutShell.watch();
 </script>
-<!-- UMUT_GEMINI_CONTRACT_START -->
+<!-- UMUT_SAVED_THEME_START -->
 <script>
-(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.UmutGemini=factory()})(globalThis,function(){
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.UmutSavedTheme=factory()})(globalThis,function(){
  'use strict';
- var numbers={size:[8,90],subSize:[5,40],menuSize:[5,40],ls:[-5,20],fsize:[30,200],bgAng:[0,360],logoSize:[6,70],logoSizeB:[6,70],logoRot:[-180,180],logoOp:[15,100]};
- var colors=['color','accent','bg','bgB','bg2'];
- var bools=['italic','upper','shadow','foil','subUp','flowers','backTheme','hideBase'];
- var choices={weight:['400','700'],frame:['none','thin','double'],bgMode:['sol','lin','rad'],logoPos:['front','back','both']};
- var texts=['sub','backText','menu','menuF'],positions=['name','sub','bText','menu','menuF','fLogo','bLogo'];
- var fields=Object.keys(numbers).concat(colors,bools,Object.keys(choices),texts,['font','subFont','theme']);
- positions.forEach(function(k){fields.push('pos.'+k+'.x','pos.'+k+'.y')});
  function object(o){return o&&typeof o==='object'&&!Array.isArray(o)}
  var motifs=['rect','circle','line','diamond','frame','rose','rose2','peony','peonyw','daisy','poppy','cosmos','anem','sun','leaf','euc','lav','maple','maple2','maple3','oak','pumpkin','dahlia','mum','siklamen','cigdem','hercai','ates','asteri','kadife','aslan','petunya','begonya','sumbul','cuha','nergis','kokina','ruscus','poins','poinsw','star','bauble','snow','wheat','berry','pine','holly'];
  function validateTheme(t,context){
@@ -403,74 +396,19 @@ if(window.UmutShell)window.UmutShell.watch();
   if(!object(t)||Object.keys(t).some(function(k){return keys.indexOf(k)<0})||typeof t.name!=='string'||!t.name.trim()||t.name.length>80||!Array.isArray(t.decorations)||!t.decorations.length||t.decorations.length>24)throw Error('Üretilen tema geçerli değil.');
   function hex(v){if(typeof v!=='string'||!/^#[0-9a-f]{6}$/i.test(v))throw Error('Tema rengi geçersiz.');return v}
   function num(v,a,b){if(typeof v!=='number'||!Number.isFinite(v)||v<a||v>b)throw Error('Tema süsü sınırların dışında.');return v}
-  var theme={name:t.name.replace(/[\u0000-\u001f]/g,' ').trim(),background:hex(t.background),textColor:hex(t.textColor),accentColor:hex(t.accentColor),font:value('font',t.font,context)};
+  var theme={name:t.name.replace(/[\u0000-\u001f]/g,' ').trim(),background:hex(t.background),textColor:hex(t.textColor),accentColor:hex(t.accentColor),font:font(t.font,context)};
   theme.decorations=t.decorations.map(function(d){if(!object(d)||Object.keys(d).some(function(k){return ['kind','x','y','size','height','rotation','opacity','color','stroke','strokeWidth','radius'].indexOf(k)<0})||motifs.indexOf(d.kind)<0)throw Error('Desteklenmeyen tema süsü.');return {kind:d.kind,x:num(d.x,0,100),y:num(d.y,0,100),size:num(d.size,2,105),height:num(d.height===undefined?d.size:d.height,2,74),rotation:num(d.rotation,-180,180),opacity:num(d.opacity,5,100),color:hex(d.color),stroke:hex(d.stroke===undefined?t.accentColor:d.stroke),strokeWidth:num(d.strokeWidth===undefined?(d.kind==='line'||d.kind==='frame'?.4:0):d.strokeWidth,0,3),radius:num(d.radius===undefined?0:d.radius,0,20)}});
   return theme;
  }
- function value(field,v,context){
-  if(typeof v!=='string'||v.length>600)throw Error('Geçersiz değişiklik değeri.');
-  if(numbers[field]){var n=Number(v),r=numbers[field];if(!v.trim()||!Number.isFinite(n)||n<r[0]||n>r[1])throw Error('Ayar sınırların dışında: '+field);return n}
-  if(colors.indexOf(field)>=0){if(!/^#[0-9a-f]{6}$/i.test(v))throw Error('Geçersiz renk.');return v}
-  if(bools.indexOf(field)>=0){if(v!=='true'&&v!=='false')throw Error('Geçersiz aç/kapat değeri.');return v==='true'}
-  if(choices[field]){if(choices[field].indexOf(v)<0)throw Error('Geçersiz ayar seçeneği.');return v}
-  if(texts.indexOf(field)>=0){if(v.length>500)throw Error('Metin çok uzun.');return v}
-  if(field==='font'||field==='subFont'){if(!context.fonts.some(function(f){return f.value===v}))throw Error('Bilinmeyen yazı tipi.');return v}
-  if(field==='theme'){if(!context.themes.some(function(t){return t.id===v}))throw Error('Bilinmeyen tema.');return v}
-  if(/^pos\.(name|sub|bText|menu|menuF|fLogo|bLogo)\.(x|y)$/.test(field)){var p=Number(v);if(!v.trim()||!Number.isFinite(p)||p<0||p>100)throw Error('Konum sınırların dışında.');return p}
-  throw Error('Desteklenmeyen ayar.');
- }
- function validate(plan,context){
-  if(!object(plan)||Object.keys(plan).some(function(k){return k!=='message'&&k!=='changes'&&k!=='theme'})||typeof plan.message!=='string'||plan.message.length>1500||!Array.isArray(plan.changes)||plan.changes.length>24)throw Error('Gemini yanıtı geçerli bir tasarım önerisi değil.');
-  var seen=new Set(),result={message:plan.message,changes:plan.changes.map(function(c){if(!object(c)||Object.keys(c).some(function(k){return k!=='field'&&k!=='value'})||fields.indexOf(c.field)<0||seen.has(c.field))throw Error('Tekrarlanan veya geçersiz değişiklik.');seen.add(c.field);return {field:c.field,value:value(c.field,c.value,context)}})};
-  if(plan.theme!==undefined){if(seen.has('theme'))throw Error('Yeni tema ve hazır tema aynı anda seçilemez.');result.theme=validateTheme(plan.theme,context)}return result;
- }
- function cleanContext(input){
-  if(!object(input)||!Array.isArray(input.fonts)||!Array.isArray(input.themes)||!object(input.settings))throw Error('Tasarım bağlamı eksik.');
-  var fonts=input.fonts.slice(0,20).filter(function(f){return object(f)&&typeof f.value==='string'&&/^[\w ',\-]{1,60}$/.test(f.value)&&typeof f.name==='string'}).map(function(f){return {value:f.value,name:f.name.slice(0,80)}});
-  var themes=input.themes.slice(0,100).filter(function(t){return object(t)&&typeof t.id==='string'&&/^[a-z0-9_-]{1,60}$/i.test(t.id)&&typeof t.name==='string'}).map(function(t){return {id:t.id,name:t.name.slice(0,80)}});
-  var c={fonts:fonts,themes:themes,settings:{},hasLogo:input.hasLogo===true,hasCardOverrides:input.hasCardOverrides===true};
-  // Only style and placement cross the network. No names, image bytes, or stored text.
-  fields.filter(function(k){return texts.indexOf(k)<0}).forEach(function(k){if(Object.prototype.hasOwnProperty.call(input.settings,k)){try{c.settings[k]=value(k,String(input.settings[k]),c)}catch(e){}}});
-  if(input.generatedTheme)c.generatedTheme=validateTheme(input.generatedTheme,c);return c;
- }
- var schema={type:'OBJECT',properties:{message:{type:'STRING'},changes:{type:'ARRAY',items:{type:'OBJECT',properties:{field:{type:'STRING',enum:fields},value:{type:'STRING'}},required:['field','value']}}},required:['message','changes']};
- var motifSchema={type:'OBJECT',properties:{kind:{type:'STRING',enum:motifs},x:{type:'NUMBER'},y:{type:'NUMBER'},size:{type:'NUMBER'},height:{type:'NUMBER'},rotation:{type:'NUMBER'},opacity:{type:'NUMBER'},color:{type:'STRING'},stroke:{type:'STRING'},strokeWidth:{type:'NUMBER'},radius:{type:'NUMBER'}},required:['kind','x','y','size','height','rotation','opacity','color']};
- var themeSchema={type:'OBJECT',properties:{message:schema.properties.message,changes:schema.properties.changes,theme:{type:'OBJECT',properties:{name:{type:'STRING'},background:{type:'STRING'},textColor:{type:'STRING'},accentColor:{type:'STRING'},font:{type:'STRING'},decorations:{type:'ARRAY',items:motifSchema}},required:['name','background','textColor','accentColor','font','decorations']}},required:['message','changes','theme']};
- return {fields:fields,positions:positions,motifs:motifs,validateTheme:validateTheme,validate:validate,cleanContext:cleanContext,schema:schema,themeSchema:themeSchema};
+
+ function font(v,c){if(typeof v!=='string'||!c.fonts.some(function(f){return f.value===v}))throw Error('Bilinmeyen yazı tipi.');return v}
+ return {validateTheme:validateTheme};
 });
 
 </script>
-<!-- UMUT_GEMINI_CONTRACT_END -->
-<!-- UMUT_HORDE_START -->
-<script>
-(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.UmutHorde=factory()})(typeof globalThis!=='undefined'?globalThis:this,function(){
- 'use strict';
- var BASE='https://aihorde.net/api/v2',ID=/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
- function client(fetcher){
-  async function request(path,method,body,signal){
-   var r=await fetcher(BASE+path,{method:method||'GET',headers:{'Content-Type':'application/json',apikey:'0000000000','Client-Agent':'MasaKartiAtolyesi:2.2.12:github.com/ExpectR/masa-karti-temalari'},body:body?JSON.stringify(body):undefined,signal:signal||AbortSignal.timeout(30000)});
-   if(!r.ok)throw Error(r.status===429?'Ücretsiz servis yoğun veya anonim kota dolu. Bir süre sonra yeniden dene.':r.status===404?'Üretim sırası sona ermiş. Yeni görsel üretebilirsin.':r.status===400?'Servis bu isteği kabul etmedi. Tarifini değiştirip yeniden dene.':'Görsel servisine bağlanılamadı (HTTP '+r.status+').');
-   return r.json();
-  }
-  function path(id,type){if(!ID.test(id))throw Error('Geçersiz üretim kaydı.');return '/generate/'+type+'/'+id}
-  return {
-   start:async function(prompt,landscape,signal){
-    if(typeof prompt!=='string'||!prompt.trim()||prompt.length>1500)throw Error('Görselini 1–1500 karakterle tarif et.');
-    var d=await request('/generate/async','POST',{prompt:prompt.trim()+', high quality artwork###text, letters, typography, watermark, signature, blurry, low quality',params:{width:landscape?640:512,height:landscape?448:640,steps:20,n:1,sampler_name:'k_euler',cfg_scale:7},models:['Dreamshaper'],nsfw:false,censor_nsfw:true,trusted_workers:true,r2:false,shared:true,allow_downgrade:true},signal);
-    if(!ID.test(d.id))throw Error('Servis geçerli bir üretim kaydı döndürmedi.');return d.id;
-   },
-   check:function(id,signal){return request(path(id,'check'),'GET',null,signal)},
-   result:async function(id,signal){var d=await request(path(id,'status'),'GET',null,signal),g=d.generations&&d.generations[0];if(!g||g.censored||g.state==='censored')throw Error('Servis kullanılabilir bir görsel döndürmedi. Farklı bir tarif deneyebilirsin.');if(typeof g.img!=='string'||g.img.length>8000000||!/^[A-Za-z0-9+/]+={0,2}$/.test(g.img))throw Error('Görsel güvenli biçimde okunamadı.');return {src:'data:image/webp;base64,'+g.img,model:String(g.model||'Dreamshaper').slice(0,100)}},
-   cancel:function(id){return request(path(id,'status'),'DELETE')}
-  };
- }
- return {client:client,validId:function(id){return typeof id==='string'&&ID.test(id)}};
-});
-
-</script>
-<!-- UMUT_HORDE_END -->
+<!-- UMUT_SAVED_THEME_END -->
 <!-- UMUT_RELEASE_NOTES_START -->
-<script type="application/json" id="umut-release-notes-data">{"schemaVersion": 1, "currentVersion": "2.2.13", "releases": [{"version": "2.2.13", "title": "Cloudflare FLUX ile hızlı görsel", "changes": ["Hızlı görsel üret seçeneği Cloudflare FLUX.1 Schnell modeline bağlandı; AI Horde alternatifi korunur.", "Üretilen görseller önizlenir, PNG veya yerel tema olarak kaydedilir; mevcut isim, logo ve öğeler korunur.", "Cloudflare anahtarı yalnızca bilgisayarda şifreli saklanır; uygulamaya ve depoya eklenmez. Ücretli plana otomatik geçilmez."]}, {"version": "2.2.12", "title": "Ücretsiz gerçek görsel üretimi", "changes": ["AI Horde üzerinden anahtarsız ve ücretsiz görsel üretimi eklendi; gönüllü sunuculardaki sıra durumu gösterilir.", "Görseli önizle, PNG indir, Yerel Temalarım’a kaydet veya kartın arka planına uygula. Üretilen görseller depoya gönderilmez.", "Yerel görsel temaları JSON olarak yedeklenip içe aktarılabilir; isimler, logo ve ek öğeler korunur.", "Anonim üretimlerin servis tarafından paylaşılabileceği belirtilir. Gemini tema ve ayar asistanı kullanılmaya devam eder."]}, {"version": "2.2.11", "title": "Gemini ile yeni yerel temalar", "changes": ["Gemini’ye yeni tema üret modu eklendi; çizgiler, geometrik desenler ve bitkisel süslerden yeni kompozisyon oluşturur.", "Önizlemedeki temalar yalnızca bu tarayıcıya kaydedilir; Yerel Temalarım bölümünden kullanılabilir.", "Üretilen tema JSON olarak indirilebilir ve yeniden içe aktarılabilir. Temalar GitHub’a gönderilmez.", "Mevcut isimler, logo, serbest öğeler ve karta özel seçimler korunur."]}, {"version": "2.2.10", "title": "Gemini Tasarım Asistanı", "changes": ["Ayar aramasının altına Gemini Tasarım Asistanı eklendi.", "İsteğini yaz, önceki ve önerilen kartı karşılaştır, Uygula ile değiştir; Geri al ile önceki tasarıma dön.", "API anahtarı bilgisayarda şifreli tutulur; isim listesi ve logo görseli Gemini’ye gönderilmez.", "Bağlantı için Gemini Başlat.cmd yardımcısı kullanılır; ücretsiz kota Google hesabına bağlıdır."]}, {"version": "2.2.9", "title": "Modern dijital saat", "changes": ["Analog saat, 24 saat biçiminde dijital saate dönüştürüldü.", "Saat ve dakika büyük, saniye vurgu renginde gösterilir; Türkçe tarih korunur."]}, {"version": "2.2.8", "title": "Atölyede saat ve tarih", "changes": ["Sağ kenara modern analog saat ve Türkçe tarih eklendi.", "Saat cihazın yerel saatine göre çalışır; tarih gece yarısında yenilenir.", "Küçük ekranlarda kompakt üst şeride yerleşir; baskılarda görünmez."]}, {"version": "2.2.7", "title": "Tekrarlanan temalar temizlendi", "changes": ["Aynı tasarımın yalnızca renk veya yazı tipi değişen kopyaları listelerden kaldırıldı.", "Tema mağazası, kategori seçimi, kartlara ayrı tema seçimi ve karşılaştırma listeleri sadeleştirildi.", "Önceden kaydedilmiş projeler, karta özel tema seçimleri, favoriler ve şablonlar korundu."]}, {"version": "2.2.6", "title": "İmleçlerle kurulan atölye", "changes": ["Yeşil U introsunun ardından renkli imleçler araç panelini ve kartları parça parça kurar.", "Açılış her seferinde oynar; Atla düğmesi veya Esc ile geçiş yoktur.", "Animasyon internet gerektirmez; tamamlandığında atölye düzenlemeye açılır."]}, {"version": "2.2.5", "title": "Güncelleme notları", "changes": ["Update yanına Yenilikler düğmesi eklendi.", "Kullandığın sürümün değişiklikleri ve önceki güncellemeler uygulama içinden görülebilir.", "Güncelleme notları internet olmadığında da açılır."]}, {"version": "2.2.4", "title": "Dikey, yay ve çember yazı", "changes": ["Yazı için 90° dikey ve harfleri alt alta dizme seçenekleri eklendi.", "Üst/alt yay ve tam çember yerleşimi; yarıçap ve açı ayarı eklendi.", "Yazıyı logo veya nesnenin etrafına hizalama eklendi."]}, {"version": "2.2.3", "title": "Kart üzerinde yazı düzenleme", "changes": ["Yazıya tıklayınca silme çarpısı ve düzenleme araçları açılır.", "Yatay/dikey ortalama, köşeden boyutlandırma ve hassas konum ayarı eklendi.", "Hazır yazılar kart bazında düzenlenebilir; işlemler Geri al ile geri çevrilebilir."]}, {"version": "2.2.2", "title": "Güncelleme kontrolü iyileştirildi", "changes": ["Update kontrolü, ham dosyaların beş dakikalık önbelleğine bağlı kalmaması için doğrudan GitHub API'sine taşındı.", "Son sürüm doğrulanamazsa yanlış bir Zaten güncelsin sonucu gösterilmesi önlendi."]}]}</script>
+<script type="application/json" id="umut-release-notes-data">{"schemaVersion": 1, "currentVersion": "2.2.14", "releases": [{"version": "2.2.14", "title": "Yalnızca FLUX: sade görsel üretimi", "changes": ["Görsel paneli Hızlı Görsel Üret · FLUX olarak yenilendi; mod seçimi kaldırıldı.", "Gemini tasarım asistanı, vektörel üretim ve AI Horde bağlantıları kaldırıldı.", "FLUX bağlantısı, PNG indirme, yerel kayıt ve önceki kayıtlı temalar korunur. Yardımcı FLUX Başlat.cmd olarak adlandırıldı."]}, {"version": "2.2.13", "title": "Cloudflare FLUX ile hızlı görsel", "changes": ["Hızlı görsel üret seçeneği Cloudflare FLUX.1 Schnell modeline bağlandı; AI Horde alternatifi korunur.", "Üretilen görseller önizlenir, PNG veya yerel tema olarak kaydedilir; mevcut isim, logo ve öğeler korunur.", "Cloudflare anahtarı yalnızca bilgisayarda şifreli saklanır; uygulamaya ve depoya eklenmez. Ücretli plana otomatik geçilmez."]}, {"version": "2.2.12", "title": "Ücretsiz gerçek görsel üretimi", "changes": ["AI Horde üzerinden anahtarsız ve ücretsiz görsel üretimi eklendi; gönüllü sunuculardaki sıra durumu gösterilir.", "Görseli önizle, PNG indir, Yerel Temalarım’a kaydet veya kartın arka planına uygula. Üretilen görseller depoya gönderilmez.", "Yerel görsel temaları JSON olarak yedeklenip içe aktarılabilir; isimler, logo ve ek öğeler korunur.", "Anonim üretimlerin servis tarafından paylaşılabileceği belirtilir. Gemini tema ve ayar asistanı kullanılmaya devam eder."]}, {"version": "2.2.11", "title": "Gemini ile yeni yerel temalar", "changes": ["Gemini’ye yeni tema üret modu eklendi; çizgiler, geometrik desenler ve bitkisel süslerden yeni kompozisyon oluşturur.", "Önizlemedeki temalar yalnızca bu tarayıcıya kaydedilir; Yerel Temalarım bölümünden kullanılabilir.", "Üretilen tema JSON olarak indirilebilir ve yeniden içe aktarılabilir. Temalar GitHub’a gönderilmez.", "Mevcut isimler, logo, serbest öğeler ve karta özel seçimler korunur."]}, {"version": "2.2.10", "title": "Gemini Tasarım Asistanı", "changes": ["Ayar aramasının altına Gemini Tasarım Asistanı eklendi.", "İsteğini yaz, önceki ve önerilen kartı karşılaştır, Uygula ile değiştir; Geri al ile önceki tasarıma dön.", "API anahtarı bilgisayarda şifreli tutulur; isim listesi ve logo görseli Gemini’ye gönderilmez.", "Bağlantı için Gemini Başlat.cmd yardımcısı kullanılır; ücretsiz kota Google hesabına bağlıdır."]}, {"version": "2.2.9", "title": "Modern dijital saat", "changes": ["Analog saat, 24 saat biçiminde dijital saate dönüştürüldü.", "Saat ve dakika büyük, saniye vurgu renginde gösterilir; Türkçe tarih korunur."]}, {"version": "2.2.8", "title": "Atölyede saat ve tarih", "changes": ["Sağ kenara modern analog saat ve Türkçe tarih eklendi.", "Saat cihazın yerel saatine göre çalışır; tarih gece yarısında yenilenir.", "Küçük ekranlarda kompakt üst şeride yerleşir; baskılarda görünmez."]}, {"version": "2.2.7", "title": "Tekrarlanan temalar temizlendi", "changes": ["Aynı tasarımın yalnızca renk veya yazı tipi değişen kopyaları listelerden kaldırıldı.", "Tema mağazası, kategori seçimi, kartlara ayrı tema seçimi ve karşılaştırma listeleri sadeleştirildi.", "Önceden kaydedilmiş projeler, karta özel tema seçimleri, favoriler ve şablonlar korundu."]}, {"version": "2.2.6", "title": "İmleçlerle kurulan atölye", "changes": ["Yeşil U introsunun ardından renkli imleçler araç panelini ve kartları parça parça kurar.", "Açılış her seferinde oynar; Atla düğmesi veya Esc ile geçiş yoktur.", "Animasyon internet gerektirmez; tamamlandığında atölye düzenlemeye açılır."]}, {"version": "2.2.5", "title": "Güncelleme notları", "changes": ["Update yanına Yenilikler düğmesi eklendi.", "Kullandığın sürümün değişiklikleri ve önceki güncellemeler uygulama içinden görülebilir.", "Güncelleme notları internet olmadığında da açılır."]}, {"version": "2.2.4", "title": "Dikey, yay ve çember yazı", "changes": ["Yazı için 90° dikey ve harfleri alt alta dizme seçenekleri eklendi.", "Üst/alt yay ve tam çember yerleşimi; yarıçap ve açı ayarı eklendi.", "Yazıyı logo veya nesnenin etrafına hizalama eklendi."]}, {"version": "2.2.3", "title": "Kart üzerinde yazı düzenleme", "changes": ["Yazıya tıklayınca silme çarpısı ve düzenleme araçları açılır.", "Yatay/dikey ortalama, köşeden boyutlandırma ve hassas konum ayarı eklendi.", "Hazır yazılar kart bazında düzenlenebilir; işlemler Geri al ile geri çevrilebilir."]}]}</script>
 <!-- UMUT_RELEASE_NOTES_END -->
 <script>
 var F1="'Playfair Display',serif",FL=[[F1,'Playfair Display'],["'Cormorant Garamond',serif",'Cormorant Garamond'],["'Cinzel',serif",'Cinzel (klasik)'],["'Alex Brush',cursive",'Alex Brush'],["'Great Vibes',cursive",'Great Vibes'],["'Parisienne',cursive",'Parisienne'],["'Dancing Script',cursive",'Dancing Script'],["'Pacifico',cursive",'Pacifico (eğlenceli)'],["'Caveat',cursive",'Caveat (el yazısı)'],["Montserrat,sans-serif",'Montserrat (modern)']];
@@ -627,7 +565,7 @@ DF+=s+'<g id="gr-leaf">'+l+'</g><g id="gr-euc">'+e+'</g><g id="gr-lav">'+v+'</g>
 var st='<stop offset="0" stop-color="#8a6a1c"/><stop offset=".3" stop-color="#f6e08a"/><stop offset=".55" stop-color="#c49a2c"/><stop offset=".8" stop-color="#fff0b3"/><stop offset="1" stop-color="#9c7a22"/>';
 DF+='<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74">'+st+'</linearGradient><linearGradient id="rg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="105" y2="74"><stop offset="0" stop-color="#b76e79"/><stop offset=".5" stop-color="#f1c4bd"/><stop offset="1" stop-color="#a65d6a"/></linearGradient><linearGradient id="navyg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="74"><stop offset="0" stop-color="#10275a"/><stop offset="1" stop-color="#08122c"/></linearGradient>';
 document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'+DF+'</defs></svg>')})();
-var APP_VERSION='2.2.13',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
+var APP_VERSION='2.2.14',ONLINE_THEME_BASE='https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/',ONLINE_CATALOG=ONLINE_THEME_BASE+'index.json';
 var NATURAL_ART={"rose": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-rose.webp?v=1", "meadow": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-meadow.webp?v=1", "lavender": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-lavender.webp?v=1", "autumn": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-autumn.webp?v=1", "winter": "https://raw.githubusercontent.com/ExpectR/masa-karti-temalari/main/assets/natural-winter.webp?v=1"};
 function naturalKey(t){if(t.cat=='own')return '';if(t.imageUrl)return 'remote';if(t.art)return t.art;if(t.cat=='newyear')return 'winter';if(t.cat=='autumn')return 'autumn';if(t.f){if(/lav|anem|cosmos/.test(t.f.join(',')))return 'lavender';if(/poppy|daisy|sun/.test(t.f.join(',')))return 'meadow';return 'rose'}return ''}
 function themeImage(t){return t.imageUrl||NATURAL_ART[naturalKey(t)]||''}
@@ -690,7 +628,7 @@ if(t.lux||t.pat)a='<svg class="tart" viewBox="0 0 105 74" preserveAspectRatio="x
 else if(t.f)a='<svg class="tart" viewBox="0 0 290 54" preserveAspectRatio="xMaxYMid meet"><use href="#fl-'+t.f[0]+'" transform="translate(262 27) scale(.52)"/><use href="#fl-'+t.f[1]+'" transform="translate(222 30) scale(.42)"/><use href="#fl-'+t.f[2]+'" transform="translate(190 25) scale(.34)"/></svg>';
 return '<div class="trow" data-k="'+k+'" style="background:'+(t.bg||'#fff')+'">'+a+'<span style="font-family:'+(t.font||F1)+';'+(t.foil?foilCss():'color:'+(t.c||'#1f2937'))+'">'+t.n+'</span></div>'}
 function tpBuild(){var b=document.getElementById('tpk');if(!b)return;b.innerHTML='<div class="tcur" id="tcur"></div><div class="tlist" id="tlist" style="display:none">'+thOpts(S.cat).map(function(o){return tRow(o[0])}).join('')+'</div>';tpUpd()}
-function tpUpd(){var c=document.getElementById('tcur');if(!c||!TH[S.theme])return;if(S.generatedTheme){c.innerHTML='<div class="trow"><span></span></div><b class="car">▾</b>';var row=c.querySelector('.trow');row.style.backgroundColor=S.bg;row.querySelector('span').style.color=S.color;row.querySelector('span').textContent='Gemini · '+S.generatedTheme.name;return}c.innerHTML=tRow(S.theme)+'<b class="car">▾</b>';var l=document.getElementById('tlist');if(l)Array.prototype.forEach.call(l.children,function(r){r.classList.toggle('on',r.dataset.k==S.theme)})}
+function tpUpd(){var c=document.getElementById('tcur');if(!c||!TH[S.theme])return;if(S.generatedTheme){c.innerHTML='<div class="trow"><span></span></div><b class="car">▾</b>';var row=c.querySelector('.trow');row.style.backgroundColor=S.bg;row.querySelector('span').style.color=S.color;row.querySelector('span').textContent='Yerel tema · '+S.generatedTheme.name;return}c.innerHTML=tRow(S.theme)+'<b class="car">▾</b>';var l=document.getElementById('tlist');if(l)Array.prototype.forEach.call(l.children,function(r){r.classList.toggle('on',r.dataset.k==S.theme)})}
 document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#tpk'),l=document.getElementById('tlist');if(!b){if(l)l.style.display='none';return}var r=e.target.closest('.trow');if(r&&l&&l.contains(r)){var sel=document.getElementById('theme');sel.value=r.dataset.k;sel.dispatchEvent(new Event('change'));l.style.display='none'}else if(l)l.style.display=l.style.display=='none'?'block':'none'});
 function fillSizes(){var e=document.getElementById('csize');e.innerHTML=sizeOpts().map(function(o){return '<option value="'+o[0]+'">'+o[1]+'</option>'}).join('');e.value=S.csize}
 function fillTheme(){var e=document.getElementById('theme');e.innerHTML=selectedThemeOptions(S.cat,S.theme).map(function(o){return '<option value="'+o[0]+'">'+o[1]+'</option>'}).join('');tpBuild()}
@@ -766,11 +704,11 @@ function $(i){return document.getElementById(i)}
 function withS(o,fn){var b=S;S=Object.assign({},S,o);try{return fn()}finally{S=b}}
 function sName(){return (S.names.split('\n')[0]||'').trim()||'Ad Soyad'}
 function prevT(k){var t=TH[k];return withS(Object.assign({},PV,{theme:k,cat:t.cat,accent:t.a,bg:t.bg||'#ffffff',color:t.c||'#1f2937',foil:!!t.foil,font:t.font||S.font,items:[]}),function(){return card(sName(),105,148)})}
-function prevP(t){if(t.kind==='image-theme')return withS(Object.assign({},PV,t.d,{items:[]}),function(){return card(sName(),105,148)});if(t.kind==='gemini-theme')return withS(geminiCandidate({theme:UmutGemini.validateTheme(t.d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})}),changes:[]},Object.assign({},S,PV)),function(){return card(sName(),105,148)});return withS(Object.assign({},PV,t.d,{sel:'',rot:false,rotF:false,ctype:'fold'}),function(){return card(sName(),105,148)})}
+function prevP(t){if(t.kind==='image-theme')return withS(Object.assign({},PV,t.d,{items:[]}),function(){return card(sName(),105,148)});if(t.kind==='gemini-theme')return withS(savedThemeCandidate({theme:UmutSavedTheme.validateTheme(t.d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})}),changes:[]},Object.assign({},S,PV)),function(){return card(sName(),105,148)});return withS(Object.assign({},PV,t.d,{sel:'',rot:false,rotF:false,ctype:'fold'}),function(){return card(sName(),105,148)})}
 function snapT(){var d={};TK.forEach(function(k){d[k]=S[k]});return JSON.parse(JSON.stringify(d))}
 function clean(d){var o={},n=function(v,a,b,df){v=+v;return isFinite(v)?Math.min(b,Math.max(a,v)):df},c=function(v,df){return HX.test(v)?v:df},f=function(v,df){return FNT.test(v)?v:df},b01=function(v){return v?1:0};
 if(TH[d.theme]){o.theme=d.theme;o.cat=TH[d.theme].cat}
-o.generatedTheme=d.generatedTheme?UmutGemini.validateTheme(d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})}):null;
+o.generatedTheme=d.generatedTheme?UmutSavedTheme.validateTheme(d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})}):null;
 o.font=f(d.font,S.font);o.subFont=f(d.subFont,S.subFont);['color','accent','bg','bgB','bg2'].forEach(function(k){o[k]=c(d[k],S[k])});
 o.size=n(d.size,8,90,S.size);o.fsize=n(d.fsize,30,200,100);o.subSize=n(d.subSize,5,40,10);o.ls=n(d.ls,-5,20,0);o.menuSize=n(d.menuSize,5,40,10);o.bgAng=n(d.bgAng,0,360,135);
 ['italic','upper','shadow','foil','subUp','flowers','backTheme','hideBase'].forEach(function(k){if(k in d)o[k]=!!d[k]});
@@ -782,11 +720,11 @@ if(i.t=='text'){r.tx=String(i.tx||'').slice(0,500);r.font=f(i.font,S.font);r.wt=
 else if(i.t=='img'){if(!IMG.test(i.src||''))return null;r.src=i.src;r.round=b01(i.round);r.mir=b01(i.mir)}
 else if(i.t=='shape'){r.k=['rect','circle','line','diamond','frame'].indexOf(i.k)>-1?i.k:'rect';r.h=n(i.h,2,300,30);r.fill=c(i.fill,'#e11d48');r.st=c(i.st,'#111827');r.sw=n(i.sw,0,10,0);r.rad=n(i.rad,0,50,0)}
 else{if(!FLN[i.k])return null;r.k=i.k;r.mir=b01(i.mir)}return r}).filter(Boolean);return o}
-function impT(txt){try{var o=JSON.parse(txt),d=o&&o.d?o.d:o;if(!d||typeof d!='object')return false;var entry=o.kind==='image-theme'?{id:uid(),kind:'image-theme',n:String(o.n||'Görsel teması').slice(0,80),d:imageThemeData(d)}:o.kind==='gemini-theme'?{id:uid(),kind:'gemini-theme',n:String(o.n||'İçe aktarılan tema').slice(0,80),d:{generatedTheme:UmutGemini.validateTheme(d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})})}}:{id:uid(),n:String(o.n||'İçe aktarılan şablon').slice(0,40),d:clean(d)};var next=TPL.concat([entry]);localStorage.setItem('mk3t',JSON.stringify(next));TPL=next;return true}catch(e){return false}}
+function impT(txt){try{var o=JSON.parse(txt),d=o&&o.d?o.d:o;if(!d||typeof d!='object')return false;var entry=o.kind==='image-theme'?{id:uid(),kind:'image-theme',n:String(o.n||'Görsel teması').slice(0,80),d:imageThemeData(d)}:o.kind==='gemini-theme'?{id:uid(),kind:'gemini-theme',n:String(o.n||'İçe aktarılan tema').slice(0,80),d:{generatedTheme:UmutSavedTheme.validateTheme(d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})})}}:{id:uid(),n:String(o.n||'İçe aktarılan şablon').slice(0,40),d:clean(d)};var next=TPL.concat([entry]);localStorage.setItem('mk3t',JSON.stringify(next));TPL=next;return true}catch(e){return false}}
 function getTpl(id){return TPL.filter(function(x){return x.id==id})[0]}
 function closeS(){$('store').style.display='none';document.body.style.overflow=''}
 function useTheme(k){var t=TH[k];if(!t||themeHidden(k))return;S.cat=t.cat;S.theme=k;fillTheme();S.hideBase=t.cat=='own';applyTheme(k);render();if(t.cat=='own'&&!S.items.length)addItem(txtDef('{isim}'));closeS()}
-function useTpl(t){if(!t)return;if(t.kind==='image-theme'){try{var beforeImage=S,nextImage=Object.assign({},S,imageThemeData(t.d));S=nextImage;rememberGemini(beforeImage,nextImage)}catch(e){onlineMsg('Görsel teması okunamadı.');return}}else if(t.kind==='gemini-theme'){try{var original=S,next=geminiCandidate({changes:[],theme:UmutGemini.validateTheme(t.d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})})},S);S=next;rememberGemini(original,next)}catch(e){onlineMsg('Kayıtlı tema okunamadı.');return}}else Object.assign(S,{generatedTheme:null},JSON.parse(JSON.stringify(t.d)));S.sel='';fillTheme();tpBuild();sync();render();edP();closeS()}
+function useTpl(t){if(!t)return;if(t.kind==='image-theme'){try{var beforeImage=S,nextImage=Object.assign({},S,imageThemeData(t.d));S=nextImage;rememberImage(beforeImage,nextImage)}catch(e){onlineMsg('Görsel teması okunamadı.');return}}else if(t.kind==='gemini-theme'){try{var original=S,next=savedThemeCandidate({changes:[],theme:UmutSavedTheme.validateTheme(t.d.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})})},S);S=next;rememberImage(original,next)}catch(e){onlineMsg('Kayıtlı tema okunamadı.');return}}else Object.assign(S,{generatedTheme:null},JSON.parse(JSON.stringify(t.d)));S.sel='';fillTheme();tpBuild();sync();render();edP();closeS()}
 function removeTheme(k){
  var t=TH[k];if(!t||t.cat=='own')return;
  if(!confirm('“'+t.n+'” temasını bu tarayıcıdan silmek istiyor musun? Silinenleri geri getirebilirsin.'))return;
@@ -802,7 +740,7 @@ function sTile(k){var t=TH[k],f=FAV.indexOf(k)>-1,del=t.cat!='own'?'<button clas
 function pTile(t){return '<div class="stile"><div class="sp">'+prevP(t)+'</div><div class="sn">'+esc(t.n)+'</div><div class="sb"><button data-tu="'+t.id+'">Kullan</button><button class="g" '+(['gemini-theme','image-theme'].indexOf(t.kind)>=0?'data-tfile':'data-te')+'="'+t.id+'">'+(['gemini-theme','image-theme'].indexOf(t.kind)>=0?'JSON indir':'Dışa aktar')+'</button><button class="g" data-td="'+t.id+'">Sil</button></div></div>'}
 function sDraw(){var T=[['all','Tümü'],['online','🌐 Online ('+selectableThemeKeys(null,function(k){return TH[k].remote}).length+')'],['bayan','Bayan'],['bay','Bay'],['menu','Menü'],['autumn','🍂 Sonbahar'],['newyear','🎄 Yeni Yıl'],['own','Kendi tasarım'],['new','🆕 Yeni ('+selectableThemeKeys(null,function(k){return TH[k].nw}).length+')'],['fav','⭐ Koleksiyonum ('+selectableThemeKeys(null,function(k){return FAV.indexOf(k)>=0}).length+')'],['local','✨ Yerel Temalarım ('+TPL.filter(function(t){return ['gemini-theme','image-theme'].indexOf(t.kind)>=0}).length+')'],['tpl','📁 Şablonlarım ('+TPL.length+')']],q=($('sq').value||'').toLocaleLowerCase('tr');
 $('stabs').innerHTML=T.map(function(t){return '<button data-t="'+t[0]+'"'+(sTab==t[0]?' class="on"':'')+'>'+t[1]+'</button>'}).join('');
-if(sTab==='local'){$('sextra').innerHTML='<p class="hint">Bu tarayıcıya kaydedilen temalar. Yedeklemek veya başka bilgisayarda açmak için JSON indir; Şablonlarım bölümünden içe aktar.</p>';$('sgrid').innerHTML=TPL.filter(function(t){return ['gemini-theme','image-theme'].indexOf(t.kind)>=0}).map(pTile).join('')||'<p class="hint">Henüz kayıtlı tema yok. Gemini → Yeni tema üret ile başlayabilirsin.</p>';$('smore').innerHTML='';return}
+if(sTab==='local'){$('sextra').innerHTML='<p class="hint">Bu tarayıcıya kaydedilen temalar. Yedeklemek veya başka bilgisayarda açmak için JSON indir; Şablonlarım bölümünden içe aktar.</p>';$('sgrid').innerHTML=TPL.filter(function(t){return ['gemini-theme','image-theme'].indexOf(t.kind)>=0}).map(pTile).join('')||'<p class="hint">Henüz kayıtlı tema yok. FLUX ile görsel üret ile başlayabilirsin.</p>';$('smore').innerHTML='';return}
 if(sTab=='tpl'){$('sextra').innerHTML='<div class="row"><input type="text" id="stn" placeholder="Şablon adı"><button id="sts">Mevcut tasarımı şablon olarak kaydet</button></div><label>İçe aktar: kodu yapıştır ya da dosya seç</label><textarea id="sti"></textarea><div class="row"><button class="g" id="stim">İçe aktar</button><input type="file" id="stf" accept=".json,.txt"></div><textarea id="ste" readonly style="display:none"></textarea>';$('sgrid').innerHTML=TPL.map(pTile).join('')||'<p class="hint">Henüz şablon yok. Kendi tasarımını kaydet ya da başkasından aldığın kodu içe aktar.</p>';$('smore').innerHTML='';return}
 $('sextra').innerHTML='';var category=['bayan','bay','menu','autumn','newyear','own'].indexOf(sTab)>=0?sTab:null;
 // Deduplicate before searching so a colour-name search cannot bring retired copies back.
@@ -814,7 +752,7 @@ $('sq').addEventListener('input',function(){sLim=24;sDraw()});
 $('store').addEventListener('click',function(e){var t=e.target,b=t.closest&&t.closest('button');if(t.id=='store'){closeS();return}if(!b)return;var d=b.dataset;
 if(b.id=='sx')closeS();else if(d.t){sTab=d.t;sLim=24;sDraw()}else if(b.id=='sm'){sLim+=24;sDraw()}else if(d.rm){removeTheme(d.rm)}else if(d.u)useTheme(d.u);
 else if(d.f){var i=FAV.indexOf(d.f);if(i<0)FAV.push(d.f);else FAV.splice(i,1);svK('mk3f',FAV);sDraw()}
-else if(d.tfile){var savedTheme=getTpl(d.tfile);if(savedTheme)downloadJSON('gemini-tema-'+savedTheme.id+'.json',{mk:1,kind:savedTheme.kind,n:savedTheme.n,d:savedTheme.d})}
+else if(d.tfile){var savedTheme=getTpl(d.tfile);if(savedTheme)downloadJSON('yerel-tema-'+savedTheme.id+'.json',{mk:1,kind:savedTheme.kind,n:savedTheme.n,d:savedTheme.d})}
 else if(d.tu)useTpl(getTpl(d.tu));else if(d.td){TPL=TPL.filter(function(x){return x.id!=d.td});svK('mk3t',TPL);sDraw()}
 else if(d.te){var x=getTpl(d.te),a=$('ste');a.style.display='block';a.value=JSON.stringify({mk:1,n:x.n,d:x.d});a.select();try{navigator.clipboard.writeText(a.value)}catch(er){}$('smsg').textContent='Kod aşağıda. Kopyalayıp başkasına gönderebilirsin.'}
 else if(b.id=='sts'){TPL.push({id:uid(),n:($('stn').value||'Şablonum').slice(0,40),d:snapT()});svK('mk3t',TPL);sDraw();$('smsg').textContent='Şablon kaydedildi.'}
@@ -974,7 +912,7 @@ function compareThemes(){
  root.querySelectorAll('select').forEach(function(sel,i){sel.value=keys[(Math.max(0,keys.indexOf(S.theme))+i)%keys.length];sel.onchange=function(){draw(i)};draw(i)});root.querySelectorAll('[data-use]').forEach(function(button){button.onclick=function(){var key=root.querySelector('[data-compare="'+button.dataset.use+'"]').value;useTheme(key);d.close()}});
 }
 var originalRender=render;
-render=function(){if(S.autoPack&&S.ctype!=='flat')renderAutoFold();else originalRender();batchPanel();if(window.canvasRefresh)canvasRefresh();if(window.refreshGeminiActions)refreshGeminiActions()};
+render=function(){if(S.autoPack&&S.ctype!=='flat')renderAutoFold();else originalRender();batchPanel();if(window.canvasRefresh)canvasRefresh();};
 var originalMarks=marks;marks=function(w,h){return S.cutMarks===false?'':originalMarks(w,h)};
 
 // Code-native text on a path: vector text stays sharp in print/PDF.
@@ -1147,17 +1085,9 @@ function showAppReleaseNotes(){
 
 
 
-function rememberGemini(original,candidate){var prior={};Object.keys(candidate).forEach(function(k){if(JSON.stringify(candidate[k])!==JSON.stringify(original[k]))prior[k]=original[k]});HIST.push(JSON.stringify({assistant:1,settings:prior}));if(HIST.length>80)HIST.shift()}
-function refreshGeminiActions(){var b=$('geminiSaveTheme');if(b)b.hidden=!S.generatedTheme}
-function saveGeneratedTheme(state,name){
- if(!state.generatedTheme)throw Error('Önce yeni bir tema üret.');
- var theme=UmutGemini.validateTheme(Object.assign({},state.generatedTheme,{name:String(name||state.generatedTheme.name).trim(),background:state.bg,textColor:state.color,accentColor:state.accent,font:state.font}),{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})});
- var existing=TPL.find(function(t){return t.kind==='gemini-theme'&&JSON.stringify(t.d.generatedTheme)===JSON.stringify(theme)});
- if(!existing){var next=TPL.concat([{id:uid(),kind:'gemini-theme',n:theme.name,d:{generatedTheme:theme}}]);try{localStorage.setItem('mk3t',JSON.stringify(next))}catch(e){throw Error('Tema kaydedilemedi. Tarayıcı depolaması dolu olabilir; mevcut kayıtların korundu.')}TPL=next}
- var status=$('geminiStatus');if(status)status.textContent='Tema yalnızca bu tarayıcıya kaydedildi. Tema Mağazası → Yerel Temalarım bölümünden açabilir veya JSON indirebilirsin.';sDraw();return theme;
-}
+function rememberImage(original,candidate){var prior={};Object.keys(candidate).forEach(function(k){if(JSON.stringify(candidate[k])!==JSON.stringify(original[k]))prior[k]=original[k]});HIST.push(JSON.stringify({assistant:1,settings:prior}));if(HIST.length>80)HIST.shift()}
 function generatedThemeArt(w,h){
- if(!S.generatedTheme)return '';var theme;try{theme=UmutGemini.validateTheme(S.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})})}catch(e){return ''}
+ if(!S.generatedTheme)return '';var theme;try{theme=UmutSavedTheme.validateTheme(S.generatedTheme,{fonts:FL.map(function(f){return {value:f[0],name:f[1]}})})}catch(e){return ''}
  var shapes=['rect','circle','line','diamond','frame'],scale=w/105;
  var body=theme.decorations.map(function(d){var isShape=shapes.indexOf(d.kind)>=0;if(!isShape&&!S.flowers)return '';var x=d.x*w/100,y=d.y*h/100,sw=d.strokeWidth*scale,W=d.size*scale,H=d.height*scale,b='';
   if(d.kind==='rect'||d.kind==='frame')b='<rect x="'+(-W/2)+'" y="'+(-H/2)+'" width="'+W+'" height="'+H+'" rx="'+d.radius*scale+'" fill="'+(d.kind==='frame'?'none':d.color)+'" stroke="'+d.stroke+'" stroke-width="'+sw+'"/>';
@@ -1166,76 +1096,37 @@ function generatedThemeArt(w,h){
   else if(d.kind==='diamond')b='<polygon points="0,'+(-H/2)+' '+W/2+',0 0,'+H/2+' '+(-W/2)+',0" fill="'+d.color+'" stroke="'+d.stroke+'" stroke-width="'+sw+'"/>';
   else {var leaf=['leaf','euc','lav','wheat','berry','pine','holly','ruscus'].indexOf(d.kind)>=0;b=leaf?'<g transform="translate('+(-W*.21)+' '+(-W/2)+') scale('+(W*.42/40)+' '+W/100+')"><use href="#gr-'+d.kind+'"/></g>':'<use href="#fl-'+d.kind+'" transform="scale('+W/100+')"/>'}
   return '<g transform="translate('+x+' '+y+') rotate('+d.rotation+')" opacity="'+d.opacity/100+'">'+b+'</g>'
- }).join('');return '<svg class="abs gemini-theme-art" aria-hidden="true" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" style="inset:0;width:100%;height:100%;pointer-events:none">'+body+'</svg>';
+ }).join('');return '<svg class="abs saved-theme-art" aria-hidden="true" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" style="inset:0;width:100%;height:100%;pointer-events:none">'+body+'</svg>';
 }
 
-function geminiContext(){
- var themes=selectableThemeKeys();if(TH[S.theme]&&!themeHidden(S.theme)&&themes.indexOf(S.theme)<0)themes.push(S.theme);
- var settings={};UmutGemini.fields.forEach(function(k){if(k.indexOf('pos.')===0){var parts=k.split('.'),p=(S.pos||{})[parts[1]];if(p)settings[k]=p[parts[2]==='x'?0:1]}else if(['sub','backText','menu','menuF'].indexOf(k)<0&&S[k]!==undefined)settings[k]=S[k]});
- return UmutGemini.cleanContext({settings:settings,fonts:FL.map(function(f){return {value:f[0],name:f[1]}}),themes:themes.map(function(k){return {id:k,name:TH[k].n}}),generatedTheme:S.generatedTheme,hasLogo:!!S.logo,hasCardOverrides:Object.keys(S.cardText||{}).length>0||Object.keys(S.cardThemes||{}).length>0});
+function savedThemeCandidate(plan,base){
+ var next=JSON.parse(JSON.stringify(base)),t=plan.theme;
+ if(t)Object.assign(next,{generatedTheme:t,theme:'o_white',cat:'own',hideBase:false,bg:t.background,color:t.textColor,accent:t.accentColor,font:t.font,foil:false,bgMode:'sol',bgImg:'',frame:'none',flowers:true});return next;
 }
-function geminiCandidate(plan,base){
- var next=JSON.parse(JSON.stringify(base)),theme=plan.changes.find(function(c){return c.field==='theme'});
- if(theme){var t=TH[theme.value];if(!t||themeHidden(theme.value))throw Error('Seçilen tema artık kullanılamıyor.');Object.assign(next,{generatedTheme:null,theme:theme.value,cat:t.cat,accent:t.a,bg:t.bg||'#ffffff',color:t.c||'#1f2937',foil:!!t.foil,hideBase:t.cat==='own'});if(t.font)next.font=t.font}
- if(plan.theme){var generated=plan.theme;Object.assign(next,{generatedTheme:generated,theme:'o_white',cat:'own',hideBase:false,bg:generated.background,color:generated.textColor,accent:generated.accentColor,font:generated.font,foil:false,bgMode:'sol',bgImg:'',frame:'none',flowers:true})}
- plan.changes.forEach(function(c){if(c.field==='theme')return;if(c.field.indexOf('pos.')===0){var parts=c.field.split('.');next.pos=next.pos||{};var p=next.pos[parts[1]]||(next.pos[parts[1]]=[50,50]);p[parts[2]==='x'?0:1]=c.value}else next[c.field]=c.value});
- return next;
+var fluxRun=null;
+function initFlux(){
+ var box=document.createElement('section');box.className='flux-assistant';box.id='fluxAssistant';box.setAttribute('aria-label','Hızlı Görsel Üret · FLUX');
+ box.innerHTML='<div class="flux-head"><b>✦ Hızlı Görsel Üret · FLUX</b><span class="flux-badge">ÖNİZLE · KAYDET</span></div><p>İstediğin görseli tarif et. FLUX.1 Schnell ile üret, önizle ve kartına ekle.</p><label for="fluxPrompt" style="display:none">Görsel tarifi</label><textarea id="fluxPrompt" maxlength="1500" placeholder="Watercolor pink roses in the corners, ivory background, empty center…"></textarea><div class="flux-samples"><button type="button" data-flux-prompt="Flat watercolor pink roses in the corners, ivory background, large empty center, no text">Suluboya güller</button><button type="button" data-flux-prompt="Elegant emerald eucalyptus branches along the edges, cream background, empty center, no text">Zarif yapraklar</button><button type="button" data-flux-prompt="Minimal abstract navy and gold flowing lines at the corners, clean empty center, no text">Lacivert &amp; altın</button></div><button type="button" id="fluxGenerate">Hızlı görsel üret</button><button type="button" id="fluxCancel" class="g" hidden>Üretimi iptal et</button><p class="flux-status" id="fluxStatus" role="status" aria-live="polite"></p><details id="fluxConnection"><summary>Bağlantı</summary><div class="flux-connection-body"><p>FLUX Başlat.cmd yardımcısını aç. Oradaki bağlantı kodunu yapıştır; API anahtarını bu alana yazma.</p><label for="fluxToken">Bağlantı kodu</label><input id="fluxToken" type="password" autocomplete="off" spellcheck="false" maxlength="64"><button type="button" id="fluxConnect" class="g">Bağlantıyı kontrol et</button><p>Yalnızca yazdığın tarif Cloudflare’a gönderilir. İsim listesi ve logo gönderilmez. Ücretsiz günlük kota ve servis yoğunluğu geçerlidir. İngilizce tarifler daha iyi sonuç verebilir.</p></div></details>';
+ $('settingsSearch').closest('.settings-search').after(box);var token='',status=$('fluxStatus');
+ try{var saved=JSON.parse(localStorage.getItem('mk3_flux_connection')||localStorage.getItem('mk3_gemini_connection')||'null');if(saved&&/^[a-f0-9]{64}$/.test(saved.token)){token=saved.token;localStorage.setItem('mk3_flux_connection',JSON.stringify({token:token}))}}catch(e){}
+ $('fluxToken').value=token;$('fluxConnection').open=!token;status.textContent=token?'Görselini tarif edip üretmeye başlayabilirsin.':'İlk kullanım için Bağlantı bölümünü tamamla.';
+ $('fluxConnect').onclick=async function(){var value=$('fluxToken').value.trim();if(!/^[a-f0-9]{64}$/.test(value)){status.textContent='Yardımcıdaki 64 karakterli bağlantı kodunu yapıştır. API anahtarını burada kullanma.';return}this.disabled=true;try{var r=await fetch('http://127.0.0.1:8766/image/status',{method:'POST',headers:{Authorization:'Bearer '+value},signal:AbortSignal.timeout(15000)}),d=await r.json();if(!r.ok||!d.configured)throw Error('FLUX bağlantısı hazır değil. Yardımcıdaki Cloudflare kurulumunu kontrol et.');token=value;localStorage.setItem('mk3_flux_connection',JSON.stringify({token:token}));$('fluxConnection').open=false;status.textContent='FLUX bağlı. Görselini tarif edebilirsin.'}catch(e){status.textContent=e.message||'FLUX Başlat.cmd dosyasını açıp yeniden dene.'}finally{this.disabled=false}};
+ box.querySelectorAll('[data-flux-prompt]').forEach(function(b){b.onclick=function(){$('fluxPrompt').value=b.dataset.fluxPrompt;$('fluxPrompt').focus()}});
+ $('fluxGenerate').onclick=function(){var prompt=$('fluxPrompt').value.trim();if(!prompt){status.textContent='Önce istediğin görseli tarif et.';return}startCloudflareImage(prompt,status,token)};
+ $('fluxCancel').onclick=function(){if(!fluxRun)return;var run=fluxRun;fluxRun=null;run.controller.abort();fluxControls(false);status.textContent='Üretim iptal edildi. Kartın değişmedi.'};
+ $('fluxPrompt').addEventListener('keydown',function(e){if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();$('fluxGenerate').click()}});
 }
-function geminiPreview(raw,baseJSON,status){
- if(JSON.stringify(S)!==baseJSON)throw Error('Öneri hazırlanırken tasarım değişti. Güncel tasarım için yeniden iste.');
- var plan=UmutGemini.validate(raw,geminiContext());if(!plan.changes.length&&!plan.theme){status.textContent=plan.message||'İsteğini biraz daha ayrıntılı yazabilir misin?';return}
- var base=JSON.parse(baseJSON),candidate=geminiCandidate(plan,base),d=newBatchDialog('Gemini tasarım önerisi'),root=d.querySelector('.batch-dialog-content');d.classList.add('gemini-preview-dialog');
- var message=document.createElement('p');message.className='gemini-preview-message';message.textContent=plan.message;root.appendChild(message);
- var grid=document.createElement('div');grid.className='gemini-preview-grid';root.appendChild(grid);
- var actual=$('prev').querySelector('.card'),w=actual?parseFloat(actual.style.width):105,h=actual?parseFloat(actual.style.height):148,thumb=innerWidth<=420?130:160,scale=Math.min(thumb/(w*96/25.4),(innerWidth<=420?184:226)/(h*96/25.4));
- [[base,'Şu an'],[candidate,'Önerilen']].forEach(function(pair){var box=document.createElement('div');box.innerHTML='<h3>'+pair[1]+'</h3><div class="sp"></div>';var sp=box.querySelector('.sp');sp.innerHTML=withS(pair[0],function(){return cardFor(sName(),w,h,null,0)});var card=sp.querySelector('.card');if(card)card.style.transform='scale('+scale+')';grid.appendChild(box)});
- var labels={theme:'Tema',font:'Yazı tipi',subFont:'Alt yazı tipi',size:'İsim boyutu',subSize:'Alt yazı boyutu',menuSize:'Menü yazı boyutu',color:'Yazı rengi',accent:'Vurgu rengi',bg:'Zemin',bgB:'Arka zemin',bg2:'Geçiş rengi',bgMode:'Zemin türü',bgAng:'Geçiş açısı',weight:'Kalınlık',italic:'İtalik',upper:'Büyük harf',shadow:'Gölge',foil:'Varak',subUp:'Alt yazı büyük harf',flowers:'Çiçekler',fsize:'Çiçek boyutu',backTheme:'Arka yüzde tema',hideBase:'Hazır yazıları gizle',frame:'Çerçeve',logoSize:'Ön logo boyutu',logoSizeB:'Arka logo boyutu',logoRot:'Logo dönüşü',logoOp:'Logo görünürlüğü',logoPos:'Logo yüzü',ls:'Harf aralığı',sub:'Alt yazı',backText:'Arka yazı',menu:'Arka menü',menuF:'Ön ek yazı'},posNames={name:'İsim',sub:'Alt yazı',bText:'Arka yazı',menu:'Arka menü',menuF:'Ön ek yazı',fLogo:'Ön logo',bLogo:'Arka logo'};
- var list=document.createElement('ul');list.className='gemini-change-list';plan.changes.forEach(function(c){var li=document.createElement('li'),parts=c.field.split('.'),label=parts[0]==='pos'?posNames[parts[1]]+' · '+(parts[2]==='x'?'yatay konum':'dikey konum'):labels[c.field]||c.field,v=c.field==='theme'?TH[c.value].n:typeof c.value==='boolean'?(c.value?'Açık':'Kapalı'):c.value;li.textContent=label+': '+String(v);list.appendChild(li)});root.appendChild(list);
- var note=document.createElement('p');note.className='gemini-dialog-note';note.textContent='Genel tasarım değişir. Karta özel tema ve yazı düzenlemeleri korunur. Uyguladıktan sonra Geri al ile geri dönebilirsin.';root.appendChild(note);
- if(plan.theme){var nameLabel=document.createElement('label');nameLabel.textContent='Yerel tema adı';var nameInput=document.createElement('input');nameInput.type='text';nameInput.maxLength=80;nameInput.value=plan.theme.name;nameLabel.appendChild(nameInput);root.appendChild(nameLabel);var save=document.createElement('button');save.type='button';save.className='g gemini-save';save.textContent='Yerel temalarıma kaydet';save.onclick=function(){try{candidate.generatedTheme=saveGeneratedTheme(candidate,nameInput.value);save.textContent='Yerel temalarına kaydedildi ✓';save.disabled=true}catch(e){status.textContent=e.message}};root.appendChild(save)}
- var apply=document.createElement('button');apply.type='button';apply.className='gemini-apply';apply.textContent='Uygula';root.appendChild(apply);
- apply.onclick=function(){
-  if(JSON.stringify(S)!==baseJSON){status.textContent='Tasarım değişti. Güncel tasarım için yeni öneri iste.';d.close();return}
-  try{UmutGemini.validate(raw,geminiContext());var original=S;S=candidate;fillTheme();sync();render();edP();rememberGemini(original,candidate);canvasSelection=null;canvasNotice='';canvasRefresh();status.textContent='Öneri uygulandı. Geri al ile önceki tasarıma dönebilirsin.';d.close()}
-  catch(e){if(original){S=original;fillTheme();sync();render();edP()}status.textContent='Öneri uygulanamadı. Önceki tasarım korundu.';d.close()}
- };
- status.textContent='Öneri hazır. Değişiklikleri inceleyip Uygula diyebilirsin.';
-}
-function initGeminiAssistant(){
- var box=document.createElement('section');box.className='gemini-assistant';box.id='geminiAssistant';box.setAttribute('aria-label','Gemini Tasarım Asistanı');
- box.innerHTML='<div class="gemini-head"><b>✦ Gemini Tasarım Asistanı</b><span class="gemini-badge">ÖNİZLE · UYGULA</span></div><label for="geminiMode" class="gemini-mode-label">Ne yapalım?</label><select id="geminiMode"><option value="edit">Kartı düzenle</option><option value="theme">Vektörel tema üret</option><option value="cloudflare">Hızlı görsel üret · FLUX</option><option value="image">Görsel üret · AI Horde</option></select><p>Nasıl bir kart istediğini yaz. Önce birlikte bakalım.</p><label for="geminiPrompt" style="display:none">Tasarım isteğin</label><textarea id="geminiPrompt" maxlength="1500" placeholder="İsimleri büyüt, zemini krem yap, logoyu ortala…"></textarea><div class="gemini-samples"><button type="button" data-prompt="Yazıyı biraz büyüt ve yatayda ortala.">Yazıyı düzenle</button><button type="button" data-mode="theme" data-prompt="Lacivert zemin, altın ince çizgiler ve köşelerde okaliptüs dallarıyla yeni, zarif bir tema üret.">Yeni tema tasarla</button><button type="button" data-prompt="Logoyu ön yüzün üst ortasına al.">Logoyu hizala</button></div><p id="cfNotice" class="hint" hidden>Cloudflare · FLUX.1 Schnell. Bağlantı yardımcısı açık olmalı. Yalnızca yazdığın tarif Cloudflare’a gider; isim listesi ve logo gönderilmez. Ücretsiz günlük kota geçerlidir; hız servis yoğunluğuna bağlıdır.</p><p id="hordeNotice" class="hint" hidden>AI Horde · Ücretsiz, anahtarsız görsel üretimi. Gönüllü sunucularda sıra bekleyebilir; sonuç kalitesi değişir. Anonim tarifler ve görseller servis tarafından paylaşılabilir; kişisel bilgi yazma. İsimlerin ve logon gönderilmez. Tarifini İngilizce yazmak daha iyi sonuç verir. <a href="https://www.aihorde.net/docs/image/" target="_blank" rel="noopener noreferrer">Servis bilgisi</a></p><button type="button" id="geminiSuggest">Öneri hazırla</button><button type="button" id="hordeCancel" class="g" hidden>Üretimi iptal et</button><button type="button" id="geminiSaveTheme" class="g" hidden>Bu temayı yerel kaydet</button><p class="gemini-status" id="geminiStatus" role="status" aria-live="polite"></p><details id="geminiConnection"><summary>Bağlantı</summary><div class="gemini-connection-body"><p>Gemini Başlat.cmd yardımcısını aç. Oradaki bağlantı kodunu yapıştır; bu alana API anahtarını yazma.</p><label for="geminiToken">Bağlantı kodu</label><input id="geminiToken" type="password" autocomplete="off" spellcheck="false" maxlength="64"><button type="button" id="geminiConnect" class="g">Bağlantıyı kontrol et</button><p>İsteğin, tasarım ayarları ve tema adları Google Gemini’ye gönderilir. İsim listesi ve logo dosyası gönderilmez. Ücretsiz kota dolarsa öneriler bekler.</p></div></details>';
- $('settingsSearch').closest('.settings-search').after(box);
- var token='',busy=false,status=$('geminiStatus'),button=$('geminiSuggest');
- try{var saved=JSON.parse(localStorage.getItem('mk3_gemini_connection')||'null');if(saved&&/^[a-f0-9]{64}$/.test(saved.token))token=saved.token}catch(e){}
- $('geminiToken').value=token;$('geminiConnection').open=!token;status.textContent=token?'İsteğini yazıp öneri hazırlayabilirsin.':'İlk kullanım için Bağlantı bölümünü tamamla.';
- async function request(path,payload,access){var controller=new AbortController(),timer=setTimeout(function(){controller.abort()},38000);try{var r=await fetch('http://127.0.0.1:8766'+path,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+access},body:JSON.stringify(payload),signal:controller.signal});var data=await r.json();if(!r.ok)throw Error(data.error||'Gemini bağlantısı kurulamadı.');return data}finally{clearTimeout(timer)}}
- $('geminiConnect').onclick=async function(){var value=$('geminiToken').value.trim();if(!/^[a-f0-9]{64}$/.test(value)){status.textContent='Yardımcıdaki 64 karakterli bağlantı kodunu yapıştır. API anahtarını burada kullanma.';return}this.disabled=true;try{await request('/connect',{},value);token=value;try{localStorage.setItem('mk3_gemini_connection',JSON.stringify({token:token}))}catch(e){}$('geminiConnection').open=false;status.textContent='Gemini yardımcısına bağlandı. Tasarım isteğini yazabilirsin.'}catch(e){status.textContent='Bağlantı kurulamadı. Gemini Başlat.cmd açık mı? Bağlantı kodunu da kontrol et.'}finally{this.disabled=false}};
- box.querySelectorAll('[data-prompt]').forEach(function(b){b.onclick=function(){$('geminiMode').value=b.dataset.mode||'edit';$('geminiMode').dispatchEvent(new Event('change'));$('geminiPrompt').value=b.dataset.prompt;$('geminiPrompt').focus()}});
- button.onclick=async function(){
-  if(busy)return;var prompt=$('geminiPrompt').value.trim();if(!prompt){status.textContent='Önce nasıl bir değişiklik istediğini yaz.';return}if($('geminiMode').value==='cloudflare'){startCloudflareImage(prompt,status,token);return}if($('geminiMode').value==='image'){startHordeImage(prompt,status);return}if(!token){$('geminiConnection').open=true;status.textContent='Önce Gemini yardımcısının bağlantı kodunu gir.';return}
-  busy=true;button.disabled=true;button.textContent='Gemini düşünüyor…';status.textContent='Öneri hazırlanıyor. Kartın henüz değişmedi.';var base=JSON.stringify(S);
-  try{var data=await request('/suggest',{prompt:prompt,mode:$('geminiMode').value,context:geminiContext()},token);geminiPreview(data,base,status)}catch(e){status.textContent=e instanceof TypeError?'Gemini yardımcısına ulaşılamadı. Gemini Başlat.cmd dosyasını aç; tarayıcı yerel ağ izni sorarsa bağlantıya izin ver.':e.name==='AbortError'?'İstek zaman aşımına uğradı. Kartın değişmedi.':e.message}
-  finally{busy=false;button.disabled=false;button.textContent='Öneri hazırla'}
- };
- initHordeImageUI(status);
- $('geminiSaveTheme').onclick=function(){try{saveGeneratedTheme(S,S.generatedTheme&&S.generatedTheme.name)}catch(e){status.textContent=e.message}};refreshGeminiActions();
- $('geminiPrompt').addEventListener('keydown',function(e){if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();button.click()}});
-}
-
-
-// Free raster generation is independent of the local Gemini helper.
-var hordeRun=null,hordePendingKey='mk3_horde_pending';
 function imageThemeData(d){
  if(!d||typeof d.bgImg!=='string'||d.bgImg.length>4000000||!/^data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(d.bgImg))throw Error('Görsel teması okunamadı.');
  return {generatedTheme:null,theme:'o_white',cat:'own',bgImg:d.bgImg,bg:'#ffffff',bgMode:'sol',frame:'none',flowers:true,hideBase:false,backTheme:true};
 }
 function saveImageTheme(src,name){
- var data=imageThemeData({bgImg:src}),entry={id:uid(),kind:'image-theme',n:String(name||'AI Horde görseli').trim().slice(0,80)||'AI Horde görseli',d:data};
+ var data=imageThemeData({bgImg:src}),entry={id:uid(),kind:'image-theme',n:String(name||'FLUX görseli').trim().slice(0,80)||'FLUX görseli',d:data};
  if(TPL.some(function(t){return t.kind==='image-theme'&&t.d.bgImg===src}))return;
  var next=TPL.concat([entry]);try{localStorage.setItem('mk3t',JSON.stringify(next))}catch(e){throw Error('Yerel depolama dolu olabilir. PNG indir ile dosyaya kaydet; mevcut kayıtların korundu.')}TPL=next;
 }
-function hordeImagePreview(src,model,status){
- var d=newBatchDialog('Üretilen görsel'),root=d.querySelector('.batch-dialog-content');d.classList.add('horde-image-dialog');
+function fluxImagePreview(src,model,status){
+ var d=newBatchDialog('Üretilen görsel'),root=d.querySelector('.batch-dialog-content');d.classList.add('flux-image-dialog');
  var info=document.createElement('p');info.textContent=model+' · Görsel hazır. Arka plana uygula ile mevcut kartına ekleyebilirsin. İsimler, logo ve ek öğeler korunur; karta özel temalar kendi seçimleriyle kalır.';root.appendChild(info);
  var image=document.createElement('img');image.src=src;image.alt='Üretilen kart arka planı';image.style.cssText='display:block;max-width:100%;max-height:48vh;margin:12px auto;border-radius:12px';root.appendChild(image);
  var label=document.createElement('label');label.textContent='Yerel tema adı';var name=document.createElement('input');name.value='Yeni görselim';name.maxLength=80;label.appendChild(name);root.appendChild(label);
@@ -1243,46 +1134,18 @@ function hordeImagePreview(src,model,status){
  function action(text,fn){var b=document.createElement('button');b.type='button';b.textContent=text;b.style.margin='6px';b.onclick=fn;root.appendChild(b);return b}
  action('PNG indir',function(){var a=document.createElement('a');a.href=src;a.download='masa-karti-gorsel.png';a.click()});
  var save=action('Yerel temalarıma kaydet',function(){try{saveImageTheme(src,name.value);msg.textContent='Yerel Temalarım bölümüne kaydedildi.';save.disabled=true}catch(e){msg.textContent=e.message}});
- action('Arka plana uygula',function(){var before=S,next=Object.assign({},S,imageThemeData({bgImg:src}));S=next;rememberGemini(before,next);fillTheme();sync();render();edP();status.textContent='Görsel arka plana uygulandı. Geri al ile önceki tasarıma dönebilirsin.';d.close()});
+ action('Arka plana uygula',function(){var before=S,next=Object.assign({},S,imageThemeData({bgImg:src}));S=next;rememberImage(before,next);fillTheme();sync();render();edP();status.textContent='Görsel arka plana uygulandı. Geri al ile önceki tasarıma dönebilirsin.';d.close()});
  status.textContent='Görsel hazır. Önizlemeden indir, kaydet veya kartına uygula.';
 }
 async function startCloudflareImage(prompt,status,token){
- if(hordeRun)return;if(!/^[a-f0-9]{64}$/.test(token||'')){$('geminiConnection').open=true;status.textContent='Cloudflare için yardımcının bağlantı kodunu gir.';return}
- var run={controller:new AbortController()},timer=setTimeout(function(){run.controller.abort()},100000);hordeRun=run;hordeControls(true);status.textContent='FLUX görseli hazırlıyor… Kartın henüz değişmedi.';
- try{var r=await fetch('http://127.0.0.1:8766/image/generate',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({prompt:prompt}),signal:run.controller.signal}),data=await r.json();if(!r.ok)throw Error(data.error||'Cloudflare görsel üretemedi.');if(typeof data.src!=='string'||data.src.length>8000040||!/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(data.src))throw Error('Görsel güvenli biçimde okunamadı.');var png=await hordeDecode(data.src);if(hordeRun!==run||run.controller.signal.aborted)return;hordeImagePreview(png,String(data.model||'Cloudflare FLUX').slice(0,100),status)}
- catch(e){if(hordeRun===run)status.textContent=e instanceof TypeError?'Görsel yardımcısına ulaşılamadı. Gemini Başlat.cmd dosyasını aç.':e.name==='AbortError'?'Görsel isteği zaman aşımına uğradı. Kartın değişmedi.':e.message}
- finally{clearTimeout(timer);if(hordeRun===run){hordeRun=null;hordeControls(false)}}
+ if(fluxRun)return;if(!/^[a-f0-9]{64}$/.test(token||'')){$('fluxConnection').open=true;status.textContent='Cloudflare için yardımcının bağlantı kodunu gir.';return}
+ var run={controller:new AbortController()},timer=setTimeout(function(){run.controller.abort()},100000);fluxRun=run;fluxControls(true);status.textContent='FLUX görseli hazırlıyor… Kartın henüz değişmedi.';
+ try{var r=await fetch('http://127.0.0.1:8766/image/generate',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({prompt:prompt}),signal:run.controller.signal}),data=await r.json();if(!r.ok)throw Error(data.error||'Cloudflare görsel üretemedi.');if(typeof data.src!=='string'||data.src.length>8000040||!/^data:image\/jpeg;base64,[A-Za-z0-9+/]+={0,2}$/.test(data.src))throw Error('Görsel güvenli biçimde okunamadı.');var png=await fluxDecode(data.src);if(fluxRun!==run||run.controller.signal.aborted)return;fluxImagePreview(png,String(data.model||'Cloudflare FLUX').slice(0,100),status)}
+ catch(e){if(fluxRun===run)status.textContent=e instanceof TypeError?'Görsel yardımcısına ulaşılamadı. FLUX Başlat.cmd dosyasını aç.':e.name==='AbortError'?'Görsel isteği zaman aşımına uğradı. Kartın değişmedi.':e.message}
+ finally{clearTimeout(timer);if(fluxRun===run){fluxRun=null;fluxControls(false)}}
 }
-function hordeDecode(src){return new Promise(function(resolve,reject){var im=new Image();im.onload=function(){if(!im.width||!im.height||im.width>2048||im.height>2048){reject(Error('Görsel boyutu desteklenmiyor.'));return}var c=document.createElement('canvas');c.width=im.width;c.height=im.height;c.getContext('2d').drawImage(im,0,0);resolve(c.toDataURL('image/png'))};im.onerror=function(){reject(Error('Üretilen görsel açılamadı.'))};im.src=src})}
-function hordeControls(running){$('geminiSuggest').disabled=running;$('geminiMode').disabled=running;$('hordeCancel').hidden=!running;$('geminiSuggest').textContent=running?'Görsel üretiliyor…':$('geminiMode').value==='image'?'Ücretsiz görsel üret':$('geminiMode').value==='cloudflare'?'Hızlı görsel üret':'Öneri hazırla'}
-function hordeClearPending(){try{localStorage.removeItem(hordePendingKey)}catch(e){}}
-async function startHordeImage(prompt,status,resume){
- if(hordeRun)return;var run={controller:new AbortController(),id:resume||'',started:Date.now(),timer:0,wake:null};hordeRun=run;hordeControls(true);var api=UmutHorde.client(fetch);
- function active(){return hordeRun===run&&!run.controller.signal.aborted}
- function pause(){return new Promise(function(resolve){run.wake=resolve;run.timer=setTimeout(resolve,6000)})}
- try{
-  status.textContent=resume?'Önceki görsel üretimine bağlanılıyor…':'Ücretsiz görsel isteği gönderiliyor…';
-  if(!run.id){var face=$('prev').querySelector('.face'),landscape=face?face.getBoundingClientRect().width>face.getBoundingClientRect().height:true;run.id=await api.start(prompt,landscape,AbortSignal.timeout(30000))}
-  if(!active()){api.cancel(run.id).catch(function(){});return}
-  try{localStorage.setItem(hordePendingKey,JSON.stringify({id:run.id,at:Date.now()}))}catch(e){}
-  while(active()){
-   if(Date.now()-run.started>20*60*1000){await api.cancel(run.id).catch(function(){});hordeClearPending();throw Error('Ücretsiz servis uzun süre yanıt vermedi. Daha sonra yeniden dene.')}
-   var check;
-   try{check=await api.check(run.id,AbortSignal.timeout(25000))}catch(e){if(!active())return;if(/sona ermiş/.test(e.message)){hordeClearPending();throw e}status.textContent='Servise ulaşılamıyor; üretim kaydı korundu. Bağlantı yeniden deneniyor…';await pause();continue}
-   if(!active())return;
-   if(check.faulted){hordeClearPending();throw Error('Görsel üretilemedi. Farklı bir tarifle yeniden dene.')}
-   if(check.done){var result=await api.result(run.id,AbortSignal.timeout(30000));if(!active())return;var png=await hordeDecode(result.src);if(!active())return;hordeClearPending();hordeImagePreview(png,result.model,status);break}
-   var position=Number(check.queue_position),wait=Number(check.wait_time);status.textContent=check.is_possible===false?'Bu model için uygun sunucu bekleniyor. İstersen üretimi iptal edebilirsin.':'Ücretsiz üretim '+(check.processing?'işleniyor…':'sırada'+(isFinite(position)?' · Sıra '+position:''))+(isFinite(wait)&&wait>0?' · Tahmini '+Math.ceil(wait/60)+' dk':'')+'. Kartın henüz değişmedi.';
-   await pause();
-  }
- }catch(e){if(active()){if(!(e instanceof TypeError)&&e.name!=='TimeoutError'&&e.name!=='AbortError')hordeClearPending();status.textContent=e instanceof TypeError?'Görsel servisine ulaşılamadı. İnternet bağlantını kontrol et.':e.message}}
- finally{clearTimeout(run.timer);if(hordeRun===run){hordeRun=null;hordeControls(false)}}
-}
-function initHordeImageUI(status){
- $('geminiMode').onchange=function(){$('hordeNotice').hidden=this.value!=='image';$('cfNotice').hidden=this.value!=='cloudflare';$('geminiPrompt').placeholder=['image','cloudflare'].indexOf(this.value)>=0?'Watercolor pink roses in the corners, ivory background, empty center…':'İsimleri büyüt, zemini krem yap, logoyu ortala…';if(hordeRun||!$('geminiSuggest').disabled)hordeControls(!!hordeRun);if(!hordeRun)status.textContent=this.value==='image'?'Görselini tarif et. Gemini bağlantısı veya API anahtarı gerekmez.':this.value==='cloudflare'?'Görselini tarif et; FLUX ile önizleme hazırlayalım.':'İsteğini yazıp öneri hazırlayabilirsin.'};
- $('hordeCancel').onclick=function(){var run=hordeRun;if(!run)return;hordeRun=null;run.controller.abort();clearTimeout(run.timer);if(run.wake)run.wake();hordeClearPending();hordeControls(false);status.textContent='Üretim iptal edildi. Kartın değişmedi.';if(run.id)UmutHorde.client(fetch).cancel(run.id).catch(function(){})};
- try{var pending=JSON.parse(localStorage.getItem(hordePendingKey)||'null');if(pending&&UmutHorde.validId(pending.id)&&Date.now()-pending.at<20*60*1000){$('geminiMode').value='image';$('geminiMode').dispatchEvent(new Event('change'));startHordeImage('',status,pending.id)}else hordeClearPending()}catch(e){}
-}
+function fluxDecode(src){return new Promise(function(resolve,reject){var im=new Image();im.onload=function(){if(!im.width||!im.height||im.width>2048||im.height>2048){reject(Error('Görsel boyutu desteklenmiyor.'));return}var c=document.createElement('canvas');c.width=im.width;c.height=im.height;c.getContext('2d').drawImage(im,0,0);resolve(c.toDataURL('image/png'))};im.onerror=function(){reject(Error('Üretilen görsel açılamadı.'))};im.src=src})}
+function fluxControls(running){$('fluxGenerate').disabled=running;$('fluxCancel').hidden=!running;$('fluxGenerate').textContent=running?'FLUX üretiyor…':'Hızlı görsel üret'}
 
 function initWorkshopClock(){
  var root=$('workshopClock');if(!root)return;
@@ -1347,7 +1210,7 @@ function initSettingsSearch(){
 }
 
 if(themeHidden(S.theme)){var initialOptions=thOpts(S.cat);if(!initialOptions.length){S.cat='own';initialOptions=thOpts('own')}S.theme=initialOptions[0][0];S.hideBase=S.cat=='own'}
-ui();fillTheme();edInit();storeInit();batchInit();initSettingsSearch();initGeminiAssistant();initCanvasTools();initAppReleaseNotes();initWorkshopClock();
+ui();fillTheme();edInit();storeInit();batchInit();initSettingsSearch();initFlux();initCanvasTools();initAppReleaseNotes();initWorkshopClock();
 var oldStoreOpen=$('sopen').onclick;
 $('sopen').onclick=function(){if(oldStoreOpen)oldStoreOpen();loadOnlineThemes(false)};
 

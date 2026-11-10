@@ -1,4 +1,4 @@
-const {test}=require('node:test'),assert=require('node:assert/strict'),{createGateway}=require('../scripts/gemini-gateway.cjs');
+const {test}=require('node:test'),assert=require('node:assert/strict'),{createGateway}=require('../scripts/flux-gateway.cjs');
 const token='f'.repeat(64),account='a'.repeat(32),key='FAKE_CLOUDFLARE_KEY_NEVER_SENT_EXTERNALLY';
 test('Cloudflare local setup, credential privacy, fixed model, bounded prompts and provider failures',async()=>{
  let upstream=[],saved=null,failure=0,nowImage='UklGRg==';
@@ -6,6 +6,7 @@ test('Cloudflare local setup, credential privacy, fixed model, bounded prompts a
  await new Promise(r=>server.listen(18773,'127.0.0.1',r));
  const post=(path,body={},origin='null',access=token)=>fetch('http://127.0.0.1:18773'+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json',Authorization:'Bearer '+access},body:JSON.stringify(body)});
  try{
+ assert.equal((await post('/suggest',{prompt:'old assistant'})).status,404);assert.equal((await post('/configure',{apiKey:'old provider'})).status,404);assert.equal(upstream.length,0);
  assert.equal((await post('/image/status',{},'null','bad')).status,401);assert.equal((await post('/image/status',{},'https://evil.invalid')).status,403);assert.equal((await post('/image/generate',{prompt:'roses'})).status,503);
  assert.equal((await post('/configure-cloudflare',{accountId:account,apiKey:key})).status,403);
  assert.equal((await post('/configure-cloudflare',{accountId:'../other',apiKey:key},'http://127.0.0.1:18773')).status,400);
