@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.15",
+      "title": "Yerel tema kaydı ve FLUX paneli düzeltmeleri",
+      "changes": [
+        "Yerel temalar görseller için daha geniş IndexedDB alanına kaydedilir; eski kayıtlar korunur.",
+        "FLUX görselinden hazır temaya geçerken eski arka plan temizlenir.",
+        "FLUX paneli açılıp kapanan ayar sekmesine dönüştürüldü; açık/kapalı tercihi hatırlanır."
+      ]
+    },
+    {
       "version": "2.2.14",
       "title": "Yalnızca FLUX: sade görsel üretimi",
       "changes": [
