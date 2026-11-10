@@ -26,6 +26,14 @@ Tema kitaplığı büyük görseller için IndexedDB alanına kaydedilir; yeni k
 
 **FLUX Başlat.cmd** dosyasını aç. İlk kurulumda yardımcının yerel sayfasına Cloudflare hesap kimliği ve yalnızca o hesabın Workers AI Read/Edit izinli API anahtarını gir. Anahtar Windows DPAPI ile `.local/cloudflare-credential.xml` içine şifreli kaydedilir; uygulamaya, HTML’e veya GitHub’a eklenmez. Yerel sayfanın bağlantı kodunu paneldeki **Bağlantı** bölümüne yapıştır. Mevcut bağlantı kodları otomatik korunur. Bilgisayarı yeniden başlatınca aynı FLUX Başlat.cmd dosyasını açmak yeterlidir.
 
+### Bağlantıyı başka bilgisayara taşıma
+
+Bu bilgisayarda **FLUX Başlat.cmd → Başka bilgisayara taşı** bölümüne gir. En az 12 karakterlik bir parola belirle ve **Parolalı bağlantı yedeğini indir** düğmesine bas. Dosya yalnızca hesap kimliği ve API anahtarını AES-256-GCM ile şifreli taşır; parola sabit parametreli scrypt ile anahtara dönüştürülür. Parola dosyaya veya ayarlara kaydedilmez. Yerel atölye bağlantı kodu yedeğe dahil edilmez.
+
+Diğer bilgisayarda uygulama/yardımcı dosyalarını aç; **FLUX Başlat.cmd → Başka bilgisayara taşı → Diğer bilgisayarda içe aktar** altında yedeği seçip parolanı gir. Yeni API anahtarı üretmeden Cloudflare erişimi doğrulanır ve anahtar hedef Windows hesabına şifreli kaydedilir. O bilgisayarın kendi atölye bağlantı kodunu kullan. Yanlış parola, bozuk dosya veya doğrulama hatası mevcut bağlantıyı değiştirmez. Yedek dosyası ve parolayı bilen kişi API erişimini kullanabilir; bunları ayrı sakla. Parola unutulursa yedekten kurtarılamaz.
+
+Taşıma yedeği tasarımları ve yerel temaları kapsamaz; onları **Projeyi kaydet / JSON indir** ile ayrıca aktar. Kaynak klasörü taşırken `.local/` klasörünü taşımana gerek yoktur. Windows 64 bit taşıma paketi varsa içindeki `runtime/node.exe` otomatik kullanılır; standart kaynak kopyası Node.js 20+ veya Codex’in paketli Node.js’ini gerektirir.
+
 Model bilgisayarda çalışmaz. Yardımcı yalnızca `127.0.0.1:8766` üzerinde dinler; yalnızca yazdığın tarif Cloudflare’a iletilir. İsim listesi, logo ve mevcut öğeler gönderilmez. Cloudflare hesabını Workers Free planında tut; günlük ücretsiz kota Cloudflare tarafından uygulanır. Uygulama ücretli plan açmaz veya başka modele geçmez. Yardımcı dört adım, tek görsel, beş saniye aralık ve çalıştığı süre içinde UTC günü başına 80 istek sınırı uygular. Üretim süresi yoğunluğa bağlıdır. Yerel kayıtlar çevrimdışı kullanılabilir. `.local/` ve `mk3` kullanıcı kayıtları güncellemelerde korunur.
 
 ## Program değişikliklerini yayınlama

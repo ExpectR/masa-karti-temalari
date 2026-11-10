@@ -8,7 +8,8 @@ function Test-Flux {
 }
 $gatewayProcess=$null
 if(!(Test-Flux)){
- $node=(Get-Command node.exe -ErrorAction SilentlyContinue).Source
+ $node=Join-Path $root 'runtime\node.exe'
+ if(!(Test-Path -LiteralPath $node)){$node=(Get-Command node.exe -ErrorAction SilentlyContinue).Source}
  if(!$node){$node=Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe'}
  if(!(Test-Path -LiteralPath $node)){throw 'Node.js 20 veya üzeri gerekli.'}
  $gatewayProcess=Start-Process -FilePath $node -ArgumentList @('"'+(Join-Path $PSScriptRoot 'flux-gateway.cjs')+'"') -WorkingDirectory $root -WindowStyle Hidden -PassThru

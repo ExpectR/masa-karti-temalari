@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.16",
+      "title": "FLUX bağlantısını parolayla taşı",
+      "changes": [
+        "FLUX yardımcısına parolalı bağlantı yedeği indirme ve içe aktarma eklendi.",
+        "Yedek başka bilgisayarda parolayla açılır; anahtar o Windows hesabına şifreli kaydedilir. Yanlış parola mevcut bağlantıyı değiştirmez.",
+        "FLUX panelinin Bağlantı bölümünden taşıma ekranı açılabilir. Tasarımlar ve yerel temalar ayrı yedeklenir."
+      ]
+    },
+    {
       "version": "2.2.15",
       "title": "Yerel tema kaydı ve FLUX paneli düzeltmeleri",
       "changes": [

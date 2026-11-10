@@ -1,5 +1,6 @@
 'use strict';
 const MODEL='@cf/black-forest-labs/flux-1-schnell';
+const {seal,unseal}=require('./portable-connection.cjs');
 function credentials(value){if(!value||!/^[-_A-Za-z0-9]{20,512}$/.test(value.apiKey||'')||!/^[a-f0-9]{32}$/i.test(value.accountId||''))throw Error('Cloudflare hesap kimliği veya API anahtarı eksik.');return {apiKey:value.apiKey,accountId:value.accountId}}
 function createCloudflareHandler({config,saveCredential,fetchImpl=fetch,now=Date.now,minInterval=5000,maxDaily=80}={}){
  let current=config?credentials(config):null,busy=false,last=-Infinity,day='',used=0;
@@ -7,18 +8,22 @@ function createCloudflareHandler({config,saveCredential,fetchImpl=fetch,now=Date
  async function body(req){let bytes=0,parts=[];for await(const part of req){bytes+=part.length;if(bytes>8192)throw Error('İstek çok büyük.');parts.push(part)}return JSON.parse(Buffer.concat(parts).toString('utf8'))}
  function failure(r){return Error(r.status===429?'Cloudflare ücretsiz kotası doldu veya servis yoğun. Daha sonra yeniden dene.':r.status===401||r.status===403?'Cloudflare anahtarının Workers AI izni doğrulanamadı. Bağlantı yardımcısından kontrol et.':'Cloudflare şu an görsel üretemiyor (HTTP '+r.status+').')}
  return async function(req,res,origin){
-  if(!['/image/status','/image/generate','/configure-cloudflare'].includes(req.url))return false;
+  if(!['/image/status','/image/generate','/configure-cloudflare','/connection/export','/connection/import'].includes(req.url))return false;
   if(req.method!=='POST'){reply(res,405,{error:'POST gerekli.'});return true}
   if(req.url==='/image/status'){reply(res,200,{configured:!!current,model:MODEL});return true}
-  if(req.url==='/configure-cloudflare'&&(!saveCredential||!origin||origin==='null')){reply(res,403,{error:'Cloudflare anahtarı yalnızca yerel kurulum sayfasından kaydedilebilir.'});return true}
+  if(['/configure-cloudflare','/connection/export','/connection/import'].includes(req.url)&&(!origin||origin==='null'||req.url!=='/connection/export'&&!saveCredential)){reply(res,403,{error:'Bağlantı işlemi yalnızca yerel kurulum sayfasından yapılabilir.'});return true}
   if(!/^application\/json\b/i.test(req.headers['content-type']||'')){reply(res,415,{error:'JSON isteği gerekli.'});return true}
   if(busy){reply(res,429,{error:'Bir görsel hazırlanıyor. Bekleyip yeniden dene.'});return true}
   let input;try{input=await body(req)}catch(e){reply(res,400,{error:'İstek okunamadı veya çok büyük.'});return true}
   if(busy){reply(res,429,{error:'Bir görsel hazırlanıyor. Bekleyip yeniden dene.'});return true}
   busy=true;
   try{
-   if(req.url==='/configure-cloudflare'){
-    let next;try{next=credentials(input)}catch(e){reply(res,400,{error:e.message});return true}
+   if(req.url==='/connection/export'){
+    if(!current){reply(res,503,{error:'Dışa aktarmak için önce FLUX bağlantısını kur.'});return true}
+    try{reply(res,200,{bundle:await seal(current,input.password)})}catch(e){reply(res,400,{error:e.message})}return true;
+   }
+   if(req.url==='/configure-cloudflare'||req.url==='/connection/import'){
+    let next;try{next=req.url==='/connection/import'?credentials(await unseal(input.bundle,input.password)):credentials(input)}catch(e){reply(res,400,{error:e.message});return true}
     const r=await fetchImpl('https://api.cloudflare.com/client/v4/accounts/'+next.accountId+'/ai/models/search?search=flux-1-schnell',{headers:{Authorization:'Bearer '+next.apiKey},signal:AbortSignal.timeout(25000)});
     if(!r.ok)throw failure(r);const d=await r.json();if(d.success!==true)throw Error('Cloudflare erişimi doğrulanamadı.');saveCredential(next.apiKey,next.accountId);current=next;reply(res,200,{ok:true});return true;
    }
