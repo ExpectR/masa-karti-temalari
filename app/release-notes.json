@@ -2,6 +2,16 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.12",
+      "title": "Ücretsiz gerçek görsel üretimi",
+      "changes": [
+        "AI Horde üzerinden anahtarsız ve ücretsiz görsel üretimi eklendi; gönüllü sunuculardaki sıra durumu gösterilir.",
+        "Görseli önizle, PNG indir, Yerel Temalarım’a kaydet veya kartın arka planına uygula. Üretilen görseller depoya gönderilmez.",
+        "Yerel görsel temaları JSON olarak yedeklenip içe aktarılabilir; isimler, logo ve ek öğeler korunur.",
+        "Anonim üretimlerin servis tarafından paylaşılabileceği belirtilir. Gemini tema ve ayar asistanı kullanılmaya devam eder."
+      ]
+    },
+    {
       "version": "2.2.11",
       "title": "Gemini ile yeni yerel temalar",
       "changes": [

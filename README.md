@@ -22,11 +22,19 @@ Tema güncellemeleri için **Tema Mağazası → Online yenile → Online** yolu
 
 Gemini bölümü ayar aramasının hemen altındadır. İsteğini yazınca genel tasarım için bir öneri hazırlar; **Şu an / Önerilen** karşılaştırmasını gösterir. Kart ancak **Uygula** ile değişir. **Geri al** (veya Ctrl+Z) asistanın uyguladığı değişikliği de geri alır. Öneri hazırlanırken kart düzenlenirse eski öneri uygulanmaz.
 
-**Yeni tema üret** modunda Gemini, mevcut tema listesinden seçim yapmak yerine renkler, geometrik şekiller ve bitkisel motiflerden yeni bir vektörel kompozisyon oluşturur. Önizlemede adını düzenleyip **Yerel temalarıma kaydet** diyebilirsin; kaydetmek kartı değiştirmez. Uyguladığın temayı asistanın altındaki **Bu temayı yerel kaydet** düğmesiyle de saklayabilirsin.
+**Vektörel tema üret** modunda Gemini, mevcut tema listesinden seçim yapmak yerine renkler, geometrik şekiller ve bitkisel motiflerden yeni bir vektörel kompozisyon oluşturur. Önizlemede adını düzenleyip **Yerel temalarıma kaydet** diyebilirsin; kaydetmek kartı değiştirmez. Uyguladığın temayı asistanın altındaki **Bu temayı yerel kaydet** düğmesiyle de saklayabilirsin.
 
-Kayıtlar **Tema Mağazası → Yerel Temalarım** bölümünde görünür. **Kullan** mevcut isim, logo ve serbest öğelerini koruyarak temayı uygular. **JSON indir** yalnızca tema tanımını dosyaya kaydeder; **Şablonlarım → İçe aktar** ile aynı veya başka bir tarayıcıya geri alınabilir. Üretilen temalar GitHub'a, tema deposuna veya bir sunucu veritabanına gönderilmez; `mk3t` anahtarında bu tarayıcıda saklanır. Tarayıcı verilerini temizlemek kayıtları siler; saklamak istediğin temaları JSON olarak yedekle.
+Kayıtlar **Tema Mağazası → Yerel Temalarım** bölümünde görünür. **Kullan** mevcut isim, logo ve serbest öğelerini koruyarak temayı uygular. **JSON indir** yalnızca tema tanımını dosyaya kaydeder; **Şablonlarım → İçe aktar** ile aynı veya başka bir tarayıcıya geri alınabilir. Yerel kayıtlar GitHub'a veya tema deposuna gönderilmez; `mk3t` anahtarında bu tarayıcıda saklanır. Tarayıcı verilerini temizlemek kayıtları siler; saklamak istediğin temaları JSON olarak yedekle.
 
-Bu sürüm fotoğraf üretmez; çizgi, çerçeve, geometrik desen ve mevcut bitkisel çizimlerden yeni bir yerleşim üretir. İsim ve logo görselleri tema dosyasına gömülmez. Mevcut tema tanımı yeni bir Gemini isteğinde tasarım bağlamı olarak gönderilebilir; özel isim listeleri ve logo/resim dosyaları gönderilmez.
+Gemini'nin vektörel modu fotoğraf üretmez. İsim ve logo görselleri tema dosyasına gömülmez. Mevcut vektörel tema tanımı yeni bir Gemini isteğinde tasarım bağlamı olarak gönderilebilir; özel isim listeleri ve logo/resim dosyaları gönderilmez.
+
+### Ücretsiz gerçek görsel üretimi
+
+**Görsel üret · Ücretsiz**, [AI Horde](https://www.aihorde.net/docs/image/) üzerinden Dreamshaper ile görsel üretir. Gemini anahtarı, bağlantı yardımcısı, hesap veya ödeme gerekmez; üretim uzak gönüllü sunucularda yapılır. Ücretsiz anonim erişim düşük önceliklidir; sıra, kullanılabilir sunucu ve kota nedeniyle bekleme veya hata olabilir. Daha iyi sonuç için İngilizce tarif yaz. Model her tarifi kusursuz karşılamaz; görselin içinde istemeden yazı oluşabilir.
+
+Bu servis yalnızca yazdığın görsel tarifini ve sabit üretim ayarlarını alır; uygulamadaki isimler, logo ve tasarım dosyaları gönderilmez. Anonim isteklerde AI Horde `shared=true` kullanır; tarif ve üretilen görsel servis tarafından paylaşılabilir. Özel/kişisel bilgi yazma. [Resmî API sözleşmesi](https://aihorde.net/api/).
+
+Sıra durumu gösterilir; **Üretimi iptal et** isteği durdurur. Yeniden açılışta bekleyen iş yeni istek göndermeden devam eder. Sonuç önizlemesinde **PNG indir**, **Yerel temalarıma kaydet** ve **Arka plana uygula** bulunur. Uygulama isimleri, logoyu, serbest öğeleri ve karta özel seçimleri korur; **Geri al** önceki tasarımı geri getirir. Yerel görsel temaları da JSON ile yedeklenebilir; kaydedilen görseller çevrimdışı çalışır. Ücretli servise otomatik geçiş yoktur.
 
 ### Windows'ta ilk bağlantı
 

@@ -57,6 +57,14 @@ def build(version):
     if contract_count != 1:
         raise SystemExit('Gemini contract marker is missing.')
 
+    horde = (ROOT / 'scripts/horde-client.js').read_text(encoding='utf-8')
+    if '</script' in horde.lower():
+        raise SystemExit('Horde client contains an unsafe closing script tag.')
+    horde_block = '<!-- UMUT_HORDE_START -->\n<script>\n' + horde + '\n</script>\n<!-- UMUT_HORDE_END -->'
+    html, horde_count = re.subn(r'<!-- UMUT_HORDE_START -->.*?<!-- UMUT_HORDE_END -->', lambda m: horde_block, html, count=1, flags=re.S)
+    if horde_count != 1:
+        raise SystemExit('Horde client marker is missing.')
+
     notes = release_notes_payload(version)
     encoded_notes = json.dumps(notes, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     notes_block = '<!-- UMUT_RELEASE_NOTES_START -->\n<script type="application/json" id="umut-release-notes-data">' + encoded_notes + '</script>\n<!-- UMUT_RELEASE_NOTES_END -->'
