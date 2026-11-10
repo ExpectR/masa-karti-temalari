@@ -30,7 +30,11 @@ Gemini'nin vektörel modu fotoğraf üretmez. İsim ve logo görselleri tema dos
 
 ### Ücretsiz gerçek görsel üretimi
 
-**Görsel üret · Ücretsiz**, [AI Horde](https://www.aihorde.net/docs/image/) üzerinden Dreamshaper ile görsel üretir. Gemini anahtarı, bağlantı yardımcısı, hesap veya ödeme gerekmez; üretim uzak gönüllü sunucularda yapılır. Ücretsiz anonim erişim düşük önceliklidir; sıra, kullanılabilir sunucu ve kota nedeniyle bekleme veya hata olabilir. Daha iyi sonuç için İngilizce tarif yaz. Model her tarifi kusursuz karşılamaz; görselin içinde istemeden yazı oluşabilir.
+**Hızlı görsel üret · FLUX**, [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/) üzerindeki FLUX.1 Schnell modelini dört adımla çalıştırır. Yerel bağlantı yardımcısı açık olmalı. Mevcut atölye bağlantı kodu kullanılır; Cloudflare API anahtarı tarayıcıya veya HTML'e gönderilmez. Yalnızca yazdığın görsel tarifi sabit model ve ayarlarla Cloudflare'a iletilir; isim listesi, logo, mevcut kart ve öğeler gönderilmez. Gerçek süre yoğunluğa bağlıdır; sabit hız garantisi yoktur.
+
+Cloudflare hesabını **Workers Free** planında tut. Günlük ücretsiz kota Cloudflare tarafından uygulanır; uygulama ücretli plan etkinleştirmez veya başka bir modele otomatik geçmez. Yerel yardımcı ayrıca işlem başına tek görsel, beş saniye aralık ve çalıştığı süre içinde UTC günü başına 80 istek sınırı uygular. Bu yerel sayaç Cloudflare hesap kotasının yerini almaz. Kurulumda Workers AI Read/Edit izinli, yalnızca ilgili hesaba ait token ve hesap kimliği yardımcının Cloudflare bölümüne girilir. Anahtar doğrulanıp `.local/cloudflare-credential.xml` içine Windows DPAPI ile şifreli kaydedilir; `.local/` Git'e dahil değildir. Gemini anahtarı ayrı saklanır ve korunur.
+
+**Görsel üret · AI Horde**, [AI Horde](https://www.aihorde.net/docs/image/) üzerinden Dreamshaper ile görsel üretir. Gemini anahtarı, bağlantı yardımcısı, hesap veya ödeme gerekmez; üretim uzak gönüllü sunucularda yapılır. Ücretsiz anonim erişim düşük önceliklidir; sıra, kullanılabilir sunucu ve kota nedeniyle bekleme veya hata olabilir. Daha iyi sonuç için İngilizce tarif yaz. Model her tarifi kusursuz karşılamaz; görselin içinde istemeden yazı oluşabilir.
 
 Bu servis yalnızca yazdığın görsel tarifini ve sabit üretim ayarlarını alır; uygulamadaki isimler, logo ve tasarım dosyaları gönderilmez. Anonim isteklerde AI Horde `shared=true` kullanır; tarif ve üretilen görsel servis tarafından paylaşılabilir. Özel/kişisel bilgi yazma. [Resmî API sözleşmesi](https://aihorde.net/api/).
 

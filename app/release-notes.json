@@ -2,6 +2,15 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "version": "2.2.13",
+      "title": "Cloudflare FLUX ile hızlı görsel",
+      "changes": [
+        "Hızlı görsel üret seçeneği Cloudflare FLUX.1 Schnell modeline bağlandı; AI Horde alternatifi korunur.",
+        "Üretilen görseller önizlenir, PNG veya yerel tema olarak kaydedilir; mevcut isim, logo ve öğeler korunur.",
+        "Cloudflare anahtarı yalnızca bilgisayarda şifreli saklanır; uygulamaya ve depoya eklenmez. Ücretli plana otomatik geçilmez."
+      ]
+    },
+    {
       "version": "2.2.12",
       "title": "Ücretsiz gerçek görsel üretimi",
       "changes": [
