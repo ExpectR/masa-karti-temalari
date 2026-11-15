@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
   "app": "Masa Kartı Atölyesi",
-  "updatedAt": "2026-11-06",
+  "updatedAt": "2026-11-15",
   "themes": [
+    {
+      "id": "bmw-m-performance",
+      "name": "BMW M Performance",
+      "category": "bay",
+      "version": 1,
+      "file": "themes/bmw-m-performance.json",
+      "description": "Antrasit karbon zemin, mavi BMW spor otomobil, BMW arması ve M renklerinde yarış çizgileri. İsim alanı boş bırakılmıştır.",
+      "minAppVersion": "2.0.0"
+    },
     {
       "id": "on-kasim-anma",
       "name": "10 Kasım — Sonsuz Özlem",

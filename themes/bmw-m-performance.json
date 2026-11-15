@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 2,
+  "id": "bmw-m-performance",
+  "cat": "bay",
+  "n": "BMW M Performance",
+  "version": 1,
+  "bg": "#080c11",
+  "c": "#f3f7fb",
+  "a": "#1c9cf0",
+  "font": "'Montserrat',sans-serif",
+  "foil": false,
+  "image": "assets/bmw-m-performance.webp",
+  "description": "Antrasit karbon zemin, mavi BMW spor otomobil, BMW arması ve M renklerinde yarış çizgileri. İsim alanı boş bırakılmıştır."
+}
